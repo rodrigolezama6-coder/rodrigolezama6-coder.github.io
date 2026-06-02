@@ -70,7 +70,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .sbtn.primary:hover{opacity:.92}
 .sbtn.soon{opacity:.5;cursor:default}
 .sbtn.soon:hover{transform:none;border-color:var(--line-2);box-shadow:none}
-.stats{display:flex;flex-wrap:wrap;gap:0;justify-content:center;margin-top:64px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
+.socials-note{margin-top:18px;font-size:.86rem;color:var(--ink-mute);max-width:480px;margin-left:auto;margin-right:auto}
+.socials-note::before{content:"\1F512  ";}
+.stats{display:flex;flex-wrap:wrap;gap:0;justify-content:center;margin-top:56px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
 .stat{flex:1;min-width:160px;padding:26px 18px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
 .stat b{display:block;font-family:var(--serif);font-weight:600;font-size:2.1rem;color:var(--ink);letter-spacing:-.02em}
@@ -213,6 +215,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <h1 data-i18n-html="hero_h1">Compañías pequeñas.<br><span class="accent">Convicción grande.</span></h1>
     <p class="tag" data-i18n="hero_tag">Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada mes y explico cada movimiento.</p>
     <div class="socials" id="socials"></div>
+    <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
       <div class="stat"><b>3</b><span data-i18n="stat_strategies">portafolios públicos</span></div>
       <div class="stat"><b>20+</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
@@ -304,13 +307,13 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
    ============================================================ */
 const CONFIG = {
   links:{
-    discord:  "https://whop.com/the-micro-capo/",      // TODO: invite real de Whop/Discord
-    substack: "https://themicrocapo.substack.com",      // TODO: confirma URL de Substack
-    x:        "https://x.com/themicrocapo",             // TODO: confirma handle de X
-    youtube:  "",                                        // pega la URL cuando lances
+    discord:  "https://whop.com/the-micro-capo-c69a/tmc-comunidad/",  // Whop = membresía que da acceso al Discord
+    substack: "https://substack.com/@themicrocapo",
+    x:        "https://x.com/themicrocapo",             // TODO: confirmar handle de X
+    youtube:  "https://www.youtube.com/@6006rodrigo",
     instagram:"https://instagram.com/themicrocapo"
   },
-  youtubeComingSoon: true
+  youtubeComingSoon: false
 };
 
 const ICON = {
@@ -439,6 +442,7 @@ const I18N = {
     hero_pill:"Research independiente de microcaps",
     hero_h1:'Compañías pequeñas.<br><span class="accent">Convicción grande.</span>',
     hero_tag:"Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada mes y explico cada movimiento.",
+    socials_note:"El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.",
     stat_strategies:"portafolios públicos", stat_holdings:"microcaps a largo plazo", stat_cadence:"update mensual", stat_transparency:"cartera transparente",
     pf_eyebrow:"Track record", pf_title:"Portafolios públicos",
     pf_sub:"Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, actualizado el primer lunes de cada mes junto con su retorno.",
@@ -461,6 +465,7 @@ const I18N = {
     hero_pill:"Independent microcap research",
     hero_h1:'Small companies.<br><span class="accent">Big conviction.</span>',
     hero_tag:"Three public portfolios, three different philosophies. I share what I hold, update it monthly and explain every move.",
+    socials_note:"Discord access is a monthly membership via Whop. That's where I post every move in real time.",
     stat_strategies:"public portfolios", stat_holdings:"long-term microcaps", stat_cadence:"monthly update", stat_transparency:"transparent book",
     pf_eyebrow:"Track record", pf_title:"Public portfolios",
     pf_sub:"Three strategies, three different philosophies. What I hold, in the open, updated the first Monday of each month with its return.",
