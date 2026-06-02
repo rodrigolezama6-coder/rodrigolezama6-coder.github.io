@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Micro Capo — Microcap research, portafolios & estrategias</title>
+<meta name="description" content="The Micro Capo: research de microcaps y 3 portafolios públicos (largo plazo, trades de corto plazo y momentum), con track record y artículos." />
+<link rel="icon" type="image/png" href="TMC_logo_1080x1080.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE MICRO CAPO — LANDING  (estilo limpio y elegante)
+   Marca: navy/negro + azul eléctrico, sobre blanco con aire
+   ============================================================ */
+:root{
+  --bg:#ffffff; --bg-soft:#f6f7fa; --bg-ink:#0a0f1d;
+  --line:#e8eaf1; --line-2:#dcdfe9;
+  --ink:#0a0f1d; --ink-soft:#525a6e; --ink-mute:#8b93a6;
+  --blue:#2b53ff; --blue-deep:#1d2747; --blue-soft:#eef2ff;
+  --green:#129b6b; --red:#d23b4e;
+  --radius:16px; --maxw:1140px;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:700}
+h1,h2,h3,h4{margin:0;letter-spacing:-.02em;color:var(--ink)}
+section{padding:96px 0;position:relative}
+.sec-head{max-width:680px;margin-bottom:46px}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4vw,3rem);margin:14px 0 14px;letter-spacing:-.01em;line-height:1.1}
+.sec-head p{color:var(--ink-soft);font-size:1.08rem;margin:0}
+.sec-head .more{display:inline-block;margin-top:14px;color:var(--blue);font-weight:700;font-size:.95rem}
+
+/* ---------- NAV ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:13px;font-weight:700;letter-spacing:-.01em;font-size:1.02rem}
+.brand img{width:40px;height:40px;border-radius:11px}
+.brand span small{display:block;font-size:.6rem;letter-spacing:.26em;color:var(--ink-mute);font-weight:600;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:.94rem;color:var(--ink-soft);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.lang-toggle{display:flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+.lang-toggle button{background:#fff;border:0;color:var(--ink-mute);font-weight:700;padding:6px 13px;font-size:.76rem;cursor:pointer;transition:all .2s;font-family:inherit}
+.lang-toggle button.active{background:var(--bg-ink);color:#fff}
+.nav-cta{background:var(--bg-ink);color:#fff;padding:11px 22px;border-radius:999px;font-weight:600;font-size:.92rem;transition:transform .15s,opacity .2s}
+.nav-cta:hover{transform:translateY(-1px);opacity:.9}
+
+/* ---------- HERO ---------- */
+.hero{padding:108px 0 84px;text-align:center}
+.hero .logo-badge{width:96px;height:96px;margin:0 auto 30px;border-radius:24px;overflow:hidden;box-shadow:0 18px 48px -18px rgba(10,15,29,.45)}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;padding:8px 16px;border-radius:999px;border:1px solid var(--line-2);background:#fff;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+.hero .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.04;letter-spacing:-.02em}
+.hero h1 .accent{color:var(--blue)}
+.hero .tag{max-width:660px;margin:24px auto 0;color:var(--ink-soft);font-size:1.16rem}
+.socials{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-top:40px}
+.sbtn{display:flex;align-items:center;gap:10px;padding:13px 22px;border-radius:12px;border:1px solid var(--line-2);background:#fff;font-weight:600;font-size:.96rem;color:var(--ink);transition:transform .15s,border-color .2s,box-shadow .2s;min-width:168px;justify-content:center;position:relative}
+.sbtn:hover{transform:translateY(-2px);border-color:var(--ink);box-shadow:0 10px 26px -14px rgba(10,15,29,.4)}
+.sbtn svg{width:19px;height:19px;flex:none}
+.sbtn small{position:absolute;top:-9px;right:12px;background:var(--blue);color:#fff;font-size:.58rem;padding:2px 9px;border-radius:999px;letter-spacing:.08em;font-weight:700}
+.sbtn.primary{background:var(--bg-ink);border-color:var(--bg-ink);color:#fff}
+.sbtn.primary:hover{opacity:.92}
+.sbtn.soon{opacity:.5;cursor:default}
+.sbtn.soon:hover{transform:none;border-color:var(--line-2);box-shadow:none}
+.stats{display:flex;flex-wrap:wrap;gap:0;justify-content:center;margin-top:64px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:760px;margin-left:auto;margin-right:auto}
+.stat{flex:1;min-width:160px;padding:26px 18px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-weight:600;font-size:2.1rem;color:var(--ink);letter-spacing:-.02em}
+.stat span{font-size:.82rem;color:var(--ink-mute)}
+
+/* ---------- PORTFOLIOS ---------- */
+.pf-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.pf-tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 20px;border:1px solid var(--line-2);border-radius:14px;background:#fff;cursor:pointer;font-family:inherit;transition:all .18s;min-width:180px;text-align:left}
+.pf-tab b{font-size:.98rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.pf-tab span{font-size:.76rem;color:var(--ink-mute)}
+.pf-tab:hover{border-color:var(--ink)}
+.pf-tab.active{background:var(--bg-ink);border-color:var(--bg-ink)}
+.pf-tab.active b{color:#fff}.pf-tab.active span{color:rgba(255,255,255,.6)}
+.pf-panel{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 24px 60px -42px rgba(10,15,29,.5)}
+.pf-headrow{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;padding:30px 30px 8px}
+.pf-philo{max-width:560px}
+.pf-philo h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;margin-bottom:8px}
+.pf-philo p{color:var(--ink-soft);font-size:1rem;margin:0}
+.pf-stats{display:flex;gap:28px;flex-wrap:wrap}
+.pstat b{display:block;font-family:var(--serif);font-weight:600;font-size:1.85rem;letter-spacing:-.02em;line-height:1.05}
+.pstat b.up{color:var(--green)} .pstat b.down{color:var(--red)}
+.pstat span{font-size:.76rem;color:var(--ink-mute)}
+.audit{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:700;color:var(--green);background:rgba(18,155,107,.1);padding:6px 12px;border-radius:999px;margin:0 30px}
+.audit::before{content:"✓";font-weight:800}
+.pf-chart{padding:6px 22px 4px}
+.pf-chart svg{width:100%;height:auto;display:block;overflow:visible}
+.pf-chart text{font-family:var(--sans);fill:var(--ink-mute)}
+.hold{width:100%;border-collapse:collapse;font-size:.92rem}
+.hold-wrap{padding:8px 30px 28px}
+.hold th{text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding:10px 10px;border-bottom:1px solid var(--line)}
+.hold td{padding:11px 10px;border-bottom:1px solid var(--line)}
+.hold tr:last-child td{border-bottom:0}
+.hold td.tk{font-weight:700;color:var(--blue)}
+.hold td.w{text-align:right;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.hold td.rt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.hold td.rt.up{color:var(--green)} .hold td.rt.down{color:var(--red)}
+.pf-note{padding:0 30px 26px;font-size:.84rem;color:var(--ink-mute)}
+.pf-empty{padding:34px 30px;color:var(--ink-mute);font-size:.95rem;text-align:center}
+.pf-cta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin:6px 30px 24px;padding:18px 22px;background:var(--bg-ink);border-radius:14px;color:#fff}
+.pf-cta span{font-weight:600;font-size:1rem;color:#fff}
+.pf-cta-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--bg-ink);padding:11px 20px;border-radius:10px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:transform .15s,opacity .2s}
+.pf-cta-btn:hover{transform:translateY(-1px);opacity:.92}
+.hold tr.more td{color:var(--blue);font-weight:600;background:var(--blue-soft)}
+.pf-disc{margin-top:26px;text-align:center;font-size:.8rem;color:var(--ink-mute);max-width:740px;margin-left:auto;margin-right:auto}
+
+/* ---------- cards (articulos) ---------- */
+.grid{display:grid;gap:22px}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:28px;transition:transform .18s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:13px}
+.card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 44px -26px rgba(10,15,29,.3)}
+.card .kicker{display:flex;align-items:center;gap:10px;font-size:.74rem;color:var(--ink-mute);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.ticker{font-weight:700;color:var(--blue);background:var(--blue-soft);padding:3px 11px;border-radius:7px;font-size:.76rem}
+.card h3{font-size:1.22rem;font-weight:700;letter-spacing:-.01em}
+.card p{color:var(--ink-soft);font-size:.96rem;margin:0;flex:1}
+.card .meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:.84rem;color:var(--ink-mute)}
+.card .go{display:inline-flex;align-items:center;gap:5px;color:var(--blue);font-weight:700;font-size:.9rem}
+
+/* ---------- books ---------- */
+.book{display:flex;gap:18px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;background:#fff;padding:22px;transition:border-color .2s,box-shadow .2s}
+.book:hover{border-color:var(--line-2);box-shadow:0 14px 34px -24px rgba(10,15,29,.3)}
+.book .spine{width:48px;height:68px;border-radius:5px;flex:none;background:linear-gradient(160deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1.05rem;box-shadow:inset -6px 0 10px -6px rgba(0,0,0,.45)}
+.book h4{margin:0 0 3px;font-size:1.04rem;font-weight:700}
+.book .auth{font-size:.82rem;color:var(--ink-mute);margin-bottom:7px}
+.book p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+
+/* ---------- course ---------- */
+.band{border-radius:26px;overflow:hidden;background:var(--bg-ink);color:#fff;padding:64px 48px;text-align:center;position:relative}
+.band::after{content:"";position:absolute;bottom:-40%;right:-10%;width:540px;height:540px;background:radial-gradient(circle,rgba(43,83,255,.4),transparent 62%);filter:blur(8px)}
+.band > *{position:relative}
+.band .eyebrow{color:#7d97ff}
+.band h2{font-family:var(--serif);font-weight:600;color:#fff;font-size:clamp(2rem,3.8vw,2.9rem);margin:14px 0 16px;line-height:1.08}
+.band p{color:rgba(255,255,255,.74);max-width:580px;margin:0 auto 30px;font-size:1.08rem}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-lg{padding:15px 32px;border-radius:12px;font-weight:600;font-size:1rem;transition:transform .15s,opacity .2s}
+.btn-lg.fill{background:#fff;color:var(--bg-ink)}
+.btn-lg.fill:hover{transform:translateY(-2px);opacity:.92}
+.btn-lg.ghost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-lg.ghost:hover{border-color:#fff}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:62px 0 44px}
+.foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.foot-brand{max-width:340px}
+.foot-brand p{color:var(--ink-mute);font-size:.92rem;margin-top:14px}
+.foot-soc{display:flex;gap:12px;margin-top:18px}
+.foot-soc a{width:42px;height:42px;border:1px solid var(--line-2);border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);transition:all .2s}
+.foot-soc a:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
+.foot-soc svg{width:18px;height:18px}
+.foot-links a{display:block;color:var(--ink-soft);padding:6px 0;font-size:.94rem}
+.foot-links a:hover{color:var(--ink)}
+.disclaimer{margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink-mute);max-width:820px}
+.copyright{margin-top:18px;font-size:.8rem;color:var(--ink-mute)}
+
+@media(max-width:880px){ .grid.c3{grid-template-columns:repeat(2,1fr)} .nav-links a:not(.nav-cta){display:none} }
+@media(max-width:640px){
+  section{padding:66px 0}
+  .grid.c3,.grid.c2{grid-template-columns:1fr}
+  .band{padding:44px 24px}
+  .sbtn{min-width:calc(50% - 7px)}
+  .hero{padding:72px 0 54px}
+  .stat{border-right:0;border-bottom:1px solid var(--line)} .stat:last-child{border-bottom:0}
+  .pf-tab{min-width:calc(50% - 5px)}
+  .pf-headrow{padding:24px 20px 4px} .hold-wrap{padding:8px 16px 22px} .pf-note,.pf-disc{padding-left:16px;padding-right:16px}
+  .pf-cta{margin-left:16px;margin-right:16px;padding:16px 18px} .audit{margin-left:20px;margin-right:20px}
+}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="TMC_logo_1080x1080.png" alt="The Micro Capo" />
+      <span>The Micro Capo<small>MICROCAP RESEARCH</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#portafolios" data-i18n="nav_portfolios">Portafolios</a>
+      <a href="#articulos" data-i18n="nav_articles">Artículos</a>
+      <a href="#libros" data-i18n="nav_books">Libros</a>
+      <a href="#curso" data-i18n="nav_course">Curso</a>
+      <div class="lang-toggle">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="nav-cta" id="navCta" target="_blank" rel="noopener" data-i18n="nav_join">Unirme</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="logo-badge"><img src="TMC_logo_1080x1080.png" alt="TMC" /></div>
+    <span class="pill" data-i18n="hero_pill">Research independiente de microcaps</span>
+    <h1 data-i18n-html="hero_h1">Compañías pequeñas.<br><span class="accent">Convicción grande.</span></h1>
+    <p class="tag" data-i18n="hero_tag">Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada mes y explico cada movimiento.</p>
+    <div class="socials" id="socials"></div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span data-i18n="stat_strategies">portafolios públicos</span></div>
+      <div class="stat"><b>20+</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
+      <div class="stat"><b>1×</b><span data-i18n="stat_cadence">update mensual</span></div>
+      <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTAFOLIOS ============ -->
+<section id="portafolios" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="pf_eyebrow">Track record</span>
+      <h2 data-i18n="pf_title">Portafolios públicos</h2>
+      <p data-i18n="pf_sub">Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, actualizado el primer lunes de cada mes junto con su retorno.</p>
+    </div>
+    <div class="pf-tabs" id="pfTabs"></div>
+    <div id="pfPanel"></div>
+    <p class="pf-disc" data-i18n="pf_disc">Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.</p>
+  </div>
+</section>
+
+<!-- ============ ARTICULOS ============ -->
+<section id="articulos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="articles_eyebrow">Escritos</span>
+      <h2 data-i18n="articles_title">Artículos</h2>
+      <p data-i18n="articles_sub">Notas de mercado, frameworks y lecciones de la trinchera de los microcaps.</p>
+      <a class="more" id="substackMore" target="_blank" rel="noopener" data-i18n="articles_more">Mis tesis de empresas completas viven en Substack →</a>
+    </div>
+    <div class="grid c3" id="articlesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ LIBROS ============ -->
+<section id="libros" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="books_eyebrow">Biblioteca</span>
+      <h2 data-i18n="books_title">Libros recomendados</h2>
+      <p data-i18n="books_sub">Los libros que moldearon mi forma de invertir en compañías pequeñas.</p>
+    </div>
+    <div class="grid c2" id="booksGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CURSO ============ -->
+<section id="curso">
+  <div class="wrap">
+    <div class="band reveal">
+      <span class="eyebrow" data-i18n="course_eyebrow">Próximamente</span>
+      <h2 data-i18n="course_title">El curso de Micro Capo</h2>
+      <p data-i18n="course_sub">Estoy preparando un curso paso a paso de cómo analizo, valoro y construyo posiciones usando mi checklist. Mientras tanto, todo el research en vivo pasa en el Discord.</p>
+      <div class="cta-row">
+        <a class="btn-lg fill" id="courseCta" target="_blank" rel="noopener" data-i18n="course_join">Entrar a la comunidad</a>
+        <a class="btn-lg ghost" id="courseSub" target="_blank" rel="noopener" data-i18n="course_waitlist">Avísame del curso</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="TMC_logo_1080x1080.png" alt="TMC" /><span>The Micro Capo</span></a>
+        <p data-i18n="foot_desc">Research de microcaps. Ideas, no consejos de inversión.</p>
+        <div class="foot-soc" id="footSoc"></div>
+      </div>
+      <nav class="foot-links">
+        <a href="#portafolios" data-i18n="nav_portfolios">Portafolios</a>
+        <a href="#articulos" data-i18n="nav_articles">Artículos</a>
+        <a href="#libros" data-i18n="nav_books">Libros</a>
+        <a href="#curso" data-i18n="nav_course">Curso</a>
+      </nav>
+    </div>
+    <p class="disclaimer" data-i18n="disclaimer">Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.</p>
+    <p class="copyright">© <span id="year"></span> The Micro Capo · @themicrocapo</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG — EDITA AQUÍ TUS LINKS
+   ============================================================ */
+const CONFIG = {
+  links:{
+    discord:  "https://whop.com/the-micro-capo/",      // TODO: invite real de Whop/Discord
+    substack: "https://themicrocapo.substack.com",      // TODO: confirma URL de Substack
+    x:        "https://x.com/themicrocapo",             // TODO: confirma handle de X
+    youtube:  "",                                        // pega la URL cuando lances
+    instagram:"https://instagram.com/themicrocapo"
+  },
+  youtubeComingSoon: true
+};
+
+const ICON = {
+  discord:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19 19 0 0 0 15.6 3l-.2.4a14 14 0 0 1 4.2 2.1A13.4 13.4 0 0 0 4.4 5.5 14 14 0 0 1 8.6 3.4L8.4 3A19 19 0 0 0 3.7 4.4 19.7 19.7 0 0 0 .4 17.3a14.4 14.4 0 0 0 4.4 2.2l.9-1.5a9 9 0 0 1-1.4-.7l.3-.2a10 10 0 0 0 8.6 0l.3.2a9 9 0 0 1-1.4.7l.9 1.5a14.4 14.4 0 0 0 4.4-2.2A19.6 19.6 0 0 0 20.3 4.4ZM8.1 14.3c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Zm7.8 0c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Z"/></svg>',
+  substack:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h18v2.6H3V4Zm0 4.7h18V24l-9-5.1L3 24V8.7Zm0-7.7h18v2.6H3V1Z"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.3 10h-6.5l-5-6.2L7.7 21H4.5l7.5-8.5L4 3h6.6l4.6 5.7L17.5 3Zm-1.1 16h1.8L7.7 4.8H5.8L16.4 19Z"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 16.5 31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0Z"/></svg>'
+};
+
+/* ============================================================
+   PORTAFOLIOS  —  EDITA AQUÍ cada primer lunes de mes
+   - ret: retorno acumulado (string, "+50%" / "-3%" / "—")
+   - sub: etiqueta del retorno
+   - extra: 2do dato opcional (cash, nº posiciones, último mes...)
+   - points: curva de rendimiento (value = % acumulado). [] = sin gráfica
+   - holdings: {t:ticker, n:nombre/sector {es,en}, w:peso}. [] = "por publicar"
+   ============================================================ */
+const PORTFOLIOS = [
+  {
+    id:"longterm",
+    tab:{es:"TMC Long Term",en:"TMC Long Term"},
+    tabSub:{es:"Microcaps · años",en:"Microcaps · years"},
+    title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
+    philo:{es:"Compro compañías pequeñas, rentables e ignoradas, equal-weight, y las mantengo años. Calidad, paciencia y asimetría: pocas posiciones que se rompan, varias que se multipliquen.",
+           en:"I buy small, profitable, ignored companies equal-weight and hold for years. Quality, patience and asymmetry: few that break, several that compound."},
+    audited:false,
+    ret:"—", retSub:{es:"retorno acumulado",en:"total return"},
+    extra:{v:"25%", l:{es:"en cash",en:"in cash"}},
+    extra2:{v:"20", l:{es:"posiciones",en:"positions"}},
+    updated:"2026-06-01",
+    limit:3,           // muestra solo el Top 3; el resto, en el Discord
+    points:[],
+    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
+          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
+    // TODO: reemplaza con tus 3 mayores posiciones reales del largo plazo
+    holdings:[
+      {t:"—", n:{es:"Top 1 — pendiente",en:"Top 1 — pending"}, w:"—"},
+      {t:"—", n:{es:"Top 2 — pendiente",en:"Top 2 — pending"}, w:"—"},
+      {t:"—", n:{es:"Top 3 — pendiente",en:"Top 3 — pending"}, w:"—"}
+    ]
+  },
+  {
+    id:"trades",
+    tab:{es:"Short Term Trades",en:"Short Term Trades"},
+    tabSub:{es:"Técnico · opciones",en:"Technical · options"},
+    title:{es:"Trades de corto plazo",en:"Short-term trades"},
+    philo:{es:"Operativa técnica y de catalizador: acciones y opciones (swing y calls) con horizonte de días a semanas. Entradas y salidas rápidas, gestión de riesgo estricta. Libro aparte del de largo plazo.",
+           en:"Technical and catalyst trading: stocks and options (swing and calls) over days to weeks. Fast in and out, strict risk management. A separate book from the long-term one."},
+    audited:false,
+    ret:"—", retSub:{es:"retorno acumulado",en:"total return"},
+    extra:{v:"~17%", l:{es:"en cash",en:"in cash"}},
+    extra2:null,
+    updated:"2026-06-01",
+    limit:3,           // muestra solo el Top 3; el resto, en el Discord
+    points:[],
+    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
+          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
+    // TODO: reemplaza con tus 3 mayores posiciones reales de trades
+    holdings:[
+      {t:"—", n:{es:"Top 1 — pendiente",en:"Top 1 — pending"}, w:"—"},
+      {t:"—", n:{es:"Top 2 — pendiente",en:"Top 2 — pending"}, w:"—"},
+      {t:"—", n:{es:"Top 3 — pendiente",en:"Top 3 — pending"}, w:"—"}
+    ]
+  },
+  {
+    id:"momentum",
+    tab:{es:"Momentum",en:"Momentum"},
+    tabSub:{es:"Sistemático · cuantitativo",en:"Systematic · quant"},
+    title:{es:"Momentum sistemático",en:"Systematic momentum"},
+    philo:{es:"Estrategia cuantitativa basada en momentum de precio y factores. Reglas claras de entrada y salida, rotación periódica, cero emoción. Acciones líquidas, no microcaps. Auditada y seguida semana a semana.",
+           en:"Quantitative strategy based on price momentum and factors. Clear entry/exit rules, periodic rotation, zero emotion. Liquid stocks, not microcaps. Audited and tracked weekly."},
+    audited:true,
+    ret:"+50%", retSub:{es:"acumulado auditado · desde que se hizo público el 14 abr 2026",en:"audited cumulative · since going public Apr 14, 2026"},
+    extra:{v:"+26%", l:{es:"cierre de mes",en:"month close"}},
+    extra2:null,
+    updated:"2026-06-01",
+    limit:3,           // muestra solo el Top 3; el resto, en el Discord
+    points:[
+      {label:"14 Abr",value:0},
+      {label:"30 Abr",value:19},
+      {label:"15 May",value:34},
+      {label:"31 May",value:50}
+    ],
+    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
+          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
+    // TODO: reemplaza con tus 3 mayores posiciones reales del momentum
+    holdings:[
+      {t:"—", n:{es:"Top 1 — envíame el ticker",en:"Top 1 — send me the ticker"}, w:"—"},
+      {t:"—", n:{es:"Top 2 — envíame el ticker",en:"Top 2 — send me the ticker"}, w:"—"},
+      {t:"—", n:{es:"Top 3 — envíame el ticker",en:"Top 3 — send me the ticker"}, w:"—"}
+    ]
+  }
+];
+
+/* ============================================================
+   ARTICULOS y LIBROS
+   ============================================================ */
+const DATA = {
+  articles:[
+    { tag:{es:"Framework",en:"Framework"}, title:{es:"El Micro Capo Checklist",en:"The Micro Capo Checklist"},
+      desc:{es:"El proceso de 1 página que uso para filtrar cada idea antes de poner un dólar.",en:"The one-page process I run on every idea before risking a dollar."}, date:"2026", url:"#" },
+    { tag:{es:"Filosofía",en:"Philosophy"}, title:{es:"Tres portafolios, tres formas de pensar",en:"Three portfolios, three ways of thinking"},
+      desc:{es:"Por qué separo largo plazo, trades y momentum en libros distintos.",en:"Why I split long-term, trades and momentum into separate books."}, date:"2026", url:"#" },
+    { tag:{es:"Disciplina",en:"Discipline"}, title:{es:"Entrar, salir y volver a entrar: TGEN",en:"In, out and back in: TGEN"},
+      desc:{es:"Compré a $2, vendí a $8, volví a $6. Lo que me enseñó sobre la convicción.",en:"Bought at $2, sold at $8, came back at $6. What it taught me about conviction."}, date:"2026", url:"#" }
+  ],
+  books:[
+    { spine:"100", title:{es:"100 to 1 in the Stock Market",en:"100 to 1 in the Stock Market"}, author:"Thomas Phelps",
+      note:{es:"El arte de comprar para multiplicar por 100 y sentarse a esperar.",en:"The art of buying to 100x and sitting on your hands."} },
+    { spine:"OS", title:{es:"One Up On Wall Street",en:"One Up On Wall Street"}, author:"Peter Lynch",
+      note:{es:"La ventaja del inversor pequeño frente a Wall Street.",en:"The small investor's edge over Wall Street."} },
+    { spine:"DM", title:{es:"The Dhandho Investor",en:"The Dhandho Investor"}, author:"Mohnish Pabrai",
+      note:{es:"Poco riesgo, mucha recompensa. Heads I win, tails I don't lose much.",en:"Low risk, high reward. Heads I win, tails I don't lose much."} },
+    { spine:"MS", title:{es:"Margin of Safety",en:"Margin of Safety"}, author:"Seth Klarman",
+      note:{es:"El value investing como gestión obsesiva del riesgo.",en:"Value investing as obsessive risk management."} }
+  ]
+};
+
+/* ============================================================
+   i18n
+   ============================================================ */
+const I18N = {
+  es:{
+    nav_portfolios:"Portafolios", nav_articles:"Artículos", nav_books:"Libros", nav_course:"Curso", nav_join:"Unirme",
+    hero_pill:"Research independiente de microcaps",
+    hero_h1:'Compañías pequeñas.<br><span class="accent">Convicción grande.</span>',
+    hero_tag:"Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada mes y explico cada movimiento.",
+    stat_strategies:"portafolios públicos", stat_holdings:"microcaps a largo plazo", stat_cadence:"update mensual", stat_transparency:"cartera transparente",
+    pf_eyebrow:"Track record", pf_title:"Portafolios públicos",
+    pf_sub:"Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, actualizado el primer lunes de cada mes junto con su retorno.",
+    pf_disc:"Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.",
+    pf_updated:"Actualizado", pf_audit:"Track record auditado", pf_pending:"Composición publicada el primer lunes de cada mes.",
+    pf_cta:"¿Quieres seguir los movimientos en tiempo real?", pf_cta_btn:"Entra al Discord",
+    th_ticker:"Ticker", th_name:"Empresa / sector", th_weight:"Peso", th_more:"Ver la cartera completa en el Discord",
+    articles_eyebrow:"Escritos", articles_title:"Artículos", articles_sub:"Notas de mercado, frameworks y lecciones de la trinchera de los microcaps.",
+    articles_more:"Mis tesis de empresas completas viven en Substack →",
+    books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
+    course_eyebrow:"Próximamente", course_title:"El curso de Micro Capo",
+    course_sub:"Estoy preparando un curso paso a paso de cómo analizo, valoro y construyo posiciones usando mi checklist. Mientras tanto, todo el research en vivo pasa en el Discord.",
+    course_join:"Entrar a la comunidad", course_waitlist:"Avísame del curso",
+    foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
+    disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
+    read:"Leer"
+  },
+  en:{
+    nav_portfolios:"Portfolios", nav_articles:"Articles", nav_books:"Books", nav_course:"Course", nav_join:"Join",
+    hero_pill:"Independent microcap research",
+    hero_h1:'Small companies.<br><span class="accent">Big conviction.</span>',
+    hero_tag:"Three public portfolios, three different philosophies. I share what I hold, update it monthly and explain every move.",
+    stat_strategies:"public portfolios", stat_holdings:"long-term microcaps", stat_cadence:"monthly update", stat_transparency:"transparent book",
+    pf_eyebrow:"Track record", pf_title:"Public portfolios",
+    pf_sub:"Three strategies, three different philosophies. What I hold, in the open, updated the first Monday of each month with its return.",
+    pf_disc:"Portfolios shared for educational purposes. Not investment advice. Past performance does not guarantee future results.",
+    pf_updated:"Updated", pf_audit:"Audited track record", pf_pending:"Holdings published the first Monday of each month.",
+    pf_cta:"Want to follow every move in real time?", pf_cta_btn:"Join the Discord",
+    th_ticker:"Ticker", th_name:"Company / sector", th_weight:"Weight", th_more:"See the full book in the Discord",
+    articles_eyebrow:"Writing", articles_title:"Articles", articles_sub:"Market notes, frameworks and lessons from the microcap trenches.",
+    articles_more:"My full company theses live on Substack →",
+    books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
+    course_eyebrow:"Coming soon", course_title:"The Micro Capo Course",
+    course_sub:"I'm building a step-by-step course on how I analyze, value and build positions using my checklist. In the meantime, all the live research happens in the Discord.",
+    course_join:"Join the community", course_waitlist:"Notify me about the course",
+    foot_desc:"Microcap research. Ideas, not investment advice.",
+    disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
+    read:"Read"
+  }
+};
+
+let LANG = localStorage.getItem('tmc_lang') || 'es';
+let ACTIVE_PF = 0;
+function t(k){ return I18N[LANG][k] || k; }
+function tx(v){ return (v && typeof v==='object') ? (v[LANG]||v.es||v.en) : v; }
+function fmtDate(iso){
+  const d=new Date(iso+'T00:00:00');
+  const m=(LANG==='es')?['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
+                       :['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${d.getDate()} ${m[d.getMonth()]} ${d.getFullYear()}`;
+}
+function retClass(s){ s=(s||'').trim(); return s.startsWith('-')?'down':(s.startsWith('+')?'up':''); }
+
+/* ---------- social buttons ---------- */
+function renderSocials(){
+  const L=CONFIG.links;
+  const btns=[
+    {key:'discord', label:{es:'Discord / Comunidad',en:'Discord / Community'}, cls:'primary', url:L.discord},
+    {key:'substack',label:{es:'Substack',en:'Substack'}, cls:'', url:L.substack},
+    {key:'x',       label:{es:'X',en:'X'}, cls:'', url:L.x},
+    {key:'youtube', label:{es:'YouTube',en:'YouTube'}, cls:CONFIG.youtubeComingSoon?'soon':'', url:L.youtube, soon:CONFIG.youtubeComingSoon}
+  ];
+  document.getElementById('socials').innerHTML = btns.map(b=>{
+    const soon=b.soon?`<small>${LANG==='es'?'Pronto':'Soon'}</small>`:'';
+    const href=(b.soon||!b.url)?'':`href="${b.url}" target="_blank" rel="noopener"`;
+    const tag=(b.soon||!b.url)?'div':'a';
+    return `<${tag} class="sbtn ${b.cls}" ${href}>${ICON[b.key]}<span>${tx(b.label)}</span>${soon}</${tag}>`;
+  }).join('');
+}
+function renderFootSoc(){
+  const L=CONFIG.links;
+  const order=[['discord',L.discord],['substack',L.substack],['x',L.x],['instagram',L.instagram]];
+  if(!CONFIG.youtubeComingSoon && L.youtube) order.push(['youtube',L.youtube]);
+  document.getElementById('footSoc').innerHTML = order.filter(([,u])=>u)
+    .map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${k}">${ICON[k]}</a>`).join('');
+}
+
+/* ---------- chart ---------- */
+function buildChart(pts){
+  if(!pts || pts.length<2) return '';
+  const W=760,H=250,L=46,R=22,T=18,B=38;
+  const vals=pts.map(p=>p.value), min=Math.min(0,...vals), max=Math.max(...vals), span=(max-min)||1;
+  const X=i=>L+(W-L-R)*(i/(pts.length-1));
+  const Y=v=>T+(H-T-B)*(1-(v-min)/span);
+  const line=pts.map((p,i)=>`${i?'L':'M'}${X(i).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ');
+  const area=`${line} L${X(pts.length-1).toFixed(1)},${Y(min).toFixed(1)} L${X(0).toFixed(1)},${Y(min).toFixed(1)} Z`;
+  const ticks=[...new Set([min,0,max])].sort((a,b)=>a-b);
+  const grid=ticks.map(v=>`<line x1="${L}" y1="${Y(v).toFixed(1)}" x2="${W-R}" y2="${Y(v).toFixed(1)}" stroke="${v===0?'#cfd4e0':'#edeff4'}"/><text x="${L-10}" y="${(Y(v)+4).toFixed(1)}" font-size="11" text-anchor="end">${(v>=0?'+':'')+v}%</text>`).join('');
+  const xlab=pts.map((p,i)=>`<text x="${X(i).toFixed(1)}" y="${H-12}" font-size="11" text-anchor="middle">${p.label}</text>`).join('');
+  const dots=pts.map((p,i)=>{const last=i===pts.length-1;return `<circle cx="${X(i).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="${last?5:3.2}" fill="${last?'#2b53ff':'#fff'}" stroke="#2b53ff" stroke-width="2"/>`;}).join('');
+  const lp=pts[pts.length-1];
+  const flag=`<text x="${X(pts.length-1).toFixed(1)}" y="${(Y(lp.value)-12).toFixed(1)}" font-size="13" font-weight="700" text-anchor="end" fill="#2b53ff">${(lp.value>=0?'+':'')+lp.value}%</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="curva">
+    <defs><linearGradient id="pgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b53ff" stop-opacity="0.18"/><stop offset="1" stop-color="#2b53ff" stop-opacity="0"/></linearGradient></defs>
+    ${grid}<path d="${area}" fill="url(#pgrad)"/><path d="${line}" fill="none" stroke="#2b53ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>${dots}${flag}${xlab}
+  </svg>`;
+}
+
+/* ---------- portfolios ---------- */
+function renderPortfolios(){
+  document.getElementById('pfTabs').innerHTML = PORTFOLIOS.map((p,i)=>
+    `<button class="pf-tab ${i===ACTIVE_PF?'active':''}" data-pf="${i}"><b>${tx(p.tab)}</b><span>${tx(p.tabSub)}</span></button>`).join('');
+  document.querySelectorAll('.pf-tab').forEach(b=>b.addEventListener('click',()=>{ACTIVE_PF=+b.dataset.pf;renderPortfolios();}));
+
+  const p=PORTFOLIOS[ACTIVE_PF];
+  const stats=[`<div class="pstat"><b class="${retClass(p.ret)}">${p.ret}</b><span>${tx(p.retSub)}</span></div>`];
+  if(p.extra)  stats.push(`<div class="pstat"><b class="${retClass(p.extra.v)}">${p.extra.v}</b><span>${tx(p.extra.l)}</span></div>`);
+  if(p.extra2) stats.push(`<div class="pstat"><b class="${retClass(p.extra2.v)}">${p.extra2.v}</b><span>${tx(p.extra2.l)}</span></div>`);
+
+  const chart = (p.points&&p.points.length>1) ? `<div class="pf-chart">${buildChart(p.points)}</div>` : '';
+  const audit = p.audited ? `<span class="audit">${t('pf_audit')}</span>` : '';
+
+  let holds;
+  if(p.holdings&&p.holdings.length){
+    const list = p.limit ? p.holdings.slice(0,p.limit) : p.holdings;
+    const moreRow = (p.limit) ? `<tr class="more"><td colspan="3">${t('th_more')} →</td></tr>` : '';
+    holds = `<div class="hold-wrap"><table class="hold">
+      <thead><tr><th>${t('th_ticker')}</th><th>${t('th_name')}</th><th style="text-align:right">${t('th_weight')}</th></tr></thead>
+      <tbody>${list.map(h=>`<tr><td class="tk">${h.t}</td><td>${tx(h.n)}</td><td class="w">${h.w}</td></tr>`).join('')}${moreRow}</tbody>
+    </table></div>`;
+  } else {
+    holds = `<div class="pf-empty">${t('pf_pending')}</div>`;
+  }
+
+  const disc = CONFIG.links.discord || '#';
+  const cta = `<div class="pf-cta"><span>${t('pf_cta')}</span><a class="pf-cta-btn" href="${disc}" target="_blank" rel="noopener">${t('pf_cta_btn')} →</a></div>`;
+
+  document.getElementById('pfPanel').innerHTML = `<div class="pf-panel">
+    <div class="pf-headrow">
+      <div class="pf-philo"><h3>${tx(p.title)}</h3><p>${tx(p.philo)}</p></div>
+      <div class="pf-stats">${stats.join('')}</div>
+    </div>
+    ${audit}
+    ${chart}
+    ${holds}
+    ${cta}
+    <p class="pf-note">${tx(p.note)} · ${t('pf_updated')}: ${fmtDate(p.updated)}</p>
+  </div>`;
+}
+
+/* ---------- articles / books ---------- */
+function renderArticles(){
+  document.getElementById('articlesGrid').innerHTML = DATA.articles.map(a=>{
+    const live=a.url&&a.url!=='#';
+    return `<article class="card reveal">
+      <div class="kicker"><span class="ticker">${tx(a.tag)}</span><span>${a.date}</span></div>
+      <h3>${tx(a.title)}</h3><p>${tx(a.desc)}</p>
+      <div class="meta"><span>${live?'':'<em style="opacity:.6">'+(LANG==='es'?'Pronto':'Soon')+'</em>'}</span>
+      ${live?`<a class="go" href="${a.url}" target="_blank" rel="noopener">${t('read')} →</a>`:''}</div>
+    </article>`;
+  }).join('');
+}
+function renderBooks(){
+  document.getElementById('booksGrid').innerHTML = DATA.books.map(b=>`
+    <div class="book reveal"><div class="spine">${b.spine}</div>
+      <div><h4>${tx(b.title)}</h4><div class="auth">${b.author}</div><p>${tx(b.note)}</p></div>
+    </div>`).join('');
+}
+
+/* ---------- links ---------- */
+function wireLinks(){
+  const L=CONFIG.links, join=L.discord||L.substack||'#';
+  document.getElementById('navCta').href=join;
+  document.getElementById('courseCta').href=join;
+  document.getElementById('courseSub').href=L.substack||join;
+  const sm=document.getElementById('substackMore'); if(sm) sm.href=L.substack||'#';
+}
+
+/* ---------- language ---------- */
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[LANG][k])el.textContent=I18N[LANG][k];});
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(I18N[LANG][k])el.innerHTML=I18N[LANG][k];});
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===LANG));
+  renderSocials(); renderPortfolios(); renderArticles(); renderBooks(); renderFootSoc();
+  observeReveal();
+}
+let io;
+function observeReveal(){
+  if(io) io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.lang-toggle button').forEach(b=>{
+  b.addEventListener('click',()=>{LANG=b.dataset.lang;localStorage.setItem('tmc_lang',LANG);applyLang();});
+});
+wireLinks();
+applyLang();
+</script>
+</body>
+</html>
