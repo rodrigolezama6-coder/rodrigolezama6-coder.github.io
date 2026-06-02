@@ -113,6 +113,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .pstat span{font-size:.76rem;color:var(--ink-mute)}
 .audit{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:700;color:var(--green);background:rgba(18,155,107,.1);padding:6px 12px;border-radius:999px;margin:0 30px}
 .audit::before{content:"✓";font-weight:800}
+.audit.est{color:var(--ink-mute);background:#eef0f4}
+.audit.est::before{content:"≈";font-weight:800}
 .pf-chart{padding:6px 22px 4px}
 .pf-chart svg{width:100%;height:auto;display:block;overflow:visible}
 .pf-chart text{font-family:var(--sans);fill:var(--ink-mute)}
@@ -242,7 +244,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
       <div class="stat"><b>3</b><span data-i18n="stat_strategies">portafolios públicos</span></div>
-      <div class="stat"><b>20+</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
+      <div class="stat"><b>21</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
       <div class="stat"><b>1×</b><span data-i18n="stat_cadence">update mensual</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
     </div>
@@ -359,76 +361,76 @@ const ICON = {
 const PORTFOLIOS = [
   {
     id:"longterm",
-    tab:{es:"TMC Long Term",en:"TMC Long Term"},
-    tabSub:{es:"Microcaps · años",en:"Microcaps · years"},
+    tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
+    tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Compro compañías pequeñas, rentables e ignoradas, equal-weight, y las mantengo años. Calidad, paciencia y asimetría: pocas posiciones que se rompan, varias que se multipliquen.",
-           en:"I buy small, profitable, ignored companies equal-weight and hold for years. Quality, patience and asymmetry: few that break, several that compound."},
-    audited:false,
-    ret:"—", retSub:{es:"retorno acumulado",en:"total return"},
-    extra:{v:"25%", l:{es:"en cash",en:"in cash"}},
-    extra2:{v:"20", l:{es:"posiciones",en:"positions"}},
-    updated:"2026-06-01",
-    limit:3,           // muestra solo el Top 3; el resto, en el Discord
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 21 posiciones: pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 21 positions: few that break, several that compound."},
+    badge:{es:"Estimado · baseline en construcción",en:"Estimate · baseline in progress"}, badgeKind:"est",
+    ret:"+12%", retSub:{es:"retorno 3M (estimado)",en:"3M return (estimate)"},
+    extra:{v:"21", l:{es:"posiciones",en:"positions"}},
+    extra2:{v:"0%", l:{es:"margen",en:"margin"}},
+    updated:"2026-06-03",
+    limit:3,
     points:[],
-    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
-          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
-    // TODO: reemplaza con tus 3 mayores posiciones reales del largo plazo
+    note:{es:"Cuenta recién abierta: baseline en construcción. El +12% es estimado según los movimientos del periodo; desde julio 2026 se reporta el cash-to-cash real del broker. Tracking desde el 14-abr-2026. Top 3 por retorno; la cartera completa, en el Discord.",
+          en:"Newly opened account: baseline in progress. The +12% is an estimate based on the period's moves; from July 2026 the real broker cash-to-cash is reported. Tracking since Apr 14, 2026. Top 3 by return; full book in the Discord."},
     holdings:[
-      {t:"—", n:{es:"Top 1 — pendiente",en:"Top 1 — pending"}, w:"—"},
-      {t:"—", n:{es:"Top 2 — pendiente",en:"Top 2 — pending"}, w:"—"},
-      {t:"—", n:{es:"Top 3 — pendiente",en:"Top 3 — pending"}, w:"—"}
+      {t:"IFA",  n:{es:"Textil-tech",en:"Textile-tech"},                  r:"+153,2%"},
+      {t:"TTZ",  n:{es:"IoT / telemetría",en:"IoT / telemetry"},          r:"+58,5%"},
+      {t:"TGEN", n:{es:"Cooling / data center",en:"Cooling / data center"}, r:"+53,9%"}
     ]
   },
   {
     id:"trades",
     tab:{es:"Short Term Trades",en:"Short Term Trades"},
-    tabSub:{es:"Técnico · opciones",en:"Technical · options"},
+    tabSub:{es:"Opciones · táctico",en:"Options · tactical"},
     title:{es:"Trades de corto plazo",en:"Short-term trades"},
-    philo:{es:"Operativa técnica y de catalizador: acciones y opciones (swing y calls) con horizonte de días a semanas. Entradas y salidas rápidas, gestión de riesgo estricta. Libro aparte del de largo plazo.",
-           en:"Technical and catalyst trading: stocks and options (swing and calls) over days to weeks. Fast in and out, strict risk management. A separate book from the long-term one."},
-    audited:false,
-    ret:"—", retSub:{es:"retorno acumulado",en:"total return"},
-    extra:{v:"~17%", l:{es:"en cash",en:"in cash"}},
-    extra2:null,
-    updated:"2026-06-01",
-    limit:3,           // muestra solo el Top 3; el resto, en el Discord
-    points:[],
-    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
-          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
-    // TODO: reemplaza con tus 3 mayores posiciones reales de trades
+    philo:{es:"Trades tácticos sobre empresas que ya conozco de TMC. Acciones y opciones, con la tesis fundamental como respaldo. El libro más activo y más volátil.",
+           en:"Tactical trades on companies I already know from TMC. Stocks and options, with the fundamental thesis as backup. The most active and most volatile book."},
+    badge:{es:"Cash-to-cash del broker",en:"Broker cash-to-cash"},
+    ret:"+61,48%", retSub:{es:"cash-to-cash 3M",en:"3M cash-to-cash"},
+    extra:{v:"-3,44%", l:{es:"max drawdown",en:"max drawdown"}},
+    extra2:{v:"57%", l:{es:"win rate",en:"win rate"}},
+    updated:"2026-06-03",
+    limit:3,
+    points:[
+      {label:"14 Abr",value:0},
+      {label:"21 Abr",value:-3.4},
+      {label:"3 Jun",value:61.5}
+    ],
+    note:{es:"Drawdown de -3% en abril y comeback a +61% en menos de 2 meses (+65 pp en ~50 días). 22 posiciones abiertas, 28 trades cerrados, margen 31%. Top 3 abiertas por retorno; el resto, en el Discord.",
+          en:"-3% drawdown in April and a comeback to +61% in under 2 months (+65 pp in ~50 days). 22 open positions, 28 closed trades, 31% margin. Top 3 open by return; the rest in the Discord."},
     holdings:[
-      {t:"—", n:{es:"Top 1 — pendiente",en:"Top 1 — pending"}, w:"—"},
-      {t:"—", n:{es:"Top 2 — pendiente",en:"Top 2 — pending"}, w:"—"},
-      {t:"—", n:{es:"Top 3 — pendiente",en:"Top 3 — pending"}, w:"—"}
+      {t:"CRWV", n:{es:"Call $120 Ene-28 (LEAP)",en:"$120 Call Jan-28 (LEAP)"}, r:"+30,4%"},
+      {t:"HIMS", n:{es:"Call $25 Ene-27 (LEAP)",en:"$25 Call Jan-27 (LEAP)"},  r:"+20,2%"},
+      {t:"HIMS", n:{es:"Call $20 Ene-27 (LEAP)",en:"$20 Call Jan-27 (LEAP)"},  r:"+17,5%"}
     ]
   },
   {
     id:"momentum",
     tab:{es:"Momentum",en:"Momentum"},
-    tabSub:{es:"Sistemático · cuantitativo",en:"Systematic · quant"},
+    tabSub:{es:"Quant · momentum",en:"Quant · momentum"},
     title:{es:"Momentum sistemático",en:"Systematic momentum"},
-    philo:{es:"Estrategia cuantitativa basada en momentum de precio y factores. Reglas claras de entrada y salida, rotación periódica, cero emoción. Acciones líquidas, no microcaps. Auditada y seguida semana a semana.",
-           en:"Quantitative strategy based on price momentum and factors. Clear entry/exit rules, periodic rotation, zero emotion. Liquid stocks, not microcaps. Audited and tracked weekly."},
-    audited:true,
-    ret:"+50%", retSub:{es:"acumulado auditado · desde que se hizo público el 14 abr 2026",en:"audited cumulative · since going public Apr 14, 2026"},
-    extra:{v:"+26%", l:{es:"cierre de mes",en:"month close"}},
-    extra2:null,
-    updated:"2026-06-01",
-    limit:3,           // muestra solo el Top 3; el resto, en el Discord
+    philo:{es:"Estrategia cuantitativa y sistemática: micro y small caps seleccionadas por momentum técnico. 29 posiciones equal-weight, reglas claras de entrada y salida, cero emoción.",
+           en:"Quantitative, systematic strategy: micro and small caps selected by technical momentum. 29 equal-weight positions, clear entry/exit rules, zero emotion."},
+    badge:{es:"Cash-to-cash del broker",en:"Broker cash-to-cash"},
+    ret:"+10,10%", retSub:{es:"cash-to-cash 3M",en:"3M cash-to-cash"},
+    extra:{v:"-6,10%", l:{es:"max drawdown",en:"max drawdown"}},
+    extra2:{v:"29", l:{es:"posiciones",en:"positions"}},
+    updated:"2026-06-03",
+    limit:3,
     points:[
-      {label:"14 Abr",value:0},
-      {label:"30 Abr",value:19},
-      {label:"15 May",value:34},
-      {label:"31 May",value:50}
+      {label:"3 Mar",value:0},
+      {label:"15 Mar",value:-6.1},
+      {label:"3 Jun",value:10.1}
     ],
-    note:{es:"Solo el Top 3 de la cartera. Los movimientos completos y en tiempo real, en el Discord.",
-          en:"Top 3 holdings only. Full, real-time moves in the Discord."},
-    // TODO: reemplaza con tus 3 mayores posiciones reales del momentum
+    note:{es:"Drawdown de -6% en marzo y recuperación a +10% al 3 de junio: aguante sin pánico (+16 pp en ~80 días). 29 posiciones equal-weight, sin margen. Top 3 por retorno; la cartera completa, en el Discord.",
+          en:"-6% drawdown in March and recovery to +10% by June 3: holding without panic (+16 pp in ~80 days). 29 equal-weight positions, no margin. Top 3 by return; full book in the Discord."},
     holdings:[
-      {t:"—", n:{es:"Top 1 — envíame el ticker",en:"Top 1 — send me the ticker"}, w:"—"},
-      {t:"—", n:{es:"Top 2 — envíame el ticker",en:"Top 2 — send me the ticker"}, w:"—"},
-      {t:"—", n:{es:"Top 3 — envíame el ticker",en:"Top 3 — send me the ticker"}, w:"—"}
+      {t:"IMOS", n:{es:"Semiconductores",en:"Semiconductors"},               r:"+61,4%"},
+      {t:"LXFR", n:{es:"Materiales",en:"Materials"},                         r:"+16,4%"},
+      {t:"HSHP", n:{es:"Industrial / shipping",en:"Industrials / shipping"}, r:"+13,4%"}
     ]
   }
 ];
@@ -474,7 +476,7 @@ const I18N = {
     pf_disc:"Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.",
     pf_updated:"Actualizado", pf_audit:"Track record auditado", pf_pending:"Composición publicada el primer lunes de cada mes.",
     pf_cta:"¿Quieres seguir los movimientos en tiempo real?", pf_cta_btn:"Entra al Discord",
-    th_ticker:"Ticker", th_name:"Empresa / sector", th_weight:"Peso", th_more:"Ver la cartera completa en el Discord",
+    th_ticker:"Ticker", th_name:"Empresa / sector", th_weight:"Peso", th_return:"Retorno", th_more:"Ver la cartera completa en el Discord",
     articles_eyebrow:"Escritos", articles_title:"Artículos", articles_sub:"Notas de mercado, frameworks y lecciones de la trinchera de los microcaps.",
     articles_more:"Mis tesis de empresas completas viven en Substack →",
     books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
@@ -498,7 +500,7 @@ const I18N = {
     pf_disc:"Portfolios shared for educational purposes. Not investment advice. Past performance does not guarantee future results.",
     pf_updated:"Updated", pf_audit:"Audited track record", pf_pending:"Holdings published the first Monday of each month.",
     pf_cta:"Want to follow every move in real time?", pf_cta_btn:"Join the Discord",
-    th_ticker:"Ticker", th_name:"Company / sector", th_weight:"Weight", th_more:"See the full book in the Discord",
+    th_ticker:"Ticker", th_name:"Company / sector", th_weight:"Weight", th_return:"Return", th_more:"See the full book in the Discord",
     articles_eyebrow:"Writing", articles_title:"Articles", articles_sub:"Market notes, frameworks and lessons from the microcap trenches.",
     articles_more:"My full company theses live on Substack →",
     books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
@@ -580,15 +582,15 @@ function renderPortfolios(){
   if(p.extra2) stats.push(`<div class="pstat"><b class="${retClass(p.extra2.v)}">${p.extra2.v}</b><span>${tx(p.extra2.l)}</span></div>`);
 
   const chart = (p.points&&p.points.length>1) ? `<div class="pf-chart">${buildChart(p.points)}</div>` : '';
-  const audit = p.audited ? `<span class="audit">${t('pf_audit')}</span>` : '';
+  const audit = p.badge ? `<span class="audit ${p.badgeKind==='est'?'est':''}">${tx(p.badge)}</span>` : '';
 
   let holds;
   if(p.holdings&&p.holdings.length){
     const list = p.limit ? p.holdings.slice(0,p.limit) : p.holdings;
     const moreRow = (p.limit) ? `<tr class="more"><td colspan="3">${t('th_more')} →</td></tr>` : '';
     holds = `<div class="hold-wrap"><table class="hold">
-      <thead><tr><th>${t('th_ticker')}</th><th>${t('th_name')}</th><th style="text-align:right">${t('th_weight')}</th></tr></thead>
-      <tbody>${list.map(h=>`<tr><td class="tk">${h.t}</td><td>${tx(h.n)}</td><td class="w">${h.w}</td></tr>`).join('')}${moreRow}</tbody>
+      <thead><tr><th>${t('th_ticker')}</th><th>${t('th_name')}</th><th style="text-align:right">${t('th_return')}</th></tr></thead>
+      <tbody>${list.map(h=>`<tr><td class="tk">${h.t}</td><td>${tx(h.n)}</td><td class="rt ${retClass(h.r)}">${h.r||'—'}</td></tr>`).join('')}${moreRow}</tbody>
     </table></div>`;
   } else {
     holds = `<div class="pf-empty">${t('pf_pending')}</div>`;
