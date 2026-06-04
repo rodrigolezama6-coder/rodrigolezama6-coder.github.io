@@ -95,6 +95,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .stat span{font-size:.82rem;color:var(--ink-mute)}
 
 /* ---------- PORTFOLIOS ---------- */
+.pf-lag{max-width:780px;margin:-22px 0 26px;padding:13px 18px;border:1px solid var(--line-2);border-left:3px solid var(--blue);border-radius:10px;background:#fff;font-size:.9rem;color:var(--ink-soft)}
 .pf-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
 .pf-tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 20px;border:1px solid var(--line-2);border-radius:14px;background:#fff;cursor:pointer;font-family:inherit;transition:all .18s;min-width:180px;text-align:left}
 .pf-tab b{font-size:.98rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
@@ -140,8 +141,12 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .grid{display:grid;gap:22px}
 .grid.c3{grid-template-columns:repeat(3,1fr)}
 .grid.c2{grid-template-columns:repeat(2,1fr)}
-.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:28px;transition:transform .18s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:13px}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;transition:transform .18s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 44px -26px rgba(10,15,29,.3)}
+.card-cover{display:block;width:100%;aspect-ratio:16/10;overflow:hidden;background:#0a0e1a}
+.card-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.card:hover .card-cover img{transform:scale(1.05)}
+.card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
 .card .kicker{display:flex;align-items:center;gap:10px;font-size:.74rem;color:var(--ink-mute);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
 .ticker{font-weight:700;color:var(--blue);background:var(--blue-soft);padding:3px 11px;border-radius:7px;font-size:.76rem}
 .card h3{font-size:1.22rem;font-weight:700;letter-spacing:-.01em}
@@ -245,7 +250,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="stats">
       <div class="stat"><b>3</b><span data-i18n="stat_strategies">portafolios públicos</span></div>
       <div class="stat"><b>21</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
-      <div class="stat"><b>1×</b><span data-i18n="stat_cadence">update mensual</span></div>
+      <div class="stat"><b>7d</b><span data-i18n="stat_cadence">entre snapshots</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
     </div>
   </div>
@@ -257,8 +262,9 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="pf_eyebrow">Track record</span>
       <h2 data-i18n="pf_title">Portafolios públicos</h2>
-      <p data-i18n="pf_sub">Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, actualizado el primer lunes de cada mes junto con su retorno.</p>
+      <p data-i18n="pf_sub">Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, con su retorno real del broker.</p>
     </div>
+    <p class="pf-lag" data-i18n="pf_lag">Cada portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.</p>
     <div class="pf-tabs" id="pfTabs"></div>
     <div id="pfPanel"></div>
     <p class="pf-disc" data-i18n="pf_disc">Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.</p>
@@ -441,11 +447,11 @@ const PORTFOLIOS = [
 const DATA = {
   articles:[
     { tag:{es:"Reporte mensual",en:"Monthly report"}, title:{es:"Reporte Mensual — Largo Plazo",en:"Monthly Report — Long Term"},
-      desc:{es:"Cartera de convicción, holdings, noticias del mes y KPIs del libro de largo plazo.",en:"Conviction book: holdings, monthly news and KPIs of the long-term portfolio."}, date:"May 2026", url:"https://rodrigolezama.substack.com/p/reporte-mensual" },
+      desc:{es:"Cartera de convicción, holdings, noticias del mes y KPIs del libro de largo plazo.",en:"Conviction book: holdings, monthly news and KPIs of the long-term portfolio."}, date:"May 2026", cover:"cover_mensual.png", url:"https://rodrigolezama.substack.com/p/reporte-mensual" },
     { tag:{es:"Reporte de trades",en:"Trades report"}, title:{es:"Reporte de Trades — Corto Plazo",en:"Trades Report — Short Term"},
-      desc:{es:"El libro de corto plazo, trade por trade, con las lecciones del mes.",en:"The short-term book, trade by trade, with the month's lessons."}, date:"May 2026", url:"https://rodrigolezama.substack.com/p/reporte-de-trades" },
+      desc:{es:"El libro de corto plazo, trade por trade, con las lecciones del mes.",en:"The short-term book, trade by trade, with the month's lessons."}, date:"May 2026", cover:"cover_trades.png", url:"https://rodrigolezama.substack.com/p/reporte-de-trades" },
     { tag:{es:"Framework",en:"Framework"}, title:{es:"El Micro Capo Checklist",en:"The Micro Capo Checklist"},
-      desc:{es:"El proceso de 1 página que uso para filtrar cada idea antes de poner un dólar.",en:"The one-page process I run on every idea before risking a dollar."}, date:"2026", url:"#" }
+      desc:{es:"El proceso de 1 página que uso para filtrar cada idea antes de poner un dólar.",en:"The one-page process I run on every idea before risking a dollar."}, date:"2026", cover:"cover_checklist.png", url:"#" }
   ],
   books:[
     { spine:"100", title:{es:"100 to 1 in the Stock Market",en:"100 to 1 in the Stock Market"}, author:"Thomas Phelps",
@@ -468,11 +474,12 @@ const I18N = {
     hero_pill:"Research independiente de microcaps",
     hero_h1:"The Micro Capo",
     hero_slogan:"Donde nadie mira, ahí está el alfa.",
-    hero_tag:"Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada mes y explico cada movimiento.",
+    hero_tag:"Tres portafolios públicos, tres filosofías distintas. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.",
     socials_note:"El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.",
-    stat_strategies:"portafolios públicos", stat_holdings:"microcaps a largo plazo", stat_cadence:"update mensual", stat_transparency:"cartera transparente",
+    stat_strategies:"portafolios públicos", stat_holdings:"microcaps a largo plazo", stat_cadence:"entre snapshots", stat_transparency:"cartera transparente",
     pf_eyebrow:"Track record", pf_title:"Portafolios públicos",
-    pf_sub:"Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, actualizado el primer lunes de cada mes junto con su retorno.",
+    pf_sub:"Tres estrategias con filosofías diferentes. Lo que tengo, en abierto, con su retorno real del broker.",
+    pf_lag:"Cada portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.",
     pf_disc:"Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.",
     pf_updated:"Actualizado", pf_audit:"Track record auditado", pf_pending:"Composición publicada el primer lunes de cada mes.",
     pf_cta:"¿Quieres seguir los movimientos en tiempo real?", pf_cta_btn:"Entra al Discord",
@@ -492,11 +499,12 @@ const I18N = {
     hero_pill:"Independent microcap research",
     hero_h1:"The Micro Capo",
     hero_slogan:"Where no one's looking, that's where the alpha is.",
-    hero_tag:"Three public portfolios, three different philosophies. I share what I hold, update it monthly and explain every move.",
+    hero_tag:"Three public portfolios, three different philosophies. I share what I hold, update it weekly and explain every move.",
     socials_note:"Discord access is a monthly membership via Whop. That's where I post every move in real time.",
-    stat_strategies:"public portfolios", stat_holdings:"long-term microcaps", stat_cadence:"monthly update", stat_transparency:"transparent book",
+    stat_strategies:"public portfolios", stat_holdings:"long-term microcaps", stat_cadence:"between snapshots", stat_transparency:"transparent book",
     pf_eyebrow:"Track record", pf_title:"Public portfolios",
-    pf_sub:"Three strategies, three different philosophies. What I hold, in the open, updated the first Monday of each month with its return.",
+    pf_sub:"Three strategies, three different philosophies. What I hold, in the open, with its real broker return.",
+    pf_lag:"Each portfolio is a snapshot I update about every 7 days. Prices move daily, so a small lag is normal. To follow every move in real time, join the Discord.",
     pf_disc:"Portfolios shared for educational purposes. Not investment advice. Past performance does not guarantee future results.",
     pf_updated:"Updated", pf_audit:"Audited track record", pf_pending:"Holdings published the first Monday of each month.",
     pf_cta:"Want to follow every move in real time?", pf_cta_btn:"Join the Discord",
@@ -616,11 +624,18 @@ function renderPortfolios(){
 function renderArticles(){
   document.getElementById('articlesGrid').innerHTML = DATA.articles.map(a=>{
     const live=a.url&&a.url!=='#';
+    const coverInner = a.cover?`<img src="${a.cover}" alt="${tx(a.title)}" loading="lazy">`:'';
+    const cover = a.cover ? (live
+        ? `<a class="card-cover" href="${a.url}" target="_blank" rel="noopener">${coverInner}</a>`
+        : `<div class="card-cover">${coverInner}</div>`) : '';
     return `<article class="card reveal">
-      <div class="kicker"><span class="ticker">${tx(a.tag)}</span><span>${a.date}</span></div>
-      <h3>${tx(a.title)}</h3><p>${tx(a.desc)}</p>
-      <div class="meta"><span>${live?'':'<em style="opacity:.6">'+(LANG==='es'?'Pronto':'Soon')+'</em>'}</span>
-      ${live?`<a class="go" href="${a.url}" target="_blank" rel="noopener">${t('read')} →</a>`:''}</div>
+      ${cover}
+      <div class="card-body">
+        <div class="kicker"><span class="ticker">${tx(a.tag)}</span><span>${a.date}</span></div>
+        <h3>${tx(a.title)}</h3><p>${tx(a.desc)}</p>
+        <div class="meta"><span>${live?'':'<em style="opacity:.6">'+(LANG==='es'?'Pronto':'Soon')+'</em>'}</span>
+        ${live?`<a class="go" href="${a.url}" target="_blank" rel="noopener">${t('read')} →</a>`:''}</div>
+      </div>
     </article>`;
   }).join('');
 }
