@@ -487,9 +487,9 @@ const I18N = {
     articles_eyebrow:"Escritos", articles_title:"Artículos", articles_sub:"Notas de mercado, frameworks y lecciones de la trinchera de los microcaps.",
     articles_more:"Mis tesis de empresas completas viven en Substack →",
     books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
-    course_eyebrow:"Próximamente", course_title:"El curso de Micro Capo",
-    course_sub:"Estoy preparando un curso paso a paso de cómo analizo, valoro y construyo posiciones usando mi checklist. Mientras tanto, todo el research en vivo pasa en el Discord.",
-    course_join:"Entrar a la comunidad", course_waitlist:"Avísame del curso",
+    course_eyebrow:"¿Lo armamos?", course_title:"¿Te interesa un curso?",
+    course_sub:"Todavía no tengo un curso, pero lo estoy considerando. Si juntamos al menos 10 personas interesadas, me pongo a armarlo paso a paso con mi checklist. Si te late, escríbeme y dime qué te gustaría aprender.",
+    course_join:"Escríbeme en X", course_waitlist:"Pregúntame en el Discord",
     foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
     disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
     read:"Leer"
@@ -512,9 +512,9 @@ const I18N = {
     articles_eyebrow:"Writing", articles_title:"Articles", articles_sub:"Market notes, frameworks and lessons from the microcap trenches.",
     articles_more:"My full company theses live on Substack →",
     books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
-    course_eyebrow:"Coming soon", course_title:"The Micro Capo Course",
-    course_sub:"I'm building a step-by-step course on how I analyze, value and build positions using my checklist. In the meantime, all the live research happens in the Discord.",
-    course_join:"Join the community", course_waitlist:"Notify me about the course",
+    course_eyebrow:"Should I build it?", course_title:"Want a course?",
+    course_sub:"I don't have a course yet, but I'm considering it. If at least 10 people are interested, I'll build it step by step with my checklist. If you're in, message me and tell me what you'd want to learn.",
+    course_join:"Message me on X", course_waitlist:"Ask me on the Discord",
     foot_desc:"Microcap research. Ideas, not investment advice.",
     disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
     read:"Read"
@@ -650,8 +650,8 @@ function renderBooks(){
 function wireLinks(){
   const L=CONFIG.links, join=L.discord||L.substack||'#';
   document.getElementById('navCta').href=join;
-  document.getElementById('courseCta').href=join;
-  document.getElementById('courseSub').href=L.substack||join;
+  document.getElementById('courseCta').href=L.x||join;
+  document.getElementById('courseSub').href=L.discord||join;
   const sm=document.getElementById('substackMore'); if(sm) sm.href=L.substack||'#';
 }
 
