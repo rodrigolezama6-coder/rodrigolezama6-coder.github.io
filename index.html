@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Micro Capo — Microcap research, portafolios & estrategias</title>
-<meta name="description" content="The Micro Capo: research de microcaps, 2 portafolios públicos (largo plazo y momentum), tesis de inversión en español y artículos." />
+<meta name="description" content="The Micro Capo: research de microcaps, un portafolio público de largo plazo con top 10 en abierto, tesis de inversión en español y artículos." />
 <link rel="icon" type="image/png" href="TMC_logo_1080x1080.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,6 +137,32 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .hold tr.more td{color:var(--blue);font-weight:600;background:var(--blue-soft)}
 .pf-disc{margin-top:26px;text-align:center;font-size:.8rem;color:var(--ink-mute);max-width:740px;margin-left:auto;margin-right:auto}
 
+/* ---------- tesis table ---------- */
+.tt-card{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 24px 60px -42px rgba(10,15,29,.5)}
+.tt-scroll{overflow-x:auto}
+.tt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:880px}
+.tt th{position:sticky;top:0;background:var(--bg-soft);text-align:left;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding:13px 10px;border-bottom:1px solid var(--line-2);cursor:pointer;user-select:none;white-space:nowrap}
+.tt th:hover{color:var(--ink)}
+.tt th .arr{font-size:.62rem;margin-left:4px;opacity:.55}
+.tt th.num,.tt td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tt td{padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tt td.mut{font-size:.84rem}
+.tt tr:last-child td{border-bottom:0}
+.tt tbody tr{transition:background .15s}
+.tt tbody tr:hover{background:var(--blue-soft)}
+.tt tbody tr.linked{cursor:pointer}
+.tt td.tk{font-weight:800;color:var(--ink)}
+.tt td.tk a{color:var(--blue)}
+.tt td.tk .doc{font-size:.66rem;background:var(--blue);color:#fff;border-radius:6px;padding:2px 7px;margin-left:7px;font-weight:700;letter-spacing:.04em;vertical-align:1px}
+.tt td.nm{color:var(--ink)}
+.tt td.mut{color:var(--ink-mute);font-size:.88rem}
+.tt td.rt{font-weight:700}
+.tt td.rt.up{color:var(--green)} .tt td.rt.down{color:var(--red)}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.74rem;font-weight:700}
+.pill.ok{background:rgba(18,155,107,.12);color:var(--green)}
+.pill.risk{background:rgba(210,59,78,.12);color:var(--red)}
+.tt-note{padding:14px 22px 18px;margin:0;font-size:.8rem;color:var(--ink-mute);border-top:1px solid var(--line)}
+
 /* ---------- cards (articulos) ---------- */
 .grid{display:grid;gap:22px}
 .grid.c3{grid-template-columns:repeat(3,1fr)}
@@ -244,12 +270,12 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <span class="pill" data-i18n="hero_pill">Research independiente de microcaps</span>
     <h1 class="hero-title" data-i18n="hero_h1">The Micro Capo</h1>
     <p class="slogan" data-i18n="hero_slogan">Donde nadie mira, ahí está el alfa.</p>
-    <p class="tag" data-i18n="hero_tag">Dos portafolios públicos, dos filosofías distintas. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.</p>
+    <p class="tag" data-i18n="hero_tag">Un portafolio de microcaps a largo plazo, en abierto. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.</p>
     <div class="socials" id="socials"></div>
     <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
-      <div class="stat"><b>2</b><span data-i18n="stat_strategies">portafolios públicos</span></div>
-      <div class="stat"><b>16</b><span data-i18n="stat_holdings">microcaps a largo plazo</span></div>
+      <div class="stat"><b>16</b><span data-i18n="stat_strategies">microcaps core en cartera</span></div>
+      <div class="stat"><b>Top 10</b><span data-i18n="stat_holdings">posiciones en abierto</span></div>
       <div class="stat"><b>7d</b><span data-i18n="stat_cadence">entre snapshots</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
     </div>
@@ -261,10 +287,10 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="pf_eyebrow">Track record</span>
-      <h2 data-i18n="pf_title">Portafolios públicos</h2>
-      <p data-i18n="pf_sub">Dos estrategias con filosofías diferentes. Lo que tengo, en abierto.</p>
+      <h2 data-i18n="pf_title">Portafolio público</h2>
+      <p data-i18n="pf_sub">Mi cartera core de microcaps a largo plazo. Lo que tengo, en abierto.</p>
     </div>
-    <p class="pf-lag" data-i18n="pf_lag">Cada portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.</p>
+    <p class="pf-lag" data-i18n="pf_lag">El portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.</p>
     <div class="pf-tabs" id="pfTabs"></div>
     <div id="pfPanel"></div>
     <p class="pf-disc" data-i18n="pf_disc">Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.</p>
@@ -305,7 +331,10 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
       <p data-i18n="thesis_sub">Análisis a profundidad de las empresas del portafolio, siguiendo el Micro Capo Checklist: negocio, números, valuación, catalizadores y riesgos.</p>
       <a class="more" id="thesisMore" target="_blank" rel="noopener" data-i18n="thesis_more">¿Prefieres leerlas en inglés? Viven en Substack →</a>
     </div>
-    <div class="grid c3" id="thesesGrid"></div>
+    <div class="tt-card reveal">
+      <div class="tt-scroll"><table class="tt" id="tesisTable"></table></div>
+      <p class="tt-note" id="tesisNote"></p>
+    </div>
   </div>
 </section>
 
@@ -373,46 +402,55 @@ const PORTFOLIOS = [
     extra:{v:"16", l:{es:"posiciones core",en:"core positions"}},
     extra2:{v:"0%", l:{es:"margen",en:"margin"}},
     updated:"2026-07-18",
-    limit:3,
-    note:{es:"Top 3 del núcleo del portafolio, ordenadas por rendimiento. La cartera completa y cada movimiento, en el Discord.",
-          en:"Top 3 from the core book, sorted by performance. Full book and every move in the Discord."},
+    limit:10,
+    note:{es:"Top 10 del core, ordenadas por rendimiento. La cartera completa y cada movimiento, en el Discord.",
+          en:"Top 10 from the core book, sorted by performance. Full book and every move in the Discord."},
     holdings:[
-      {t:"IFA",  n:{es:"Textil-tech",en:"Textile-tech"}},
-      {t:"TTZ",  n:{es:"IoT / telemetría",en:"IoT / telemetry"}},
-      {t:"SIF",  n:{es:"Aeroespacial / forja",en:"Aerospace forging"}}
-    ]
-  },
-  {
-    id:"momentum",
-    tab:{es:"Momentum",en:"Momentum"},
-    tabSub:{es:"Quant · momentum",en:"Quant · momentum"},
-    title:{es:"Momentum sistemático",en:"Systematic momentum"},
-    philo:{es:"Estrategia cuantitativa y sistemática: micro y small caps seleccionadas por momentum técnico. 29 posiciones equal-weight, reglas claras de entrada y salida, cero emoción.",
-           en:"Quantitative, systematic strategy: micro and small caps selected by technical momentum. 29 equal-weight positions, clear entry/exit rules, zero emotion."},
-    extra:{v:"29", l:{es:"posiciones",en:"positions"}},
-    extra2:{v:"0%", l:{es:"margen",en:"margin"}},
-    updated:"2026-06-03",
-    limit:3,
-    note:{es:"29 posiciones equal-weight, sin margen. Top 3 por rendimiento; la cartera completa, en el Discord.",
-          en:"29 equal-weight positions, no margin. Top 3 by performance; full book in the Discord."},
-    holdings:[
-      {t:"IMOS", n:{es:"Semiconductores",en:"Semiconductors"}},
-      {t:"LXFR", n:{es:"Materiales",en:"Materials"}},
-      {t:"HSHP", n:{es:"Industrial / shipping",en:"Industrials / shipping"}}
+      {t:"IFA",   n:{es:"Textil-tech",en:"Textile-tech"}},
+      {t:"TTZ",   n:{es:"IoT / telemetría",en:"IoT / telemetry"}},
+      {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
+      {t:"HMM.A", n:{es:"Eléctrico / industrial",en:"Electrical / industrials"}},
+      {t:"ACFN",  n:{es:"Monitoreo remoto / IoT",en:"Remote monitoring / IoT"}},
+      {t:"OPXS",  n:{es:"Defensa / óptica",en:"Defense / optics"}},
+      {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}},
+      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
+      {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
+      {t:"ONDS",  n:{es:"Drones / redes privadas",en:"Drones / private networks"}}
     ]
   }
 ];
 
 /* ============================================================
-   TESIS, ARTICULOS y LIBROS
+   TESIS  —  tracker de las 16 posiciones core
+   - entry: precio promedio del broker · cur: precio actual (snapshot)
+   - url: se llena cuando la tesis en español está publicada
+   - status: "ok" (Intacta) | "risk" (Riesgo)
+   - date: mes de entrada ("2026-04") o "" si falta
+   ============================================================ */
+const TESIS_UPDATED = "2026-07-18";
+const TESIS = [
+  {t:"IFA",   name:"iFabric Corp",            date:"",        type:"Growth",            status:"ok",   sector:{es:"Consumo / textil-tech",en:"Consumer / textile-tech"},      entry:2.05,  cur:5.10,  ret:149.4, cad:true,  url:""},
+  {t:"TTZ",   name:"Total Telcom",            date:"",        type:"Value",             status:"ok",   sector:{es:"Tecnología / telecom",en:"Technology / telecom"},          entry:0.26,  cur:0.50,  ret:88.8,  cad:true,  url:""},
+  {t:"SIF",   name:"SIFCO Industries",        date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Industrial / aeroespacial",en:"Industrials / aerospace"},   entry:16.96, cur:22.50, ret:32.7,  cad:false, url:""},
+  {t:"HMM.A", name:"Hammond Mfg",             date:"2026-05", type:"Compounder",        status:"ok",   sector:{es:"Industrial / eléctrico",en:"Industrials / electrical"},     entry:15.70, cur:17.50, ret:11.5,  cad:true,  url:""},
+  {t:"ACFN",  name:"Acorn Energy",            date:"2026-04", type:"GARP",              status:"ok",   sector:{es:"Tecnología / IoT",en:"Technology / IoT"},                   entry:18.66, cur:20.18, ret:8.2,   cad:false, url:""},
+  {t:"OPXS",  name:"Optex Systems",           date:"",        type:"GARP",              status:"ok",   sector:{es:"Defensa / óptica",en:"Defense / optics"},                   entry:12.15, cur:12.76, ret:5.0,   cad:false, url:""},
+  {t:"TPC",   name:"Tutor Perini",            date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Construcción",en:"Construction"},                           entry:76.01, cur:78.62, ret:3.4,   cad:false, url:""},
+  {t:"LEAT",  name:"Leatt Corporation",       date:"2026-06", type:"Turnaround",        status:"ok",   sector:{es:"Consumo / protección",en:"Consumer / protective gear"},     entry:12.01, cur:12.34, ret:2.7,   cad:false, url:"tesis/leat/"},
+  {t:"PPIH",  name:"Perma-Pipe Intl",         date:"2026-06", type:"Growth",            status:"ok",   sector:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, entry:25.09, cur:25.42, ret:1.3, cad:false, url:""},
+  {t:"ONDS",  name:"Ondas Holdings",          date:"",        type:"Growth",            status:"ok",   sector:{es:"Tecnología / drones",en:"Technology / drones"},             entry:6.73,  cur:6.47,  ret:-3.8,  cad:false, url:""},
+  {t:"FSI",   name:"Flexible Solutions Intl", date:"",        type:"Value",             status:"ok",   sector:{es:"Químicos especiales",en:"Specialty chemicals"},             entry:6.19,  cur:5.94,  ret:-4.1,  cad:false, url:""},
+  {t:"KLNG",  name:"Koil Energy Solutions",   date:"",        type:"Growth",            status:"ok",   sector:{es:"Energía / servicios",en:"Energy services"},                 entry:2.42,  cur:2.31,  ret:-4.5,  cad:false, url:""},
+  {t:"OCC",   name:"Optical Cable Corp",      date:"",        type:"Value",             status:"ok",   sector:{es:"Tecnología / fibra óptica",en:"Technology / fiber optics"}, entry:15.95, cur:14.70, ret:-7.8,  cad:false, url:""},
+  {t:"TGEN",  name:"Tecogen",                 date:"",        type:"Growth",            status:"ok",   sector:{es:"Energía / cooling",en:"Energy / cooling"},                  entry:4.10,  cur:3.55,  ret:-13.4, cad:false, url:""},
+  {t:"MOJO",  name:"Equator Beverage Co",     date:"",        type:"Special Situation", status:"risk", sector:{es:"Consumo / bebidas",en:"Consumer / beverages"},              entry:1.33,  cur:0.86,  ret:-34.9, cad:false, url:""},
+  {t:"KTEL",  name:"KonaTel",                 date:"",        type:"Special Situation", status:"risk", sector:{es:"Telecom",en:"Telecom"},                                     entry:0.33,  cur:0.22,  ret:-35.5, cad:false, url:""}
+];
+
+/* ============================================================
+   ARTICULOS y LIBROS
    ============================================================ */
 const DATA = {
-  theses:[
-    { ticker:"LEAT", title:{es:"Leatt Corporation",en:"Leatt Corporation"},
-      desc:{es:"Equipo de protección para moto y MTB saliendo del fondo del ciclo: sin deuda, net cash de $16.7M, creciendo +35% mientras la industria se encoge. Fair value ~$22 (~+84%).",
-            en:"Moto & MTB protective gear coming off the cycle bottom: no debt, $16.7M net cash, growing +35% while the industry shrinks. Fair value ~$22 (~+84%). Spanish version on the site; English on Substack."},
-      date:"Jul 2026", cover:"tesis/leat/ch_cycle_es.png", url:"tesis/leat/" }
-  ],
   articles:[
     { tag:{es:"Reporte mensual",en:"Monthly report"}, title:{es:"Reporte Mensual — Largo Plazo",en:"Monthly Report — Long Term"},
       desc:{es:"Cartera de convicción, holdings, noticias del mes y KPIs del libro de largo plazo.",en:"Conviction book: holdings, monthly news and KPIs of the long-term portfolio."}, date:"May 2026", cover:"cover_mensual.png", url:"https://rodrigolezama.substack.com/p/reporte-mensual" },
@@ -442,12 +480,12 @@ const I18N = {
     hero_pill:"Research independiente de microcaps",
     hero_h1:"The Micro Capo",
     hero_slogan:"Donde nadie mira, ahí está el alfa.",
-    hero_tag:"Dos portafolios públicos, dos filosofías distintas. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.",
+    hero_tag:"Un portafolio de microcaps a largo plazo, en abierto. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.",
     socials_note:"El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.",
-    stat_strategies:"portafolios públicos", stat_holdings:"microcaps a largo plazo", stat_cadence:"entre snapshots", stat_transparency:"cartera transparente",
-    pf_eyebrow:"Track record", pf_title:"Portafolios públicos",
-    pf_sub:"Dos estrategias con filosofías diferentes. Lo que tengo, en abierto.",
-    pf_lag:"Cada portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.",
+    stat_strategies:"microcaps core en cartera", stat_holdings:"posiciones en abierto", stat_cadence:"entre snapshots", stat_transparency:"cartera transparente",
+    pf_eyebrow:"Track record", pf_title:"Portafolio público",
+    pf_sub:"Mi cartera core de microcaps a largo plazo. Lo que tengo, en abierto.",
+    pf_lag:"El portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.",
     pf_disc:"Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.",
     pf_updated:"Actualizado", pf_audit:"Track record auditado", pf_pending:"Composición publicada el primer lunes de cada mes.",
     pf_cta:"¿Quieres seguir los movimientos en tiempo real?", pf_cta_btn:"Entra al Discord",
@@ -456,8 +494,12 @@ const I18N = {
     articles_more:"Más artículos y reportes viven en Substack →",
     books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
     thesis_eyebrow:"Deep dives", thesis_title:"Tesis de inversión",
-    thesis_sub:"Análisis a profundidad de las empresas del portafolio, siguiendo el Micro Capo Checklist: negocio, números, valuación, catalizadores y riesgos. Aquí, en español.",
+    thesis_sub:"Las 16 posiciones core del portafolio, con su tesis a profundidad siguiendo el Micro Capo Checklist. Cada empresa irá recibiendo su tesis completa en español; el botón azul marca las ya publicadas.",
     thesis_more:"¿Prefieres leerlas en inglés? Viven en Substack →",
+    tt_ticker:"Ticker", tt_name:"Empresa", tt_date:"Fecha", tt_type:"Tipo", tt_status:"Status", tt_sector:"Sector",
+    tt_entry:"Entrada", tt_cur:"Actual", tt_ret:"Retorno",
+    tt_intact:"Intacta", tt_risk:"Riesgo", tt_tesis:"TESIS",
+    tt_note:"Precios promedio de entrada del broker vs precio del último snapshot. HMM.A, IFA y TTZ cotizan en CAD. Haz clic en los encabezados para ordenar; las filas con botón TESIS llevan al análisis completo.",
     foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
     disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
     read:"Leer"
@@ -467,12 +509,12 @@ const I18N = {
     hero_pill:"Independent microcap research",
     hero_h1:"The Micro Capo",
     hero_slogan:"Where no one's looking, that's where the alpha is.",
-    hero_tag:"Two public portfolios, two different philosophies. I share what I hold, update it weekly and explain every move.",
+    hero_tag:"One long-term microcap portfolio, in the open. I share what I hold, update it weekly and explain every move.",
     socials_note:"Discord access is a monthly membership via Whop. That's where I post every move in real time.",
-    stat_strategies:"public portfolios", stat_holdings:"long-term microcaps", stat_cadence:"between snapshots", stat_transparency:"transparent book",
-    pf_eyebrow:"Track record", pf_title:"Public portfolios",
-    pf_sub:"Two strategies, two different philosophies. What I hold, in the open.",
-    pf_lag:"Each portfolio is a snapshot I update about every 7 days. Prices move daily, so a small lag is normal. To follow every move in real time, join the Discord.",
+    stat_strategies:"core microcaps in the book", stat_holdings:"positions in the open", stat_cadence:"between snapshots", stat_transparency:"transparent book",
+    pf_eyebrow:"Track record", pf_title:"Public portfolio",
+    pf_sub:"My core long-term microcap book. What I hold, in the open.",
+    pf_lag:"The portfolio is a snapshot I update about every 7 days. Prices move daily, so a small lag is normal. To follow every move in real time, join the Discord.",
     pf_disc:"Portfolios shared for educational purposes. Not investment advice. Past performance does not guarantee future results.",
     pf_updated:"Updated", pf_audit:"Audited track record", pf_pending:"Holdings published the first Monday of each month.",
     pf_cta:"Want to follow every move in real time?", pf_cta_btn:"Join the Discord",
@@ -481,8 +523,12 @@ const I18N = {
     articles_more:"More articles and reports live on Substack →",
     books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
     thesis_eyebrow:"Deep dives", thesis_title:"Investment theses",
-    thesis_sub:"In-depth analyses of the companies in the portfolio, following the Micro Capo Checklist: business, numbers, valuation, catalysts and risks. Here in Spanish.",
+    thesis_sub:"The portfolio's 16 core positions, each getting its in-depth thesis following the Micro Capo Checklist. Spanish theses are published here; the blue tag marks the ones already live.",
     thesis_more:"Prefer English? They live on Substack →",
+    tt_ticker:"Ticker", tt_name:"Name", tt_date:"Date", tt_type:"Type", tt_status:"Status", tt_sector:"Sector",
+    tt_entry:"Entry", tt_cur:"Current", tt_ret:"Return",
+    tt_intact:"Intact", tt_risk:"Risk", tt_tesis:"THESIS",
+    tt_note:"Broker average entry price vs last snapshot price. HMM.A, IFA and TTZ trade in CAD. Click headers to sort; rows with a THESIS tag link to the full write-up.",
     foot_desc:"Microcap research. Ideas, not investment advice.",
     disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
     read:"Read"
@@ -527,8 +573,8 @@ function renderFootSoc(){
 
 /* ---------- portfolios ---------- */
 function renderPortfolios(){
-  document.getElementById('pfTabs').innerHTML = PORTFOLIOS.map((p,i)=>
-    `<button class="pf-tab ${i===ACTIVE_PF?'active':''}" data-pf="${i}"><b>${tx(p.tab)}</b><span>${tx(p.tabSub)}</span></button>`).join('');
+  document.getElementById('pfTabs').innerHTML = PORTFOLIOS.length>1 ? PORTFOLIOS.map((p,i)=>
+    `<button class="pf-tab ${i===ACTIVE_PF?'active':''}" data-pf="${i}"><b>${tx(p.tab)}</b><span>${tx(p.tabSub)}</span></button>`).join('') : '';
   document.querySelectorAll('.pf-tab').forEach(b=>b.addEventListener('click',()=>{ACTIVE_PF=+b.dataset.pf;renderPortfolios();}));
 
   const p=PORTFOLIOS[ACTIVE_PF];
@@ -562,24 +608,71 @@ function renderPortfolios(){
   </div>`;
 }
 
-/* ---------- theses ---------- */
+/* ---------- theses table ---------- */
+let TT_SORT = {key:'ret', dir:-1};
+function ttDateLabel(d){
+  if(!d) return '—';
+  const [y,m]=d.split('-');
+  const ms=(LANG==='es')?['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']
+                        :['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${ms[+m-1]} ${y}`;
+}
 function renderTheses(){
-  document.getElementById('thesesGrid').innerHTML = DATA.theses.map(th=>{
-    const live=th.url&&th.url!=='#';
-    const coverInner = th.cover?`<img src="${th.cover}" alt="${tx(th.title)}" loading="lazy">`:'';
-    const cover = th.cover ? (live
-        ? `<a class="card-cover" href="${th.url}">${coverInner}</a>`
-        : `<div class="card-cover">${coverInner}</div>`) : '';
-    return `<article class="card reveal">
-      ${cover}
-      <div class="card-body">
-        <div class="kicker"><span class="ticker">${th.ticker}</span><span>${th.date}</span></div>
-        <h3>${tx(th.title)}</h3><p>${tx(th.desc)}</p>
-        <div class="meta"><span></span>
-        ${live?`<a class="go" href="${th.url}">${t('read')} →</a>`:''}</div>
-      </div>
-    </article>`;
-  }).join('');
+  const cols=[
+    {key:'t',      label:t('tt_ticker'), num:false},
+    {key:'name',   label:t('tt_name'),   num:false},
+    {key:'date',   label:t('tt_date'),   num:false},
+    {key:'type',   label:t('tt_type'),   num:false},
+    {key:'status', label:t('tt_status'), num:false},
+    {key:'sector', label:t('tt_sector'), num:false},
+    {key:'entry',  label:t('tt_entry'),  num:true},
+    {key:'cur',    label:t('tt_cur'),    num:true},
+    {key:'ret',    label:t('tt_ret'),    num:true}
+  ];
+  const val=(r,k)=>{
+    if(k==='sector') return tx(r.sector);
+    if(k==='date') return r.date||'';
+    return r[k];
+  };
+  const rows=[...TESIS].sort((a,b)=>{
+    const A=val(a,TT_SORT.key), B=val(b,TT_SORT.key);
+    if(typeof A==='number' && typeof B==='number') return (A-B)*TT_SORT.dir;
+    return String(A).localeCompare(String(B))*TT_SORT.dir;
+  });
+  const head=`<thead><tr>${cols.map(c=>{
+    const arr=(TT_SORT.key===c.key)?(TT_SORT.dir===1?'▲':'▼'):'↕';
+    return `<th class="${c.num?'num':''}" data-k="${c.key}">${c.label}<span class="arr">${arr}</span></th>`;
+  }).join('')}</tr></thead>`;
+  const body=`<tbody>${rows.map(r=>{
+    const live=!!r.url;
+    const tk = live ? `<a href="${r.url}">${r.t}</a><span class="doc">${t('tt_tesis')}</span>` : r.t;
+    const st = `<span class="pill ${r.status==='ok'?'ok':'risk'}">${r.status==='ok'?t('tt_intact'):t('tt_risk')}</span>`;
+    const rc = r.ret>=0?'up':'down';
+    const cad = r.cad ? `<span style="font-size:.7rem;color:var(--ink-mute)"> CAD</span>` : '';
+    return `<tr class="${live?'linked':''}" ${live?`data-url="${r.url}"`:''}>
+      <td class="tk">${tk}</td>
+      <td class="nm">${r.name}</td>
+      <td class="mut">${ttDateLabel(r.date)}</td>
+      <td class="mut">${r.type}</td>
+      <td>${st}</td>
+      <td class="mut">${tx(r.sector)}</td>
+      <td class="num">${r.entry.toFixed(2)}${cad}</td>
+      <td class="num">${r.cur.toFixed(2)}${cad}</td>
+      <td class="num rt ${rc}">${(r.ret>=0?'+':'')+r.ret.toFixed(1).replace('.',LANG==='es'?',':'.')}%</td>
+    </tr>`;
+  }).join('')}</tbody>`;
+  const tbl=document.getElementById('tesisTable');
+  tbl.innerHTML=head+body;
+  tbl.querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{
+    const k=th.dataset.k;
+    if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='ret')?-1:1}; }
+    renderTheses();
+  }));
+  tbl.querySelectorAll('tr.linked').forEach(tr=>tr.addEventListener('click',e=>{
+    if(e.target.closest('a')) return;
+    location.href=tr.dataset.url;
+  }));
+  document.getElementById('tesisNote').textContent=t('tt_note')+' · '+t('pf_updated')+': '+fmtDate(TESIS_UPDATED);
 }
 
 /* ---------- articles / books ---------- */
