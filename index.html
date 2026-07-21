@@ -55,17 +55,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 
 /* ---------- HERO (futurista / espacio) ---------- */
 .hero{position:relative;overflow:hidden;background:#05070f;color:#fff;padding:120px 0 96px;text-align:center;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 95% at 50% -12%, #18285f 0%, #0a1130 40%, #05070f 78%)}
-.nebula{position:absolute;left:50%;bottom:-32%;width:980px;height:600px;transform:translateX(-50%);background:radial-gradient(closest-side, rgba(43,83,255,.40), rgba(43,83,255,0) 70%);filter:blur(22px)}
-.planet{position:absolute;top:-96px;right:-72px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle at 32% 30%, #7f9dff 0%, #2b53ff 32%, #18215c 64%, #0a1130 100%);box-shadow:0 0 130px 36px rgba(43,83,255,.42), inset -28px -16px 64px rgba(0,0,0,.55)}
-.orbit{position:absolute;border:1px solid rgba(130,160,240,.16);border-radius:50%}
-.orbit-1{top:-230px;right:-230px;width:680px;height:680px;transform:rotate(-12deg)}
-.orbit-2{top:-160px;right:-160px;width:520px;height:520px;border-color:rgba(130,160,240,.09);transform:rotate(8deg)}
-.stars{position:absolute;inset:0}
-.star{position:absolute;background:#fff;border-radius:50%;box-shadow:0 0 4px rgba(255,255,255,.6);animation:twinkle 3.4s ease-in-out infinite}
-@keyframes twinkle{0%,100%{opacity:.22}50%{opacity:.95}}
-.vignette{position:absolute;inset:0;background:radial-gradient(125% 85% at 50% 32%, transparent 48%, rgba(5,7,15,.6) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:url(hero_nyse.jpg) center 34%/cover no-repeat;filter:grayscale(1)}
+.hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,7,15,.86) 0%, rgba(10,17,48,.68) 46%, rgba(5,7,15,.9) 100%)}
+.vignette{position:absolute;inset:0;background:radial-gradient(125% 85% at 50% 32%, transparent 48%, rgba(5,7,15,.65) 100%)}
 .hero-content{position:relative;z-index:2}
 .hero .pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;padding:8px 16px;border-radius:999px;border:1px solid rgba(160,180,240,.28);background:rgba(120,150,235,.10);font-size:.8rem;color:#c2cdf0;font-weight:600;backdrop-filter:blur(4px)}
 .hero .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#46d39a;box-shadow:0 0 10px #46d39a}
@@ -275,11 +267,6 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
-    <div class="nebula"></div>
-    <div class="orbit orbit-1"></div>
-    <div class="orbit orbit-2"></div>
-    <div class="planet"></div>
-    <div class="stars" id="stars"></div>
     <div class="vignette"></div>
   </div>
   <div class="wrap hero-content">
@@ -445,15 +432,6 @@ const SECTORS = [
   {label:{es:"Químicos especiales",en:"Specialty chemicals"},                   pct:0.9,  color:"#c8532e"}
 ];
 
-/* Bloque bio — se muestra como tabla aparte junto a la gráfica */
-const BIO = [
-  {t:"WGS",  n:{es:"Genómica / diagnóstico",en:"Genomics / diagnostics"}},
-  {t:"CCCC", n:{es:"Biotech / oncología",en:"Biotech / oncology"}},
-  {t:"XGN",  n:{es:"Diagnóstico autoinmune",en:"Autoimmune diagnostics"}},
-  {t:"STIM", n:{es:"Dispositivos médicos",en:"Medical devices"}},
-  {t:"AVR",  n:{es:"Dispositivos / válvulas cardiacas",en:"Devices / heart valves"}},
-  {t:"QTRX", n:{es:"Proteómica / diagnóstico",en:"Proteomics / diagnostics"}}
-];
 
 /* ============================================================
    TESIS  —  tracker de las 16 posiciones core
@@ -646,12 +624,8 @@ function renderPortfolios(){
   const donut = buildDonut(SECTORS);
   const legend = `<ul class="dlegend">${SECTORS.map(s=>
     `<li><span class="sw" style="background:${s.color}"></span>${tx(s.label)}<b>${s.pct.toFixed(1).replace('.',LANG==='es'?',':'.')}%</b></li>`).join('')}</ul>`;
-  const bioRows = BIO.map(b=>`<tr><td class="tk">${b.t}</td><td>${tx(b.n)}</td></tr>`).join('');
   const viz = `<div class="pf-viz">
     <div class="viz-donut"><h4>${t('pf_sector_title')}</h4><div class="dwrap">${donut}${legend}</div></div>
-    <div class="viz-bio"><h4>${t('pf_bio_title')}</h4><table>
-      <thead><tr><th>${t('th_ticker')}</th><th>${t('th_name')}</th></tr></thead>
-      <tbody>${bioRows}</tbody></table></div>
   </div>`;
 
   document.getElementById('pfPanel').innerHTML = `<div class="pf-panel">
@@ -779,18 +753,6 @@ function observeReveal(){
   io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 }
-function genStars(){
-  const el=document.getElementById('stars'); if(!el) return;
-  let h='';
-  for(let i=0;i<90;i++){
-    const s=(Math.random()*1.8+0.6).toFixed(2);
-    const top=(Math.random()*100).toFixed(2), left=(Math.random()*100).toFixed(2);
-    const d=(Math.random()*3.4).toFixed(2);
-    h+=`<span class="star" style="top:${top}%;left:${left}%;width:${s}px;height:${s}px;animation-delay:${d}s"></span>`;
-  }
-  el.innerHTML=h;
-}
-genStars();
 document.getElementById('year').textContent=new Date().getFullYear();
 document.querySelectorAll('.lang-toggle button').forEach(b=>{
   b.addEventListener('click',()=>{LANG=b.dataset.lang;localStorage.setItem('tmc_lang',LANG);applyLang();});
