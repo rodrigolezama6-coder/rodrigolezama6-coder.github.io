@@ -444,6 +444,7 @@ const TESIS_UPDATED = "2026-07-21";
 /* Una fila por tesis PUBLICADA. date = fecha de publicación de la tesis.
    entry = precio cuando se publicó (no el promedio del broker). Sin retornos. */
 const TESIS = [
+  {t:"SIF",  name:"SIFCO Industries",  date:"2026-07", type:"Turnaround", status:"ok", sector:{es:"Industrial / aeroespacial y defensa",en:"Industrials / aerospace & defense"}, entry:13.00, cur:23.93, cad:false, url:"tesis/sif/"},
   {t:"LEAT", name:"Leatt Corporation", date:"2026-07", type:"Turnaround", status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:12.78, cad:false, url:"tesis/leat/"}
 ];
 
@@ -500,7 +501,7 @@ const I18N = {
     tt_ticker:"Ticker", tt_name:"Empresa", tt_date:"Fecha", tt_type:"Tipo", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entrada", tt_cur:"Actual", tt_ret:"Retorno",
     tt_intact:"Intacta", tt_risk:"Riesgo", tt_tesis:"TESIS",
-    tt_note:"Fecha = publicación de la tesis. Entrada = precio de la acción al publicarla; Actual = último snapshot. Haz clic en la fila o el botón TESIS para leer el análisis completo.",
+    tt_note:"Fecha = publicación de la tesis. Entrada = mi precio de primera compra; Actual = último snapshot. Haz clic en la fila o el botón TESIS para leer el análisis completo.",
     foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
     disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
     read:"Leer"
@@ -530,7 +531,7 @@ const I18N = {
     tt_ticker:"Ticker", tt_name:"Name", tt_date:"Date", tt_type:"Type", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entry", tt_cur:"Current", tt_ret:"Return",
     tt_intact:"Intact", tt_risk:"Risk", tt_tesis:"THESIS",
-    tt_note:"Date = thesis publication. Entry = share price at publication; Current = last snapshot. Click the row or the THESIS tag to read the full write-up.",
+    tt_note:"Date = thesis publication. Entry = my first-buy price; Current = last snapshot. Click the row or the THESIS tag to read the full write-up.",
     foot_desc:"Microcap research. Ideas, not investment advice.",
     disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
     read:"Read"

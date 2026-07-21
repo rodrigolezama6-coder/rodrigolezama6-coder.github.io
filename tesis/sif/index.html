@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SIFCO Industries (SIF) — Tesis de inversión | The Micro Capo</title>
+<meta name="description" content="Tesis de inversión de SIFCO Industries (NYSE American: SIF): forja aeroespacial saliendo de un turnaround real, backlog récord y ciclo de defensa. Fair value 2027 ~$31." />
+<link rel="icon" type="image/png" href="../../TMC_logo_1080x1080.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f6f7fa; --bg-ink:#0a0f1d;
+  --line:#e8eaf1; --line-2:#dcdfe9;
+  --ink:#0a0f1d; --ink-soft:#525a6e; --ink-mute:#8b93a6;
+  --blue:#2b53ff; --blue-deep:#1d2747; --blue-soft:#eef2ff;
+  --green:#129b6b; --red:#d23b4e;
+  --radius:16px; --maxw:760px;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px;margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px}
+.back{font-size:.92rem;font-weight:600;color:var(--ink-soft)}
+.back:hover{color:var(--ink);text-decoration:none}
+
+.hero{background:#05070f;color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 95% at 50% -12%, #18285f 0%, #0a1130 45%, #05070f 80%)}
+.hero .wrap{position:relative}
+.hero .kicker{display:inline-flex;gap:10px;align-items:center;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#86a4ff;margin-bottom:18px}
+.hero .kicker .tick{background:rgba(120,150,235,.15);border:1px solid rgba(160,180,240,.3);padding:3px 12px;border-radius:999px;color:#c2cdf0}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;margin:0}
+.hero .sub{font-family:var(--serif);color:#aeb9d8;font-size:1.15rem;margin:16px 0 0;font-style:italic}
+.hero .meta{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border:1px solid rgba(160,180,240,.2);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03)}
+.hero .m{flex:1;min-width:130px;padding:16px 18px;border-right:1px solid rgba(160,180,240,.16)}
+.hero .m:last-child{border-right:0}
+.hero .m b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:600;color:#fff}
+.hero .m b.up{color:#46d39a}
+.hero .m span{font-size:.74rem;color:#9aa6c8}
+@media(max-width:560px){.hero .m{min-width:calc(50% - 1px);border-bottom:1px solid rgba(160,180,240,.16)}}
+
+article{padding:56px 0 30px}
+article h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:52px 0 18px}
+article h3{font-size:1.16rem;font-weight:700;margin:38px 0 12px}
+article p{margin:0 0 18px;color:var(--ink);font-size:1.02rem}
+article .lead{font-size:1.08rem}
+article em{color:var(--ink-soft)}
+article ul{margin:0 0 18px;padding-left:22px}
+article li{margin-bottom:10px;font-size:1.02rem}
+article strong{font-weight:700}
+.fig{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 34px -26px rgba(10,15,29,.25)}
+.fig img{width:100%}
+blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;font-size:.98rem;color:var(--blue-deep)}
+blockquote p{margin:0 0 6px}
+blockquote .who{font-size:.84rem;font-weight:700;color:var(--ink-soft)}
+.callout{margin:26px 0;padding:20px 24px;border:1px solid var(--line-2);border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--bg-soft)}
+.callout p{margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+.srcs{font-size:.92rem;color:var(--ink-soft)}
+.srcs li{margin-bottom:6px}
+.legal{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-mute)}
+
+.cta{margin:48px 0 0;padding:26px 28px;background:var(--bg-ink);border-radius:18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta span{font-weight:600}
+.cta a{background:#fff;color:var(--bg-ink);padding:12px 22px;border-radius:10px;font-weight:700;font-size:.94rem;white-space:nowrap}
+.cta a:hover{text-decoration:none;opacity:.92}
+
+footer{border-top:1px solid var(--line);padding:36px 0 44px;margin-top:60px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-mute)}
+footer a{color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../../"><img src="../../TMC_logo_1080x1080.png" alt="The Micro Capo" /><span>The Micro Capo</span></a>
+    <a class="back" href="../../#tesis">← Volver a las tesis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="tick">NYSE American: SIF</span><span>Tesis de inversión · Julio 2026</span></div>
+    <h1>SIFCO Industries</h1>
+    <p class="sub">Una forja de aviones que perdió dinero casi una década, dio el giro, y le pegó al ciclo de defensa justo cuando la industria se quedó sin capacidad.</p>
+    <div class="meta">
+      <div class="m"><b>$23.07</b><span>precio (20-jul-2026)</span></div>
+      <div class="m"><b class="up">~$31</b><span>fair value 2027 (+36%)</span></div>
+      <div class="m"><b class="up">$46-58</b><span>rango 2028 si EPS $2.32</span></div>
+      <div class="m"><b>7.5 / 10</b><span>Checklist Micro Capo</span></div>
+    </div>
+  </div>
+</section>
+
+<article>
+  <div class="wrap">
+
+  <div class="fig"><img src="tbl_snapshot_es.png" alt="Snapshot de SIFCO" loading="lazy"></div>
+
+  <h2>La oportunidad, en una página</h2>
+  <p class="lead"><strong>SIF cotiza a $23.07 (cierre del 20-jul-2026). Mi fair value para 2027 es de cerca de $31, o sea como +36% de upside desde aquí, y para 2028 podría irse a entre $46 y $58 si el EPS llega a donde lo modelo. Y quiero ser honesto de entrada: este ya no es el deep value que era cuando empecé a comprar a $13. La acción sube +313% en el año, así que la parte fácil del re-rate ya pasó. Lo que queda es una historia de ejecución con un múltiplo todavía barato para defensa.</strong></p>
+  <p>Lo que te llevas por ese precio: un forjador aeroespacial de Estados Unidos que pasó de perder dinero casi todos los años desde 2016 a un margen neto de 10% en el último trimestre (<a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q Q2 FY2026</a>), con un backlog récord de $157.7M creciendo +22% contra el año pasado, y una demanda que no es una promesa sino contratos de defensa a varios años. A $23 pagas como 12 veces mis utilidades de 2027, mientras los grandes del sector, HEICO (HEI) y Howmet (HWM), cotizan arriba de 60 veces utilidades.</p>
+  <p><em>Nota macro simple: en defensa, cuando la demanda está metida en contratos plurianuales y la capacidad de la industria está saturada, el proveedor chico que ya inflexionó es justo el tipo de nombre que se re-califica cuando el mercado por fin lo voltea a ver.</em></p>
+
+  <h2>1. ¿Qué hace la empresa?</h2>
+  <p>SIFCO Industries hace piezas forjadas de metal para aeroespacial y defensa. Forjar es dar forma al metal bajo presión extrema para que quede más fuerte y más duradero, y esas piezas van donde fallar no es opción: motores de avión, trenes de aterrizaje, estructuras, helicópteros y turbinas. Fundada en 1913, opera dos plantas, SIFCO Forge en Cleveland, Ohio, y Quality Aluminum Forge en Orange, California, y Estados Unidos es 75% de su revenue (<a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a>). Factura $95.3M en los últimos doce meses y tiene apenas 6.25M de acciones.</p>
+  <p>El punto de calidad del negocio es la barrera de entrada. Una vez que te certifican como proveedor en un programa aeroespacial o de defensa, te quedas años, porque reemplazar un componente forjado requiere pruebas y recertificación caras y lentas. El mix ya es <strong>66% militar</strong> en el primer semestre de FY2026 (56% en FY2025), y el cliente es el prime, no el Pentágono: SIF es proveedor de segundo nivel de Boeing, Sikorsky y Lockheed. Eso trae concentración, en FY2025 un cliente fue 18% de las ventas y los dos mayores 34% (<a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a>), pero también relaciones pegajosas de largo plazo.</p>
+  <div class="fig"><img src="ch_mix_es.png" alt="Mix militar vs comercial" loading="lazy"></div>
+  <div class="fig"><img src="tbl_mix_es.png" alt="Revenue por mercado" loading="lazy"></div>
+  <p><em>El dato que más me gusta de esa tabla: rotorcraft se multiplicó por 2.6x en un año. Ese es el CH-53K entrando al P&amp;L. Fuente: nota de Revenue del <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q Q2 FY2026</a>.</em></p>
+
+  <h2>2. Por qué nadie la seguía: una década de infierno</h2>
+  <p>Para entender la oportunidad hay que entender por qué estaba tan barata. SIF esencialmente perdió dinero todos los años desde 2016. Tan reciente como FY2024 perdió $8.6M de operaciones continuas (<a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a>). No tenía cobertura de analistas, y con razón. La lista de golpes es larga:</p>
+  <ul>
+    <li><strong>Energía y turbinas.</strong> La caída del mercado de energía después de 2014 y la pérdida de un cliente clave en 2015 vaciaron el negocio de turbinas industriales, y llevaron a cerrar la planta de Alliance, Ohio en 2017.</li>
+    <li><strong>CBlade.</strong> SIF tenía una filial en Italia, CBlade, que hacía álabes (blades) para turbinas de generación de energía. Nunca dio los retornos esperados y por más de una década se comió capital y atención del management que el negocio core de aeroespacial necesitaba.</li>
+    <li><strong>COVID.</strong> Destruyó el aeroespacial comercial.</li>
+    <li><strong>Y la gota que derramó el vaso.</strong> Fue objetivo de una adquisición que fracasó, sufrió un incidente de ciberseguridad, y para abril de 2023 había caído en default con JPMorgan. Entró en forbearance formal y pidió $3M de emergencia a la holding de un director (Garnet Holdings, del director Mark Silk, hoy con 13% de la empresa vía su trust familiar según el <a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058407/sif-20251222.htm" target="_blank" rel="noopener">proxy de dic-2025</a>) solo para no apagar las luces.</li>
+  </ul>
+  <p>Con un CEO en el puesto desde 2016 y sin ningún viento de cola en sus mercados, no había razón para creer que algo cambiaría. Esa es exactamente la clase de historia que el mercado abandona, y la razón por la que el giro pasó tan desapercibido.</p>
+
+  <h2>3. El giro: qué cambió en 2024</h2>
+  <ul>
+    <li><strong>Nuevo CEO.</strong> George Scherff entró en julio de 2024, con un background de CEO de portafolio de private equity (Lund International, Paradigm Packaging, Hartzell Manufacturing, entre otros, según su bio en el <a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058407/sif-20251222.htm" target="_blank" rel="noopener">proxy</a>). Sus roles previos terminaron consistentemente en ventas a compradores estratégicos o de PE. Ese detalle importa para el ángulo de M&amp;A más adelante.</li>
+    <li><strong>Venta de CBlade.</strong> En octubre de 2024 vendieron CBlade por $14.4M en efectivo (<a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a>, nota de operaciones discontinuadas), y con eso refinanciaron a JPMorgan con el prestamista especializado Siena Lending y pagaron el préstamo del director. Balance limpio.</li>
+    <li><strong>Gente de aeroespacial en el board.</strong> Entró Bob Johnson, ex-chairman de Honeywell Aerospace. Ese es el tipo de nombre que no se sienta en el board de una microcap muerta.</li>
+    <li><strong>Y la cereza del pastel: el ciclo de defensa explotó al mismo tiempo.</strong> El contrato plurianual del CH-53K de $10.9B (septiembre 2025), el F-15EX creciendo flota, y una escasez de capacidad de forja en toda la industria (<a href="https://www.bcg.com/publications/2024/fixing-whats-broken-in-aerospace-supply-chain" target="_blank" rel="noopener">BCG, 2024</a>) que por primera vez en años le dio a SIF poder de fijar precios.</li>
+  </ul>
+
+  <h2>4. La tesis: el triple play</h2>
+  <p><strong>El mercado veía una microcap ilíquida y quebrada. Los datos muestran una empresa que ya limpió el balance, volvió a ganar dinero, y tiene tres cosas convergiendo a la vez. Ese es el setup.</strong></p>
+
+  <h3>Pilar 1: la inflexión ya está en los números</h3>
+  <p>No es una historia de esperanza. Las ventas del Q2 FY2026 subieron <strong>+39% a $26.4M</strong>, el EPS pasó de una pérdida de $0.23 a una ganancia de <strong>$0.43</strong>, y en el primer semestre ya llevan <strong>$0.72</strong> de EPS con $4.4M de utilidad neta (<a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q Q2 FY2026</a>). Todos los números que siguen salen de los 10-Q y 10-K en <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000090168" target="_blank" rel="noopener">SEC EDGAR</a>.</p>
+  <div class="fig"><img src="ch_inflex_es.png" alt="Inflexión de revenue y EPS" loading="lazy"></div>
+  <div class="fig"><img src="tbl_quarters_es.png" alt="Trimestres recientes" loading="lazy"></div>
+  <p><em>El EPS GAAP del Q3 FY25 de $0.54 incluye partidas no operativas; el ajustado fue como $0.16.</em></p>
+
+  <h3>Pilar 2: apalancamiento operativo, y es brutal</h3>
+  <p>La base de costos de SIF es casi fija, así que cuando sube el volumen el margen se dispara. El gross margin pasó de <strong>8.3% en el Q2 FY25 a 21.4% en el Q2 FY26</strong> (gross profit de $1.57M a $5.66M sobre el income statement del <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q</a>). Y el número que más me gusta: la utilidad bruta subió $4.1M sobre un aumento de ventas de $7.4M, o sea un <strong>margen incremental de ~55%</strong>. El SG&amp;A subió solo $0.6M en el mismo periodo, así que cada dólar extra de venta cae en buena proporción a la utilidad.</p>
+  <div class="fig"><img src="ch_gm_es.png" alt="Gross margin por trimestre" loading="lazy"></div>
+  <p>La empresa además ya genera caja de verdad: $5.2M de operating cash flow en el semestre con capex de solo $0.2M, y con eso pagó la mitad de su deuda, de $10.6M a $5.1M en seis meses (nota de deuda del 10-Q).</p>
+  <div class="fig"><img src="tbl_financials_es.png" alt="Financieros históricos" loading="lazy"></div>
+
+  <h3>Pilar 3: el backlog acelera, y trae la demanda de defensa</h3>
+  <p>El backlog (remaining performance obligations) está en récord de <strong>$157.7M</strong>, +22% contra el año pasado y +13% contra el trimestre anterior (<a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q Q2 FY2026</a>; la serie completa está en el <a href="https://data.sec.gov/api/xbrl/companyconcept/CIK0000090168/us-gaap/RevenueRemainingPerformanceObligation.json" target="_blank" rel="noopener">XBRL de EDGAR</a>). Y soy honesto con la trayectoria: no fue línea recta, bajó a $119M al cierre de FY2025 y de ahí encadenó dos saltos seguidos hasta el récord.</p>
+  <div class="fig"><img src="ch_backlog_es.png" alt="Evolución del backlog" loading="lazy"></div>
+  <p>Un detalle de arbitraje de información: la empresa no pone el backlog en el press release, está enterrado en el filing. De esos $157.7M, <strong>$95.3M están programados para entregarse en los próximos 12 meses</strong> según el propio 10-Q. Y eso es piso, no techo, porque encima va todo lo que se ordena y entrega dentro del año (en FY2025 facturaron $84.8M cuando el backlog de un año antes era de solo $85.0M).</p>
+  <div class="fig"><img src="tbl_backlog_es.png" alt="Backlog y entregas programadas" loading="lazy"></div>
+  <p>Y hay otro tell de pricing power escondido en los filings: las contract liabilities (anticipos de clientes) saltaron de <strong>$1.8M a $6.2M en seis meses</strong> (nota de contract balances del <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q</a>). Que los clientes paguen por adelantado en vez de a crédito post-entrega señala oferta apretada y valida que SIF está subiendo precios.</p>
+
+  <h2>5. El contexto: por qué la demanda es contractual, no aspiracional</h2>
+  <p>En un artículo de un analista en una comunidad privada (por eso no lo puedo compartir públicamente) vi mapeado cada programa donde SIF forja piezas contra el presupuesto del Pentágono (el P-1 de la solicitud FY2027). El patrón importa: casi todos los programas bajaron en FY2026 y rebotan fuerte en FY2027. Eso no fue caída de demanda, fue arquitectura de presupuesto: en FY26 el dinero extra se fue a barcos y municiones, no a aviones. La demanda nunca se fue.</p>
+  <div class="fig"><img src="tbl_programs_es.png" alt="Programas de defensa donde participa SIF" loading="lazy"></div>
+  <p>El punto más fuerte de todo: la capacidad de forja aeroespacial es el cuello de botella número uno de la industria según <a href="https://www.bcg.com/publications/2024/fixing-whats-broken-in-aerospace-supply-chain" target="_blank" rel="noopener">BCG (2024)</a>, con lead times que pasaron de 4-6 semanas a 20-40 y sin capacidad nueva relevante hasta 2028. Eso valida el pricing power de SIF y explica por qué su margen se sostiene.</p>
+  <p>El timing para nosotros: hay un lag de 1 a 3 años entre presupuesto y orden de forja, así que la ola del presupuesto FY27 pega en el P&amp;L de SIF entre FY2027 y FY2029. El backlog récord de hoy todavía es mayormente dinero de FY24-26, o sea apenas estamos surfeando la ola. El caveat que no voy a esconder: parte del salto FY27 depende de un paquete de $350B de reconciliación que el Congreso no ha aprobado.</p>
+
+  <h2>6. Los números y el modelo</h2>
+  <p>Construí el modelo directo de los filings y no inventé un total. El primer semestre real trae $50.4M de revenue y $0.72 de EPS. Para el segundo semestre asumo +10% contra el primero, o sea $55.5M, que contra los $44.9M del segundo semestre de FY2025 es crecer +24% YoY, menos que el +26% que trae el H1. Sumado da <strong>~$106M de revenue en FY2026 y $1.52 de EPS</strong>, y cuadra con el 10-Q: $95.3M del backlog se entregan en 12 meses y encima va lo que se ordena y entrega dentro del año. De ahí crezco low-teens con expansión suave de margen.</p>
+  <div class="fig"><img src="tbl_model_es.png" alt="Modelo FY2026-FY2028" loading="lazy"></div>
+  <p>Los estimados son conservadores en margen: el H1 real ya trae 8.8% de margen neto con el Q2 en 10%, y modelo 9% para el año. Un límite honesto: SIF no da guidance ni desglose de revenue por programa, así que el modelo se apoya en el backlog del 10-Q y en el semestre real, no en números que la empresa publique hacia adelante.</p>
+
+  <h2>7. Valuación</h2>
+  <p>Valúo con EPS porque prefiero ponerle múltiplo a una empresa que ya es rentable. A $23.07 la acción cotiza a ~20x el EPS TTM y <strong>~12x mi EPS de FY2027</strong>, con EV/Adj EBITDA TTM de ~10x. Mientras tanto los grandes del sector cotizan en otro planeta: <strong>HEICO (HEI) a ~63x utilidades y Howmet (HWM) a ~62x</strong>, con EV/EBITDA de 32x y 43x. No espero que a SIF le paguen múltiplos de HEICO, pero el hueco entre 12x y 60x te dice cuánto espacio hay si la ejecución sigue.</p>
+  <div class="fig"><img src="ch_peers_es.png" alt="Múltiplos vs peers" loading="lazy"></div>
+  <div class="fig"><img src="tbl_multiples_es.png" alt="Tabla de múltiplos" loading="lazy"></div>
+  <div class="fig"><img src="tbl_scenarios_es.png" alt="Escenarios bear, base y bull" loading="lazy"></div>
+  <p>Ponderado eso da cerca de <strong>$31 para 2027, como +36% desde $23.07</strong>. Y viendo a 2028: si el EPS llega a los $2.32 que modelo, a 20-25x la acción podría valer <strong>entre $46 y $58</strong>. Son mis expectativas, no una promesa. Yo empecé a comprar en $13 y creo que la tesis todavía tiene muchas piernas; el upside a un año es más modesto que otras tesis mías, pero el runway multi-año sigue completo. El caso bear tiene colchón: la empresa ya es rentable, hay ~$6 por acción de tangible book y $32.9M de NOLs federales que escudan impuestos (<a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a>). Y de referencia externa, un <a href="https://seekingalpha.com/article/4919111-sifco-industries-aerospace-turnaround-still-looks-undervalued" target="_blank" rel="noopener">autor de Seeking Alpha</a> trae price target de $40 (un autor, no sell-side; no lo uso como ancla).</p>
+
+  <h2>8. Checklist Micro Capo: 7.5 / 10</h2>
+  <div class="fig"><img src="tbl_checklist_es.png" alt="Checklist Micro Capo" loading="lazy"></div>
+  <p>Clasificación: transición de valor a calidad / turnaround con optionality de defensa. La nota de los pilares financiero y de riesgo es lo que evita que sea un 9.</p>
+
+  <h2>9. Catalizadores</h2>
+  <div class="fig"><img src="tbl_catalysts_es.png" alt="Catalizadores" loading="lazy"></div>
+  <ul>
+    <li><strong>Q3 FY2026 (esperado ~13-ago-2026).</strong> El siguiente juez. Si el backlog sigue arriba y el gross margin se sostiene arriba de 20%, la tesis multi-año se afianza.</li>
+    <li><strong>Primer año completo de utilidad en casi una década (10-K de diciembre 2026).</strong> Un cambio de narrativa que puede atraer capital nuevo.</li>
+    <li><strong>Guidance o cobertura.</strong> Si SIF empieza a hacer calls, dar guidance o atraer un analista, se cierra el descuento de iliquidez.</li>
+    <li><strong>M&amp;A.</strong> CEO de 82 años (edad según el <a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058407/sif-20251222.htm" target="_blank" rel="noopener">proxy</a>) con historial de exits, un mercado de defensa caliente, y un negocio ya inflexionado con balance limpio. Fue objetivo de adquisición en 2023-24.</li>
+    <li><strong>El bill de reconciliación de $350B.</strong> Si pasa, valida los números de FY27; si no, hay que recortar el escenario.</li>
+  </ul>
+
+  <h2>10. Riesgos</h2>
+  <div class="fig"><img src="tbl_risks_es.png" alt="Riesgos" loading="lazy"></div>
+  <p>El que más me pesa: el turnaround todavía es joven. Tres o cuatro trimestres buenos no son una tendencia confirmada tras años de pérdidas, y con ~5M de acciones flotantes cualquier tropiezo se mueve fuerte. El hueco del F/A-18 (la línea cierra en primavera 2027 y SIF nunca dijo cuánto revenue le pesa) es el mayor unknown, aunque ya está entrando a los números, lo cual de-riesga.</p>
+
+  <h2>11. Por qué la tengo</h2>
+  <p>Empecé a comprar a $13, pero mi precio medio quedó en como $17 porque fui sumando conforme la tesis se confirmaba. Muchas veces prefiero promediar a la alza que "promierdar" a la baja. Traía un plan de seguir sumando hasta llevarla a 10% del portafolio. Entré porque el setup me gustó: una forja crítica de defensa saliendo de un turnaround real, con operating leverage confirmado y un backlog acelerando, todavía barata contra sus comparables.</p>
+  <p>Lo que me mantiene dentro es que lo peor ya pasó. Limpiaron el balance, volvieron a ganar dinero, y le pegaron a un ciclo de defensa metido en contratos a varios años, no en promesas. Pero soy honesto conmigo mismo: a $23 esto ya no es la ganga de info arbitrage que compré. El re-rate ya ocurrió en buena parte, y de aquí en adelante el que manda es la ejecución. Por eso mi add depende de que FY27-28 entregue los $1.90 a $2.30 de EPS, y el primer juez es el Q3 de agosto.</p>
+
+  <h2>12. Conclusión</h2>
+  <p>El mercado pasó años preciando a SIF por lo que fue: un perdedor crónico sin cobertura. Lo que muestran los filings es un forjador de defensa que ya inflexionó, ganando márgenes que un año antes no existían, con un backlog récord y demanda contractual hasta 2030 en casi todos sus programas. Hoy pago como <strong>12 veces mis utilidades de 2027</strong>, y Peter Lynch decía que menos de 15x forward ya era muy barato. Además, muchas veces prefiero pagar múltiplos más altos por empresas que lo valen que pagar 5x u 8x utilidades por empresas que pueden traer más riesgo. La calidad se paga.</p>
+  <p>La parte que lo protege: ya es rentable, genera caja, pagó la mitad de su deuda en seis meses, tiene ~$6 por acción de tangible book y $32.9M de NOLs de colchón, y la capacidad de forja de toda la industria seguirá apretada al menos hasta 2028. Mi número para 2027 es cerca de $31, con el bull en $44 si el margen aguanta y el bear en $14 si el turnaround tropieza, y para 2028 el rango a 20-25x es $46-58. Ponderado sigo viendo asimetría a favor, pero ahora es una historia de mostrar ejecución, no de comprar una ganga dormida.</p>
+
+  <div class="cta"><span>¿Quieres seguir cada movimiento en tiempo real?</span><a href="https://whop.com/the-micro-capo-c69a/tmc-comunidad/" target="_blank" rel="noopener">Entra al Discord →</a></div>
+
+  <hr>
+  <h3>Fuentes</h3>
+  <ul class="srcs">
+    <li>Cifras de la empresa: <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000018/sif-20260331.htm" target="_blank" rel="noopener">10-Q Q2 FY2026 (3/31/26)</a> · <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000011/" target="_blank" rel="noopener">10-Q Q1 FY2026</a> · <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016825000032/" target="_blank" rel="noopener">10-Q Q3 FY2025</a> · <a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058405/" target="_blank" rel="noopener">10-K FY2025</a> · <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016824000060/" target="_blank" rel="noopener">10-K FY2024</a> · <a href="https://data.sec.gov/api/xbrl/companyconcept/CIK0000090168/us-gaap/RevenueRemainingPerformanceObligation.json" target="_blank" rel="noopener">serie de backlog (XBRL, data.sec.gov)</a></li>
+    <li>No-GAAP (EBITDA ajustado): <a href="https://www.sec.gov/Archives/edgar/data/90168/000009016826000019/ex991_sif03312026xpressrel.htm" target="_blank" rel="noopener">press release Q2 FY2026 (exhibit del 8-K)</a></li>
+    <li>Gobierno corporativo: <a href="https://www.sec.gov/Archives/edgar/data/90168/000162828025058407/sif-20251222.htm" target="_blank" rel="noopener">DEF 14A dic-2025</a> (edad del CEO, bios, insiders 16.66%, accionistas 5%+)</li>
+    <li>Precio y liquidez: precio de mercado del 20-jul-2026 ($23.07; ~$2.3M/día de volumen promedio 90 días)</li>
+    <li>Terceros (señalados como tales en el texto): <a href="https://seekingalpha.com/article/4919111-sifco-industries-aerospace-turnaround-still-looks-undervalued" target="_blank" rel="noopener">nota de Seeking Alpha, Buy PT $40</a> · <a href="https://www.bcg.com/publications/2024/fixing-whats-broken-in-aerospace-supply-chain" target="_blank" rel="noopener">BCG, capacidad de forja (2024)</a> · artículo de un analista en una comunidad privada sobre el presupuesto FY2027 (P-1), no compartible públicamente · múltiplos de HEI/HWM al corte de jun-2026</li>
+  </ul>
+  <p class="legal">Aviso legal. Esto es mi opinión personal con fines educativos. No es asesoría de inversión ni recomendación de compra o venta. Mantengo una posición larga en SIF y puedo cambiarla sin aviso. Las microcaps son riesgosas, incluida la pérdida total. Haz tu propia tarea.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> The Micro Capo · @themicrocapo</span>
+    <a href="../../">themicrocapo.com</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
