@@ -148,7 +148,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 /* ---------- tesis table ---------- */
 .tt-card{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 24px 60px -42px rgba(10,15,29,.5)}
 .tt-scroll{overflow-x:auto}
-.tt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:760px}
+.tt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:840px}
 .tt th{position:sticky;top:0;background:var(--bg-soft);text-align:left;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding:13px 10px;border-bottom:1px solid var(--line-2);cursor:pointer;user-select:none;white-space:nowrap}
 .tt th:hover{color:var(--ink)}
 .tt th .arr{font-size:.62rem;margin-left:4px;opacity:.55}
@@ -501,7 +501,7 @@ const I18N = {
     tt_ticker:"Ticker", tt_name:"Empresa", tt_date:"Fecha", tt_type:"Tipo", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entrada", tt_cur:"Actual", tt_ret:"Retorno",
     tt_intact:"Intacta", tt_risk:"Riesgo", tt_tesis:"TESIS",
-    tt_note:"Fecha = publicación de la tesis. Entrada = mi precio de primera compra; Actual = último snapshot. Haz clic en la fila o el botón TESIS para leer el análisis completo.",
+    tt_note:"Fecha = publicación de la tesis. Entrada = mi precio de primera compra; Actual = último snapshot; Retorno = desde mi entrada. Haz clic en la fila o el botón TESIS para leer el análisis completo.",
     foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
     disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
     read:"Leer"
@@ -531,7 +531,7 @@ const I18N = {
     tt_ticker:"Ticker", tt_name:"Name", tt_date:"Date", tt_type:"Type", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entry", tt_cur:"Current", tt_ret:"Return",
     tt_intact:"Intact", tt_risk:"Risk", tt_tesis:"THESIS",
-    tt_note:"Date = thesis publication. Entry = my first-buy price; Current = last snapshot. Click the row or the THESIS tag to read the full write-up.",
+    tt_note:"Date = thesis publication. Entry = my first-buy price; Current = last snapshot; Return = since my entry. Click the row or the THESIS tag to read the full write-up.",
     foot_desc:"Microcap research. Ideas, not investment advice.",
     disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
     read:"Read"
@@ -659,11 +659,13 @@ function renderTheses(){
     {key:'status', label:t('tt_status'), num:false},
     {key:'sector', label:t('tt_sector'), num:false},
     {key:'entry',  label:t('tt_entry'),  num:true},
-    {key:'cur',    label:t('tt_cur'),    num:true}
+    {key:'cur',    label:t('tt_cur'),    num:true},
+    {key:'ret',    label:t('tt_ret'),    num:true}
   ];
   const val=(r,k)=>{
     if(k==='sector') return tx(r.sector);
     if(k==='date') return r.date||'';
+    if(k==='ret') return r.cur/r.entry-1;
     return r[k];
   };
   const rows=[...TESIS].sort((a,b)=>{
@@ -680,6 +682,8 @@ function renderTheses(){
     const tk = live ? `<a href="${r.url}">${r.t}</a><span class="doc">${t('tt_tesis')}</span>` : r.t;
     const st = `<span class="pill ${r.status==='ok'?'ok':'risk'}">${r.status==='ok'?t('tt_intact'):t('tt_risk')}</span>`;
     const cad = r.cad ? `<span style="font-size:.7rem;color:var(--ink-mute)"> CAD</span>` : '';
+    const ret=(r.cur/r.entry-1)*100, rc=ret>=0?'up':'down';
+    const retTxt=(ret>=0?'+':'')+ret.toFixed(1).replace('.',LANG==='es'?',':'.')+'%';
     return `<tr class="${live?'linked':''}" ${live?`data-url="${r.url}"`:''}>
       <td class="tk">${tk}</td>
       <td class="nm">${r.name}</td>
@@ -689,13 +693,14 @@ function renderTheses(){
       <td class="mut">${tx(r.sector)}</td>
       <td class="num">$${r.entry.toFixed(2)}${cad}</td>
       <td class="num">$${r.cur.toFixed(2)}${cad}</td>
+      <td class="num rt ${rc}">${retTxt}</td>
     </tr>`;
   }).join('')}</tbody>`;
   const tbl=document.getElementById('tesisTable');
   tbl.innerHTML=head+body;
   tbl.querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{
     const k=th.dataset.k;
-    if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='date')?-1:1}; }
+    if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='date'||k==='ret')?-1:1}; }
     renderTheses();
   }));
   tbl.querySelectorAll('tr.linked').forEach(tr=>tr.addEventListener('click',e=>{
