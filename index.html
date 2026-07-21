@@ -274,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="socials" id="socials"></div>
     <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
-      <div class="stat"><b>16</b><span data-i18n="stat_strategies">microcaps core en cartera</span></div>
+      <div class="stat"><b>15</b><span data-i18n="stat_strategies">microcaps core en cartera</span></div>
       <div class="stat"><b>Top 10</b><span data-i18n="stat_holdings">posiciones en abierto</span></div>
       <div class="stat"><b>7d</b><span data-i18n="stat_cadence">entre snapshots</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
@@ -397,9 +397,9 @@ const PORTFOLIOS = [
     tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
     tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 16 posiciones core: pocas que se rompan, varias que se multipliquen.",
-           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 16 core positions: few that break, several that compound."},
-    extra:{v:"16", l:{es:"posiciones core",en:"core positions"}},
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 15 posiciones core: pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 15 core positions: few that break, several that compound."},
+    extra:{v:"15", l:{es:"posiciones core",en:"core positions"}},
     extra2:{v:"0%", l:{es:"margen",en:"margin"}},
     updated:"2026-07-18",
     limit:10,
@@ -411,11 +411,11 @@ const PORTFOLIOS = [
       {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
       {t:"HMM.A", n:{es:"Eléctrico / industrial",en:"Electrical / industrials"}},
       {t:"ACFN",  n:{es:"Monitoreo remoto / IoT",en:"Remote monitoring / IoT"}},
-      {t:"OPXS",  n:{es:"Defensa / óptica",en:"Defense / optics"}},
       {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}},
       {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
       {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
-      {t:"ONDS",  n:{es:"Drones / redes privadas",en:"Drones / private networks"}}
+      {t:"ONDS",  n:{es:"Drones / redes privadas",en:"Drones / private networks"}},
+      {t:"FSI",   n:{es:"Químicos especiales",en:"Specialty chemicals"}}
     ]
   }
 ];
@@ -434,7 +434,6 @@ const TESIS = [
   {t:"SIF",   name:"SIFCO Industries",        date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Industrial / aeroespacial",en:"Industrials / aerospace"},   entry:16.96, cur:22.50, ret:32.7,  cad:false, url:""},
   {t:"HMM.A", name:"Hammond Mfg",             date:"2026-05", type:"Compounder",        status:"ok",   sector:{es:"Industrial / eléctrico",en:"Industrials / electrical"},     entry:15.70, cur:17.50, ret:11.5,  cad:true,  url:""},
   {t:"ACFN",  name:"Acorn Energy",            date:"2026-04", type:"GARP",              status:"ok",   sector:{es:"Tecnología / IoT",en:"Technology / IoT"},                   entry:18.66, cur:20.18, ret:8.2,   cad:false, url:""},
-  {t:"OPXS",  name:"Optex Systems",           date:"",        type:"GARP",              status:"ok",   sector:{es:"Defensa / óptica",en:"Defense / optics"},                   entry:12.15, cur:12.76, ret:5.0,   cad:false, url:""},
   {t:"TPC",   name:"Tutor Perini",            date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Construcción",en:"Construction"},                           entry:76.01, cur:78.62, ret:3.4,   cad:false, url:""},
   {t:"LEAT",  name:"Leatt Corporation",       date:"2026-06", type:"Turnaround",        status:"ok",   sector:{es:"Consumo / protección",en:"Consumer / protective gear"},     entry:12.01, cur:12.34, ret:2.7,   cad:false, url:"tesis/leat/"},
   {t:"PPIH",  name:"Perma-Pipe Intl",         date:"2026-06", type:"Growth",            status:"ok",   sector:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, entry:25.09, cur:25.42, ret:1.3, cad:false, url:""},
@@ -494,7 +493,7 @@ const I18N = {
     articles_more:"Más artículos y reportes viven en Substack →",
     books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
     thesis_eyebrow:"Deep dives", thesis_title:"Tesis de inversión",
-    thesis_sub:"Las 16 posiciones core del portafolio, con su tesis a profundidad siguiendo el Micro Capo Checklist. Cada empresa irá recibiendo su tesis completa en español; el botón azul marca las ya publicadas.",
+    thesis_sub:"Las 15 posiciones core del portafolio, con su tesis a profundidad siguiendo el Micro Capo Checklist. Cada empresa irá recibiendo su tesis completa en español; el botón azul marca las ya publicadas.",
     thesis_more:"¿Prefieres leerlas en inglés? Viven en Substack →",
     tt_ticker:"Ticker", tt_name:"Empresa", tt_date:"Fecha", tt_type:"Tipo", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entrada", tt_cur:"Actual", tt_ret:"Retorno",
@@ -523,7 +522,7 @@ const I18N = {
     articles_more:"More articles and reports live on Substack →",
     books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
     thesis_eyebrow:"Deep dives", thesis_title:"Investment theses",
-    thesis_sub:"The portfolio's 16 core positions, each getting its in-depth thesis following the Micro Capo Checklist. Spanish theses are published here; the blue tag marks the ones already live.",
+    thesis_sub:"The portfolio's 15 core positions, each getting its in-depth thesis following the Micro Capo Checklist. Spanish theses are published here; the blue tag marks the ones already live.",
     thesis_more:"Prefer English? They live on Substack →",
     tt_ticker:"Ticker", tt_name:"Name", tt_date:"Date", tt_type:"Type", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entry", tt_cur:"Current", tt_ret:"Return",
