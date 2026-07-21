@@ -129,6 +129,22 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .hold td.rt{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 .hold td.rt.up{color:var(--green)} .hold td.rt.down{color:var(--red)}
 .pf-note{padding:0 30px 26px;font-size:.84rem;color:var(--ink-mute)}
+.pf-viz{display:flex;gap:34px;flex-wrap:wrap;align-items:flex-start;padding:10px 30px 6px;border-top:1px solid var(--line);margin-top:6px}
+.pf-viz h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;margin:16px 0 14px}
+.viz-donut{flex:1;min-width:300px}
+.viz-donut .dwrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.viz-donut svg{width:190px;height:190px;flex:none}
+.dlegend{list-style:none;margin:0;padding:0;font-size:.86rem}
+.dlegend li{display:flex;align-items:center;gap:9px;padding:3px 0;color:var(--ink)}
+.dlegend .sw{width:11px;height:11px;border-radius:3px;flex:none}
+.dlegend b{font-variant-numeric:tabular-nums;margin-left:auto;padding-left:16px;font-weight:700;color:var(--ink)}
+.viz-bio{flex:1;min-width:280px}
+.viz-bio table{width:100%;border-collapse:collapse;font-size:.9rem}
+.viz-bio th{text-align:left;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:600;padding:8px 8px;border-bottom:1px solid var(--line)}
+.viz-bio td{padding:9px 8px;border-bottom:1px solid var(--line)}
+.viz-bio tr:last-child td{border-bottom:0}
+.viz-bio td.tk{font-weight:700;color:var(--blue)}
+@media(max-width:640px){.pf-viz{padding:6px 16px 4px}}
 .pf-empty{padding:34px 30px;color:var(--ink-mute);font-size:.95rem;text-align:center}
 .pf-cta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin:6px 30px 24px;padding:18px 22px;background:var(--bg-ink);border-radius:14px;color:#fff}
 .pf-cta span{font-weight:600;font-size:1rem;color:#fff}
@@ -140,7 +156,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 /* ---------- tesis table ---------- */
 .tt-card{border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 24px 60px -42px rgba(10,15,29,.5)}
 .tt-scroll{overflow-x:auto}
-.tt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:880px}
+.tt{width:100%;border-collapse:collapse;font-size:.88rem;min-width:760px}
 .tt th{position:sticky;top:0;background:var(--bg-soft);text-align:left;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding:13px 10px;border-bottom:1px solid var(--line-2);cursor:pointer;user-select:none;white-space:nowrap}
 .tt th:hover{color:var(--ink)}
 .tt th .arr{font-size:.62rem;margin-left:4px;opacity:.55}
@@ -274,8 +290,8 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="socials" id="socials"></div>
     <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
-      <div class="stat"><b>15</b><span data-i18n="stat_strategies">microcaps core en cartera</span></div>
-      <div class="stat"><b>Top 10</b><span data-i18n="stat_holdings">posiciones en abierto</span></div>
+      <div class="stat"><b>21</b><span data-i18n="stat_strategies">microcaps en cartera</span></div>
+      <div class="stat"><b>Top 5</b><span data-i18n="stat_holdings">posiciones en abierto</span></div>
       <div class="stat"><b>7d</b><span data-i18n="stat_cadence">entre snapshots</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
     </div>
@@ -397,27 +413,46 @@ const PORTFOLIOS = [
     tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
     tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 15 posiciones core: pocas que se rompan, varias que se multipliquen.",
-           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 15 core positions: few that break, several that compound."},
-    extra:{v:"15", l:{es:"posiciones core",en:"core positions"}},
-    extra2:{v:"0%", l:{es:"margen",en:"margin"}},
-    updated:"2026-07-18",
-    limit:10,
-    note:{es:"Top 10 del core, ordenadas por rendimiento. La cartera completa y cada movimiento, en el Discord.",
-          en:"Top 10 from the core book, sorted by performance. Full book and every move in the Discord."},
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 21 posiciones: 15 core + 6 bio; pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 21 positions: 15 core + 6 bio; few that break, several that compound."},
+    extra:{v:"21", l:{es:"posiciones · 15 core + 6 bio",en:"positions · 15 core + 6 bio"}},
+    extra2:{v:"Mar 2025", l:{es:"cartera pública desde",en:"public since"}},
+    updated:"2026-07-21",
+    limit:5,
+    note:{es:"Top 5 del core por peso en cartera. Cartera pública desde marzo de 2025. La cartera completa y cada movimiento, en el Discord.",
+          en:"Top 5 core positions by portfolio weight. Book public since March 2025. Full book and every move in the Discord."},
     holdings:[
-      {t:"IFA",   n:{es:"Textil-tech",en:"Textile-tech"}},
-      {t:"TTZ",   n:{es:"IoT / telemetría",en:"IoT / telemetry"}},
-      {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
-      {t:"HMM.A", n:{es:"Eléctrico / industrial",en:"Electrical / industrials"}},
-      {t:"ACFN",  n:{es:"Monitoreo remoto / IoT",en:"Remote monitoring / IoT"}},
-      {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}},
-      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
       {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
       {t:"ONDS",  n:{es:"Drones / redes privadas",en:"Drones / private networks"}},
-      {t:"FSI",   n:{es:"Químicos especiales",en:"Specialty chemicals"}}
+      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
+      {t:"OCC",   n:{es:"Fibra óptica",en:"Fiber optics"}},
+      {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}}
     ]
   }
+];
+
+/* ============================================================
+   SECTORES  —  distribución por peso, core + bio (edita con cada snapshot)
+   Paleta categórica validada (CVD-safe) sobre blanco
+   ============================================================ */
+const SECTORS = [
+  {label:{es:"Bio / salud",en:"Bio / healthcare"},                              pct:31.1, color:"#d84a8b"},
+  {label:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, pct:22.7, color:"#2b53ff"},
+  {label:{es:"Tecnología",en:"Technology"},                                     pct:21.2, color:"#e8a13c"},
+  {label:{es:"Consumo",en:"Consumer"},                                          pct:13.4, color:"#129b6b"},
+  {label:{es:"Energía",en:"Energy"},                                            pct:9.1,  color:"#8a63d2"},
+  {label:{es:"Telecom",en:"Telecom"},                                           pct:1.6,  color:"#59b7e8"},
+  {label:{es:"Químicos especiales",en:"Specialty chemicals"},                   pct:0.9,  color:"#c8532e"}
+];
+
+/* Bloque bio — se muestra como tabla aparte junto a la gráfica */
+const BIO = [
+  {t:"WGS",  n:{es:"Genómica / diagnóstico",en:"Genomics / diagnostics"}},
+  {t:"CCCC", n:{es:"Biotech / oncología",en:"Biotech / oncology"}},
+  {t:"XGN",  n:{es:"Diagnóstico autoinmune",en:"Autoimmune diagnostics"}},
+  {t:"STIM", n:{es:"Dispositivos médicos",en:"Medical devices"}},
+  {t:"AVR",  n:{es:"Dispositivos / válvulas cardiacas",en:"Devices / heart valves"}},
+  {t:"QTRX", n:{es:"Proteómica / diagnóstico",en:"Proteomics / diagnostics"}}
 ];
 
 /* ============================================================
@@ -427,23 +462,11 @@ const PORTFOLIOS = [
    - status: "ok" (Intacta) | "risk" (Riesgo)
    - date: mes de entrada ("2026-04") o "" si falta
    ============================================================ */
-const TESIS_UPDATED = "2026-07-18";
+const TESIS_UPDATED = "2026-07-21";
+/* Una fila por tesis PUBLICADA. date = fecha de publicación de la tesis.
+   entry = precio cuando se publicó (no el promedio del broker). Sin retornos. */
 const TESIS = [
-  {t:"IFA",   name:"iFabric Corp",            date:"",        type:"Growth",            status:"ok",   sector:{es:"Consumo / textil-tech",en:"Consumer / textile-tech"},      entry:2.05,  cur:5.10,  ret:149.4, cad:true,  url:""},
-  {t:"TTZ",   name:"Total Telcom",            date:"",        type:"Value",             status:"ok",   sector:{es:"Tecnología / telecom",en:"Technology / telecom"},          entry:0.26,  cur:0.50,  ret:88.8,  cad:true,  url:""},
-  {t:"SIF",   name:"SIFCO Industries",        date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Industrial / aeroespacial",en:"Industrials / aerospace"},   entry:16.96, cur:22.50, ret:32.7,  cad:false, url:""},
-  {t:"HMM.A", name:"Hammond Mfg",             date:"2026-05", type:"Compounder",        status:"ok",   sector:{es:"Industrial / eléctrico",en:"Industrials / electrical"},     entry:15.70, cur:17.50, ret:11.5,  cad:true,  url:""},
-  {t:"ACFN",  name:"Acorn Energy",            date:"2026-04", type:"GARP",              status:"ok",   sector:{es:"Tecnología / IoT",en:"Technology / IoT"},                   entry:18.66, cur:20.18, ret:8.2,   cad:false, url:""},
-  {t:"TPC",   name:"Tutor Perini",            date:"",        type:"Turnaround",        status:"ok",   sector:{es:"Construcción",en:"Construction"},                           entry:76.01, cur:78.62, ret:3.4,   cad:false, url:""},
-  {t:"LEAT",  name:"Leatt Corporation",       date:"2026-06", type:"Turnaround",        status:"ok",   sector:{es:"Consumo / protección",en:"Consumer / protective gear"},     entry:12.01, cur:12.34, ret:2.7,   cad:false, url:"tesis/leat/"},
-  {t:"PPIH",  name:"Perma-Pipe Intl",         date:"2026-06", type:"Growth",            status:"ok",   sector:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, entry:25.09, cur:25.42, ret:1.3, cad:false, url:""},
-  {t:"ONDS",  name:"Ondas Holdings",          date:"",        type:"Growth",            status:"ok",   sector:{es:"Tecnología / drones",en:"Technology / drones"},             entry:6.73,  cur:6.47,  ret:-3.8,  cad:false, url:""},
-  {t:"FSI",   name:"Flexible Solutions Intl", date:"",        type:"Value",             status:"ok",   sector:{es:"Químicos especiales",en:"Specialty chemicals"},             entry:6.19,  cur:5.94,  ret:-4.1,  cad:false, url:""},
-  {t:"KLNG",  name:"Koil Energy Solutions",   date:"",        type:"Growth",            status:"ok",   sector:{es:"Energía / servicios",en:"Energy services"},                 entry:2.42,  cur:2.31,  ret:-4.5,  cad:false, url:""},
-  {t:"OCC",   name:"Optical Cable Corp",      date:"",        type:"Value",             status:"ok",   sector:{es:"Tecnología / fibra óptica",en:"Technology / fiber optics"}, entry:15.95, cur:14.70, ret:-7.8,  cad:false, url:""},
-  {t:"TGEN",  name:"Tecogen",                 date:"",        type:"Growth",            status:"ok",   sector:{es:"Energía / cooling",en:"Energy / cooling"},                  entry:4.10,  cur:3.55,  ret:-13.4, cad:false, url:""},
-  {t:"MOJO",  name:"Equator Beverage Co",     date:"",        type:"Special Situation", status:"risk", sector:{es:"Consumo / bebidas",en:"Consumer / beverages"},              entry:1.33,  cur:0.86,  ret:-34.9, cad:false, url:""},
-  {t:"KTEL",  name:"KonaTel",                 date:"",        type:"Special Situation", status:"risk", sector:{es:"Telecom",en:"Telecom"},                                     entry:0.33,  cur:0.22,  ret:-35.5, cad:false, url:""}
+  {t:"LEAT", name:"Leatt Corporation", date:"2026-07", type:"Turnaround", status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:12.78, cad:false, url:"tesis/leat/"}
 ];
 
 /* ============================================================
@@ -481,24 +504,25 @@ const I18N = {
     hero_slogan:"Donde nadie mira, ahí está el alfa.",
     hero_tag:"Un portafolio de microcaps a largo plazo, en abierto. Comparto lo que tengo, lo actualizo cada semana y explico cada movimiento.",
     socials_note:"El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.",
-    stat_strategies:"microcaps core en cartera", stat_holdings:"posiciones en abierto", stat_cadence:"entre snapshots", stat_transparency:"cartera transparente",
+    stat_strategies:"microcaps en cartera", stat_holdings:"posiciones en abierto", stat_cadence:"entre snapshots", stat_transparency:"cartera transparente",
     pf_eyebrow:"Track record", pf_title:"Portafolio público",
     pf_sub:"Mi cartera core de microcaps a largo plazo. Lo que tengo, en abierto.",
     pf_lag:"El portafolio es un snapshot que actualizo cada ~7 días. Los precios se mueven a diario, así que un pequeño lag es normal. Para seguir cada movimiento en tiempo real, entra al Discord.",
     pf_disc:"Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.",
     pf_updated:"Actualizado", pf_audit:"Track record auditado", pf_pending:"Composición publicada el primer lunes de cada mes.",
+    pf_sector_title:"Distribución por sector", pf_bio_title:"El bloque bio",
     pf_cta:"¿Quieres seguir los movimientos en tiempo real?", pf_cta_btn:"Entra al Discord",
     th_ticker:"Ticker", th_name:"Empresa / sector", th_weight:"Peso", th_return:"Retorno", th_more:"Ver la cartera completa en el Discord",
     articles_eyebrow:"Escritos", articles_title:"Artículos", articles_sub:"Notas de mercado, frameworks y lecciones de la trinchera de los microcaps.",
     articles_more:"Más artículos y reportes viven en Substack →",
     books_eyebrow:"Biblioteca", books_title:"Libros recomendados", books_sub:"Los libros que moldearon mi forma de invertir en compañías pequeñas.",
     thesis_eyebrow:"Deep dives", thesis_title:"Tesis de inversión",
-    thesis_sub:"Las 15 posiciones core del portafolio, con su tesis a profundidad siguiendo el Micro Capo Checklist. Cada empresa irá recibiendo su tesis completa en español; el botón azul marca las ya publicadas.",
+    thesis_sub:"Mis tesis a profundidad, siguiendo el Micro Capo Checklist: negocio, números, valuación, catalizadores y riesgos. Voy publicando una por una; aquí aparecen conforme salen.",
     thesis_more:"¿Prefieres leerlas en inglés? Viven en Substack →",
     tt_ticker:"Ticker", tt_name:"Empresa", tt_date:"Fecha", tt_type:"Tipo", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entrada", tt_cur:"Actual", tt_ret:"Retorno",
     tt_intact:"Intacta", tt_risk:"Riesgo", tt_tesis:"TESIS",
-    tt_note:"Precios promedio de entrada del broker vs precio del último snapshot. HMM.A, IFA y TTZ cotizan en CAD. Haz clic en los encabezados para ordenar; las filas con botón TESIS llevan al análisis completo.",
+    tt_note:"Fecha = publicación de la tesis. Entrada = precio de la acción al publicarla; Actual = último snapshot. Haz clic en la fila o el botón TESIS para leer el análisis completo.",
     foot_desc:"Research de microcaps. Ideas, no consejos de inversión.",
     disclaimer:"Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.",
     read:"Leer"
@@ -510,24 +534,25 @@ const I18N = {
     hero_slogan:"Where no one's looking, that's where the alpha is.",
     hero_tag:"One long-term microcap portfolio, in the open. I share what I hold, update it weekly and explain every move.",
     socials_note:"Discord access is a monthly membership via Whop. That's where I post every move in real time.",
-    stat_strategies:"core microcaps in the book", stat_holdings:"positions in the open", stat_cadence:"between snapshots", stat_transparency:"transparent book",
+    stat_strategies:"microcaps in the book", stat_holdings:"positions in the open", stat_cadence:"between snapshots", stat_transparency:"transparent book",
     pf_eyebrow:"Track record", pf_title:"Public portfolio",
     pf_sub:"My core long-term microcap book. What I hold, in the open.",
     pf_lag:"The portfolio is a snapshot I update about every 7 days. Prices move daily, so a small lag is normal. To follow every move in real time, join the Discord.",
     pf_disc:"Portfolios shared for educational purposes. Not investment advice. Past performance does not guarantee future results.",
     pf_updated:"Updated", pf_audit:"Audited track record", pf_pending:"Holdings published the first Monday of each month.",
+    pf_sector_title:"Sector allocation", pf_bio_title:"The bio block",
     pf_cta:"Want to follow every move in real time?", pf_cta_btn:"Join the Discord",
     th_ticker:"Ticker", th_name:"Company / sector", th_weight:"Weight", th_return:"Return", th_more:"See the full book in the Discord",
     articles_eyebrow:"Writing", articles_title:"Articles", articles_sub:"Market notes, frameworks and lessons from the microcap trenches.",
     articles_more:"More articles and reports live on Substack →",
     books_eyebrow:"Library", books_title:"Recommended books", books_sub:"The books that shaped how I invest in small companies.",
     thesis_eyebrow:"Deep dives", thesis_title:"Investment theses",
-    thesis_sub:"The portfolio's 15 core positions, each getting its in-depth thesis following the Micro Capo Checklist. Spanish theses are published here; the blue tag marks the ones already live.",
+    thesis_sub:"My in-depth theses, following the Micro Capo Checklist: business, numbers, valuation, catalysts and risks. Published one by one; they show up here as they go live.",
     thesis_more:"Prefer English? They live on Substack →",
     tt_ticker:"Ticker", tt_name:"Name", tt_date:"Date", tt_type:"Type", tt_status:"Status", tt_sector:"Sector",
     tt_entry:"Entry", tt_cur:"Current", tt_ret:"Return",
     tt_intact:"Intact", tt_risk:"Risk", tt_tesis:"THESIS",
-    tt_note:"Broker average entry price vs last snapshot price. HMM.A, IFA and TTZ trade in CAD. Click headers to sort; rows with a THESIS tag link to the full write-up.",
+    tt_note:"Date = thesis publication. Entry = share price at publication; Current = last snapshot. Click the row or the THESIS tag to read the full write-up.",
     foot_desc:"Microcap research. Ideas, not investment advice.",
     disclaimer:"Disclaimer: The Micro Capo shares ideas, portfolios and research for educational and informational purposes only. This is not financial, legal or tax advice. Investing in microcaps and trading options carries a high risk of total loss. Do your own research and consult a professional before making decisions. The author holds positions in the companies mentioned.",
     read:"Read"
@@ -570,6 +595,28 @@ function renderFootSoc(){
     .map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${k}">${ICON[k]}</a>`).join('');
 }
 
+/* ---------- donut (distribución por sector) ---------- */
+function buildDonut(slices){
+  const size=190, cx=size/2, cy=size/2, r=76, w=30;
+  let a0=-Math.PI/2, paths='', labels='';
+  slices.forEach(s=>{
+    const a1=a0 + (s.pct/100)*Math.PI*2;
+    const large=(a1-a0)>Math.PI?1:0;
+    const x0o=cx+r*Math.cos(a0), y0o=cy+r*Math.sin(a0);
+    const x1o=cx+r*Math.cos(a1), y1o=cy+r*Math.sin(a1);
+    const ri=r-w;
+    const x1i=cx+ri*Math.cos(a1), y1i=cy+ri*Math.sin(a1);
+    const x0i=cx+ri*Math.cos(a0), y0i=cy+ri*Math.sin(a0);
+    paths+=`<path d="M${x0o.toFixed(1)},${y0o.toFixed(1)} A${r},${r} 0 ${large} 1 ${x1o.toFixed(1)},${y1o.toFixed(1)} L${x1i.toFixed(1)},${y1i.toFixed(1)} A${ri},${ri} 0 ${large} 0 ${x0i.toFixed(1)},${y0i.toFixed(1)} Z" fill="${s.color}" stroke="#fff" stroke-width="2"><title>${tx(s.label)}: ${s.pct}%</title></path>`;
+    if(s.pct>=8){
+      const am=(a0+a1)/2, rl=r-w/2;
+      labels+=`<text x="${(cx+rl*Math.cos(am)).toFixed(1)}" y="${(cy+rl*Math.sin(am)+3).toFixed(1)}" font-size="10.5" font-weight="700" text-anchor="middle" fill="#fff">${Math.round(s.pct)}%</text>`;
+    }
+    a0=a1;
+  });
+  return `<svg viewBox="0 0 ${size} ${size}" role="img" aria-label="sector allocation">${paths}${labels}</svg>`;
+}
+
 /* ---------- portfolios ---------- */
 function renderPortfolios(){
   document.getElementById('pfTabs').innerHTML = PORTFOLIOS.length>1 ? PORTFOLIOS.map((p,i)=>
@@ -596,19 +643,31 @@ function renderPortfolios(){
   const disc = CONFIG.links.discord || '#';
   const cta = `<div class="pf-cta"><span>${t('pf_cta')}</span><a class="pf-cta-btn" href="${disc}" target="_blank" rel="noopener">${t('pf_cta_btn')} →</a></div>`;
 
+  const donut = buildDonut(SECTORS);
+  const legend = `<ul class="dlegend">${SECTORS.map(s=>
+    `<li><span class="sw" style="background:${s.color}"></span>${tx(s.label)}<b>${s.pct.toFixed(1).replace('.',LANG==='es'?',':'.')}%</b></li>`).join('')}</ul>`;
+  const bioRows = BIO.map(b=>`<tr><td class="tk">${b.t}</td><td>${tx(b.n)}</td></tr>`).join('');
+  const viz = `<div class="pf-viz">
+    <div class="viz-donut"><h4>${t('pf_sector_title')}</h4><div class="dwrap">${donut}${legend}</div></div>
+    <div class="viz-bio"><h4>${t('pf_bio_title')}</h4><table>
+      <thead><tr><th>${t('th_ticker')}</th><th>${t('th_name')}</th></tr></thead>
+      <tbody>${bioRows}</tbody></table></div>
+  </div>`;
+
   document.getElementById('pfPanel').innerHTML = `<div class="pf-panel">
     <div class="pf-headrow">
       <div class="pf-philo"><h3>${tx(p.title)}</h3><p>${tx(p.philo)}</p></div>
       <div class="pf-stats">${stats.join('')}</div>
     </div>
     ${holds}
+    ${viz}
     ${cta}
     <p class="pf-note">${tx(p.note)} · ${t('pf_updated')}: ${fmtDate(p.updated)}</p>
   </div>`;
 }
 
 /* ---------- theses table ---------- */
-let TT_SORT = {key:'ret', dir:-1};
+let TT_SORT = {key:'date', dir:-1};
 function ttDateLabel(d){
   if(!d) return '—';
   const [y,m]=d.split('-');
@@ -625,8 +684,7 @@ function renderTheses(){
     {key:'status', label:t('tt_status'), num:false},
     {key:'sector', label:t('tt_sector'), num:false},
     {key:'entry',  label:t('tt_entry'),  num:true},
-    {key:'cur',    label:t('tt_cur'),    num:true},
-    {key:'ret',    label:t('tt_ret'),    num:true}
+    {key:'cur',    label:t('tt_cur'),    num:true}
   ];
   const val=(r,k)=>{
     if(k==='sector') return tx(r.sector);
@@ -646,7 +704,6 @@ function renderTheses(){
     const live=!!r.url;
     const tk = live ? `<a href="${r.url}">${r.t}</a><span class="doc">${t('tt_tesis')}</span>` : r.t;
     const st = `<span class="pill ${r.status==='ok'?'ok':'risk'}">${r.status==='ok'?t('tt_intact'):t('tt_risk')}</span>`;
-    const rc = r.ret>=0?'up':'down';
     const cad = r.cad ? `<span style="font-size:.7rem;color:var(--ink-mute)"> CAD</span>` : '';
     return `<tr class="${live?'linked':''}" ${live?`data-url="${r.url}"`:''}>
       <td class="tk">${tk}</td>
@@ -655,16 +712,15 @@ function renderTheses(){
       <td class="mut">${r.type}</td>
       <td>${st}</td>
       <td class="mut">${tx(r.sector)}</td>
-      <td class="num">${r.entry.toFixed(2)}${cad}</td>
-      <td class="num">${r.cur.toFixed(2)}${cad}</td>
-      <td class="num rt ${rc}">${(r.ret>=0?'+':'')+r.ret.toFixed(1).replace('.',LANG==='es'?',':'.')}%</td>
+      <td class="num">$${r.entry.toFixed(2)}${cad}</td>
+      <td class="num">$${r.cur.toFixed(2)}${cad}</td>
     </tr>`;
   }).join('')}</tbody>`;
   const tbl=document.getElementById('tesisTable');
   tbl.innerHTML=head+body;
   tbl.querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{
     const k=th.dataset.k;
-    if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='ret')?-1:1}; }
+    if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='date')?-1:1}; }
     renderTheses();
   }));
   tbl.querySelectorAll('tr.linked').forEach(tr=>tr.addEventListener('click',e=>{
