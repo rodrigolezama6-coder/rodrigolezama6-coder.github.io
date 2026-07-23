@@ -440,12 +440,13 @@ const SECTORS = [
    - status: "ok" (Intacta) | "risk" (Riesgo)
    - date: mes de entrada ("2026-04") o "" si falta
    ============================================================ */
-const TESIS_UPDATED = "2026-07-21";
+const TESIS_UPDATED = "2026-07-22";
 /* Una fila por tesis PUBLICADA. date = fecha de publicación de la tesis.
-   entry = precio cuando se publicó (no el promedio del broker). Sin retornos. */
+   entry = mi precio de primera compra. El retorno se calcula solo (cur/entry). */
 const TESIS = [
-  {t:"SIF",  name:"SIFCO Industries",  date:"2026-07", type:"Turnaround", status:"ok", sector:{es:"Industrial / aeroespacial y defensa",en:"Industrials / aerospace & defense"}, entry:13.00, cur:23.93, cad:false, url:"tesis/sif/"},
-  {t:"LEAT", name:"Leatt Corporation", date:"2026-07", type:"Turnaround", status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:12.78, cad:false, url:"tesis/leat/"}
+  {t:"SIF",  name:"SIFCO Industries",        date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Industrial / aeroespacial y defensa",en:"Industrials / aerospace & defense"}, entry:13.00, cur:26.16, cad:false, url:"tesis/sif/"},
+  {t:"LEAT", name:"Leatt Corporation",       date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:12.90, cad:false, url:"tesis/leat/"},
+  {t:"MOJO", name:"EQUATOR Beverage Co",     date:"2026-07", type:"Special Situation", status:"ok", sector:{es:"Consumo / bebidas funcionales",en:"Consumer / functional beverages"}, entry:1.33, cur:0.86, cad:false, url:"tesis/mojo/"}
 ];
 
 /* ============================================================
