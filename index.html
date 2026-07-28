@@ -277,7 +277,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="socials" id="socials"></div>
     <p class="socials-note" data-i18n="socials_note">El acceso al Discord es por membresía mensual vía Whop. Ahí publico cada movimiento en tiempo real.</p>
     <div class="stats">
-      <div class="stat"><b>21</b><span data-i18n="stat_strategies">microcaps en cartera</span></div>
+      <div class="stat"><b>16</b><span data-i18n="stat_strategies">microcaps en cartera</span></div>
       <div class="stat"><b>Top 5</b><span data-i18n="stat_holdings">posiciones en abierto</span></div>
       <div class="stat"><b>7d</b><span data-i18n="stat_cadence">entre snapshots</span></div>
       <div class="stat"><b>100%</b><span data-i18n="stat_transparency">cartera transparente</span></div>
@@ -400,20 +400,20 @@ const PORTFOLIOS = [
     tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
     tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 21 posiciones: 15 core + 6 bio; pocas que se rompan, varias que se multipliquen.",
-           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 21 positions: 15 core + 6 bio; few that break, several that compound."},
-    extra:{v:"21", l:{es:"posiciones · 15 core + 6 bio",en:"positions · 15 core + 6 bio"}},
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 16 posiciones: 14 core + 2 bio; pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 16 positions: 14 core + 2 bio; few that break, several that compound."},
+    extra:{v:"16", l:{es:"posiciones · 14 core + 2 bio",en:"positions · 14 core + 2 bio"}},
     extra2:{v:"Mar 2025", l:{es:"cartera pública desde",en:"public since"}},
-    updated:"2026-07-21",
+    updated:"2026-07-28",
     limit:5,
     note:{es:"Top 5 del core por peso en cartera. Cartera pública desde marzo de 2025. La cartera completa y cada movimiento, en el Discord.",
           en:"Top 5 core positions by portfolio weight. Book public since March 2025. Full book and every move in the Discord."},
     holdings:[
       {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
-      {t:"ONDS",  n:{es:"Drones / redes privadas",en:"Drones / private networks"}},
-      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
       {t:"OCC",   n:{es:"Fibra óptica",en:"Fiber optics"}},
-      {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}}
+      {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}},
+      {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
+      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}}
     ]
   }
 ];
@@ -423,13 +423,13 @@ const PORTFOLIOS = [
    Paleta categórica validada (CVD-safe) sobre blanco
    ============================================================ */
 const SECTORS = [
-  {label:{es:"Bio / salud",en:"Bio / healthcare"},                              pct:31.1, color:"#d84a8b"},
-  {label:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, pct:22.7, color:"#2b53ff"},
-  {label:{es:"Tecnología",en:"Technology"},                                     pct:21.2, color:"#e8a13c"},
-  {label:{es:"Consumo",en:"Consumer"},                                          pct:13.4, color:"#129b6b"},
-  {label:{es:"Energía",en:"Energy"},                                            pct:9.1,  color:"#8a63d2"},
-  {label:{es:"Telecom",en:"Telecom"},                                           pct:1.6,  color:"#59b7e8"},
-  {label:{es:"Químicos especiales",en:"Specialty chemicals"},                   pct:0.9,  color:"#c8532e"}
+  {label:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, pct:32.1, color:"#2b53ff"},
+  {label:{es:"Tecnología",en:"Technology"},                                     pct:18.4, color:"#e8a13c"},
+  {label:{es:"Bio / salud",en:"Bio / healthcare"},                              pct:17.5, color:"#d84a8b"},
+  {label:{es:"Consumo",en:"Consumer"},                                          pct:16.1, color:"#129b6b"},
+  {label:{es:"Energía",en:"Energy"},                                            pct:12.8, color:"#8a63d2"},
+  {label:{es:"Telecom",en:"Telecom"},                                           pct:2.1,  color:"#59b7e8"},
+  {label:{es:"Químicos especiales",en:"Specialty chemicals"},                   pct:1.0,  color:"#c8532e"}
 ];
 
 
