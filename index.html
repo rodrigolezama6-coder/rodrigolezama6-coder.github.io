@@ -161,7 +161,9 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);bac
 .tt tbody tr.linked{cursor:pointer}
 .tt td.tk{font-weight:800;color:var(--ink)}
 .tt td.tk a{color:var(--blue)}
-.tt td.tk .doc{font-size:.66rem;background:var(--blue);color:#fff;border-radius:6px;padding:2px 7px;margin-left:7px;font-weight:700;letter-spacing:.04em;vertical-align:1px}
+.tt th.lnk,.tt td.lnk{width:1%;white-space:nowrap;padding-left:0}
+.tt td.lnk .doc{display:inline-block;font-size:.64rem;background:var(--blue);color:#fff;border-radius:6px;padding:3px 8px;font-weight:700;letter-spacing:.05em}
+.tt td.lnk .doc:hover{text-decoration:none;opacity:.9}
 .tt td.nm{color:var(--ink)}
 .tt td.mut{color:var(--ink-mute);font-size:.88rem}
 .tt td.rt{font-weight:700}
@@ -656,6 +658,7 @@ function ttDateLabel(d){
 function renderTheses(){
   const cols=[
     {key:'t',      label:t('tt_ticker'), num:false},
+    {key:'doc',    label:'',             num:false, nosort:true},
     {key:'name',   label:t('tt_name'),   num:false},
     {key:'date',   label:t('tt_date'),   num:false},
     {key:'type',   label:t('tt_type'),   num:false},
@@ -677,18 +680,21 @@ function renderTheses(){
     return String(A).localeCompare(String(B))*TT_SORT.dir;
   });
   const head=`<thead><tr>${cols.map(c=>{
+    if(c.nosort) return `<th class="lnk"></th>`;
     const arr=(TT_SORT.key===c.key)?(TT_SORT.dir===1?'▲':'▼'):'↕';
     return `<th class="${c.num?'num':''}" data-k="${c.key}">${c.label}<span class="arr">${arr}</span></th>`;
   }).join('')}</tr></thead>`;
   const body=`<tbody>${rows.map(r=>{
     const live=!!r.url;
-    const tk = live ? `<a href="${r.url}">${r.t}</a><span class="doc">${t('tt_tesis')}</span>` : r.t;
+    const tk = live ? `<a href="${r.url}">${r.t}</a>` : r.t;
+    const doc = live ? `<a class="doc" href="${r.url}">${t('tt_tesis')}</a>` : '';
     const st = `<span class="pill ${r.status==='ok'?'ok':'risk'}">${r.status==='ok'?t('tt_intact'):t('tt_risk')}</span>`;
     const cad = r.cad ? `<span style="font-size:.7rem;color:var(--ink-mute)"> CAD</span>` : '';
     const ret=(r.cur/r.entry-1)*100, rc=ret>=0?'up':'down';
     const retTxt=(ret>=0?'+':'')+ret.toFixed(1).replace('.',LANG==='es'?',':'.')+'%';
     return `<tr class="${live?'linked':''}" ${live?`data-url="${r.url}"`:''}>
       <td class="tk">${tk}</td>
+      <td class="lnk">${doc}</td>
       <td class="nm">${r.name}</td>
       <td class="mut">${ttDateLabel(r.date)}</td>
       <td class="mut">${r.type}</td>
@@ -701,7 +707,7 @@ function renderTheses(){
   }).join('')}</tbody>`;
   const tbl=document.getElementById('tesisTable');
   tbl.innerHTML=head+body;
-  tbl.querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{
+  tbl.querySelectorAll('th[data-k]').forEach(th=>th.addEventListener('click',()=>{
     const k=th.dataset.k;
     if(TT_SORT.key===k){ TT_SORT.dir*=-1; } else { TT_SORT={key:k, dir: (k==='entry'||k==='cur'||k==='date'||k==='ret')?-1:1}; }
     renderTheses();
