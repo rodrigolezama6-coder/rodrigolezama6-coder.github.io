@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Las empresas se ganan su lugar en tu portafolio — The Micro Capo</title>
+<meta name="description" content="Por qué 'comprar y aguantar para siempre' es de los peores consejos en microcaps. En mi cartera ninguna empresa tiene su lugar asegurado: la propiedad de largo plazo se gana trimestre a trimestre, no se asume el día que compras." />
+<link rel="icon" type="image/png" href="../../TMC_logo_1080x1080.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f6f7fa; --bg-ink:#0a0f1d;
+  --line:#e8eaf1; --line-2:#dcdfe9;
+  --ink:#0a0f1d; --ink-soft:#525a6e; --ink-mute:#8b93a6;
+  --blue:#2b53ff; --blue-deep:#1d2747; --blue-soft:#eef2ff;
+  --green:#129b6b; --red:#d23b4e;
+  --radius:16px; --maxw:760px;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px;margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px}
+.back{font-size:.92rem;font-weight:600;color:var(--ink-soft)}
+.back:hover{color:var(--ink);text-decoration:none}
+
+.hero{background:#05070f;color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 95% at 50% -12%, #18285f 0%, #0a1130 45%, #05070f 80%)}
+.hero .wrap{position:relative}
+.hero .kicker{display:inline-flex;gap:10px;align-items:center;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#86a4ff;margin-bottom:18px}
+.hero .kicker .tick{background:rgba(120,150,235,.15);border:1px solid rgba(160,180,240,.3);padding:3px 12px;border-radius:999px;color:#c2cdf0}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;margin:0}
+.hero .sub{font-family:var(--serif);color:#aeb9d8;font-size:1.15rem;margin:16px 0 0;font-style:italic}
+.hero .meta{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border:1px solid rgba(160,180,240,.2);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03)}
+.hero .m{flex:1;min-width:130px;padding:16px 18px;border-right:1px solid rgba(160,180,240,.16)}
+.hero .m:last-child{border-right:0}
+.hero .m b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:600;color:#fff}
+.hero .m b.up{color:#46d39a}
+.hero .m span{font-size:.74rem;color:#9aa6c8}
+@media(max-width:560px){.hero .m{min-width:calc(50% - 1px);border-bottom:1px solid rgba(160,180,240,.16)}}
+
+article{padding:56px 0 30px}
+article h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:52px 0 18px}
+article h3{font-size:1.16rem;font-weight:700;margin:38px 0 12px}
+article p{margin:0 0 18px;color:var(--ink);font-size:1.02rem}
+article .lead{font-size:1.08rem}
+article em{color:var(--ink-soft)}
+article ul{margin:0 0 18px;padding-left:22px}
+article li{margin-bottom:10px;font-size:1.02rem}
+article strong{font-weight:700}
+.fig{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 34px -26px rgba(10,15,29,.25)}
+.fig img{width:100%}
+blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;font-size:.98rem;color:var(--blue-deep)}
+blockquote p{margin:0 0 6px}
+blockquote .who{font-size:.84rem;font-weight:700;color:var(--ink-soft)}
+.callout{margin:26px 0;padding:20px 24px;border:1px solid var(--line-2);border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--bg-soft)}
+.callout p{margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+.srcs{font-size:.92rem;color:var(--ink-soft)}
+.srcs li{margin-bottom:6px}
+.legal{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-mute)}
+
+.cta{margin:48px 0 0;padding:26px 28px;background:var(--bg-ink);border-radius:18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta span{font-weight:600}
+.cta a{background:#fff;color:var(--bg-ink);padding:12px 22px;border-radius:10px;font-weight:700;font-size:.94rem;white-space:nowrap}
+.cta a:hover{text-decoration:none;opacity:.92}
+
+footer{border-top:1px solid var(--line);padding:36px 0 44px;margin-top:60px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-mute)}
+footer a{color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../../"><img src="../../TMC_logo_1080x1080.png" alt="The Micro Capo" /><span>The Micro Capo</span></a>
+    <a class="back" href="../../#articulos">← Volver a los artículos</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="tick">Artículo</span><span>Filosofía · Agosto 2026</span></div>
+    <h1>Las empresas se ganan su lugar en tu portafolio</h1>
+    <p class="sub">Mientras tanto, solo lo rentan. Renta, no compres para siempre.</p>
+  </div>
+</section>
+
+<article>
+  <div class="wrap">
+
+  <p class="lead">Seguido me preguntan por qué soy tan activo, por qué compro y vendo sobre las mismas posiciones. Detrás de la pregunta casi siempre está la misma idea: que mover la cartera es de manos débiles, y que aguantar para siempre es de manos fuertes.</p>
+
+  <p>Lo voy a decir directo: "comprar y aguantar para siempre" es de los peores consejos que le puedes dar a un inversionista de microcaps. Suena a sabiduría. En la práctica, es de las formas más rápidas de quebrar.</p>
+
+  <p>En mi cartera, todas las empresas se tienen que ganar su lugar; ninguna lo tiene asegurado. Solo lo rentan. Y la renta se paga trimestre tras trimestre, con ejecución. Si el management cumple, se queda. El día que deja de cumplir, sale. No importa cuánto la haya querido, cuánto haya subido, ni cuántos años lleve conmigo. La propiedad de largo plazo no se asume el día que compras: se gana.</p>
+
+  <p>Y no, esto no me lo inventé yo. Los mejores lo hacían.</p>
+
+  <p>Peter Lynch rotaba alrededor de 300% al año en los primeros años del Magellan. Joel Greenblatt tenía cifras parecidas en Gotham. Hasta Warren Buffett rotaba entre 50 y 100% al año durante sus primeras tres décadas. Contrario a lo que casi todos creen, muchos de los grandes tuvieron su mejor desempeño cuando más rotaban la cartera. Cazaban valor y lo perseguían donde estuviera.</p>
+
+  <p>¿Y por qué entonces relacionamos a los grandes con el "no vender jamás"? En parte, porque el "buy and hold" muchas veces es la historia que se cuenta después: una vez que la empresa lo hizo muy bien y se fue ganando su lugar, es fácil voltear atrás y decir "nunca la vendí". Y en parte porque, para esos capitales enormes, al no haber tantas oportunidades del tamaño que necesitan para mover semejantes volúmenes, aguantar deja de ser una decisión y se vuelve una limitación —que luego se cuenta como filosofía. Y ojo: claro que la meta es encontrar a la empresa que lo haga excepcionalmente bien para siempre y no soltarla nunca. Pero esas son rarísimas, y en microcaps todavía más.</p>
+
+  <p>En microcaps, además, hay una razón de peso: estas empresas evolucionan rapidísimo, para bien o para mal. Una compañía de 50 millones de dólares no es la misma dos años después; puede multiplicar su negocio o el management puede demostrar que no sabe asignar capital. Por eso, prometer el día que la compras que la vas a tener diez años es comprometerte a ciegas: es justo el momento en el que menos la conoces. Entre más tiempo la sigues, más sabes de ella —y solo entonces puedes ir decidiendo si merece quedarse.</p>
+
+  <p>Y hay algo más que pesa muchísimo: el tiempo. Aunque me encantaría tener 100 acciones en cartera, mi tiempo es limitado, y prefiero un portafolio de 15 o 20 empresas que pueda atender de verdad, a fondo. Eso me obliga a ser todavía más exigente con cada lugar disponible: si solo tengo veinte asientos, cada uno vale oro. Peter Lynch llegó a tener cientos de acciones y lo hizo estupendamente, pero yo no tengo esa capacidad —conozco mis límites y prefiero concentrarme.</p>
+
+  <p>Ahora, cuidado, porque aquí es donde la gente se confunde: rotar no es lo mismo que estar impaciente. Como decía Miles Davis, la música no está solo en las notas que tocas, sino en las que decides no tocar. Invertir es parecido: no se decide tanto en el momento de comprar o vender, sino en todo lo que haces —y lo que no haces— en medio. Lo mío no es apretar botones persiguiendo el titular de la mañana; es lo contrario. Verifico mi tesis con disciplina y no hago nada hasta que hay algo real que hacer. A ese estilo se le conoce como paciencia activa, y me parece una buena definición del oficio.</p>
+
+  <p>La clave está en distinguir qué te obliga a actuar y qué es solo ruido. Ante cualquier noticia me hago una pregunta: ¿esto es un cambio estructural en la compañía, o es algo pasajero? Y aplica en las dos direcciones, tanto para bien como para mal. Un mal trimestre por una causa temporal es volatilidad; se aguanta. Una euforia pasajera por una moda tampoco cambia el fondo. Pero cuando algo altera de raíz la tesis —el negocio, su ventaja, la gente que lo dirige— eso sí es motivo de salida. Y muchas veces, si tengo la duda, prefiero primero vender y después analizar con calma: salgo, pienso sin la presión de la posición encima, y si el golpe resultó pasajero, siempre puedo volver a entrar.</p>
+
+  <p>Al final, la idea es simple: renta, en lugar de comprar para siempre. Y si terminas quedándote con una acción durante muchos años, de lujo —significa que la empresa lo hizo excepcionalmente bien, que se ganó su lugar una y otra vez, y lo más probable es que te haya dado retornos enormes. Eso es tener la convicción en el lugar correcto: en el negocio ejecutando hoy, no en una promesa que hiciste ayer.</p>
+
+  <p>Así que sí, soy activo. Pero cada movimiento responde a lo mismo: la empresa dejó de ganarse su lugar, o apareció otra que se lo gana mejor. Nada te arruina más rápido que comprar y desentenderte. Y quedarte con algo para siempre solo funciona si quien lo dirige cumple para siempre.</p>
+
+  <p>Y "para siempre" es demasiado tiempo para confiárselo a alguien sin que te lo siga demostrando.</p>
+
+  <div class="cta"><span>¿Quieres seguir cada movimiento en tiempo real?</span><a href="https://whop.com/the-micro-capo-c69a/tmc-comunidad/" target="_blank" rel="noopener">Entra al Discord →</a></div>
+
+  <p class="legal">Aviso legal. Esto es mi opinión personal con fines educativos e informativos. No es asesoría de inversión ni recomendación de compra o venta. Invertir en microcaps conlleva un riesgo elevado, incluida la pérdida total. Haz tu propia investigación.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> The Micro Capo · @themicrocapo</span>
+    <a href="../../">themicrocapo.com</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
