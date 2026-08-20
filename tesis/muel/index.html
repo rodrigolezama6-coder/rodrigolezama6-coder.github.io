@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paul Mueller Company (MUEL) — Tesis de inversión | The Micro Capo</title>
+<meta name="description" content="Tesis de inversión de Paul Mueller Company (OTC: MUEL): fabricante de acero inoxidable con solo 898,883 acciones en circulación, parado en el camino del reshoring farmacéutico de EE.UU. Barato a ~13x, con el poder de utilidad tapado por dos trimestres de sobrecostos. PT ponderado 2027 ~$790." />
+<link rel="icon" type="image/png" href="../../TMC_logo_1080x1080.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f6f7fa; --bg-ink:#0a0f1d;
+  --line:#e8eaf1; --line-2:#dcdfe9;
+  --ink:#0a0f1d; --ink-soft:#525a6e; --ink-mute:#8b93a6;
+  --blue:#2b53ff; --blue-deep:#1d2747; --blue-soft:#eef2ff;
+  --green:#129b6b; --red:#d23b4e;
+  --radius:16px; --maxw:760px;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px;margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px}
+.back{font-size:.92rem;font-weight:600;color:var(--ink-soft)}
+.back:hover{color:var(--ink);text-decoration:none}
+.hero{background:#05070f;color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 95% at 50% -12%, #18285f 0%, #0a1130 45%, #05070f 80%)}
+.hero .wrap{position:relative}
+.hero .kicker{display:inline-flex;gap:10px;align-items:center;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#86a4ff;margin-bottom:18px}
+.hero .kicker .tick{background:rgba(120,150,235,.15);border:1px solid rgba(160,180,240,.3);padding:3px 12px;border-radius:999px;color:#c2cdf0}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;margin:0}
+.hero .sub{font-family:var(--serif);color:#aeb9d8;font-size:1.15rem;margin:16px 0 0;font-style:italic}
+.hero .meta{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border:1px solid rgba(160,180,240,.2);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03)}
+.hero .m{flex:1;min-width:130px;padding:16px 18px;border-right:1px solid rgba(160,180,240,.16)}
+.hero .m:last-child{border-right:0}
+.hero .m b{display:block;font-family:var(--serif);font-size:1.45rem;font-weight:600;color:#fff}
+.hero .m b.up{color:#46d39a}
+.hero .m span{font-size:.74rem;color:#9aa6c8}
+@media(max-width:560px){.hero .m{min-width:calc(50% - 1px);border-bottom:1px solid rgba(160,180,240,.16)}}
+article{padding:56px 0 30px}
+article h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:52px 0 18px}
+article h3{font-size:1.16rem;font-weight:700;margin:38px 0 12px}
+article p{margin:0 0 18px;color:var(--ink);font-size:1.02rem}
+article .lead{font-size:1.08rem}
+article em{color:var(--ink-soft)}
+article ul{margin:0 0 18px;padding-left:22px}
+article li{margin-bottom:10px;font-size:1.02rem}
+article strong{font-weight:700}
+.fig{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 34px -26px rgba(10,15,29,.25)}
+.fig img{width:100%}
+.dtable{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow-x:auto;background:#fff;box-shadow:0 14px 34px -26px rgba(10,15,29,.25)}
+.dtable table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+.dtable th{background:var(--bg-soft);text-align:left;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding:11px 14px;border-bottom:1px solid var(--line-2)}
+.dtable td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.dtable tr:last-child td{border-bottom:0}
+.dtable td:first-child{font-weight:600}
+blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;font-size:.98rem;color:var(--blue-deep)}
+blockquote p{margin:0 0 6px}
+blockquote .who{font-size:.84rem;font-weight:700;color:var(--ink-soft)}
+.callout{margin:26px 0;padding:20px 24px;border:1px solid var(--line-2);border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--bg-soft)}
+.callout p{margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+.srcs{font-size:.92rem;color:var(--ink-soft)}
+.srcs li{margin-bottom:6px}
+.legal{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-mute)}
+.cta{margin:48px 0 0;padding:26px 28px;background:var(--bg-ink);border-radius:18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta span{font-weight:600}
+.cta a{background:#fff;color:var(--bg-ink);padding:12px 22px;border-radius:10px;font-weight:700;font-size:.94rem;white-space:nowrap}
+.cta a:hover{text-decoration:none;opacity:.92}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;margin-top:60px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-mute)}
+footer a{color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../../"><img src="../../TMC_logo_1080x1080.png" alt="The Micro Capo" /><span>The Micro Capo</span></a>
+    <a class="back" href="../../#tesis">← Volver a las tesis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="tick">OTC: MUEL</span><span>Tesis de inversión · Agosto 2026</span></div>
+    <h1>Paul Mueller Company</h1>
+    <p class="sub">Un fabricante de acero inoxidable de 85 años, con menos de 900 mil acciones en circulación, parado justo en el camino de la ola de reshoring farmacéutico de Estados Unidos. Barato porque dos trimestres feos taparon lo que de verdad gana.</p>
+    <div class="meta">
+      <div class="m"><b>$454</b><span>precio (ago 2026)</span></div>
+      <div class="m"><b class="up">~$790</b><span>PT ponderado 2027 (+74%)</span></div>
+      <div class="m"><b class="up">$1,000-1,200</b><span>bull case 2027</span></div>
+      <div class="m"><b>7.5 / 10</b><span>Checklist Micro Capo</span></div>
+    </div>
+  </div>
+</section>
+
+<article>
+  <div class="wrap">
+
+  <h2>La oportunidad, en una página</h2>
+  <p class="lead"><strong>MUEL cotiza cerca de $454, con apenas 898,883 acciones en circulación, a ~13x utilidades. Es un múltiplo barato para lo que es, porque los últimos doce meses cargan dos trimestres de sobrecostos que taparon su verdadero poder de ganancias. En un trimestre limpio esta empresa hace entre $12 y $15 de utilidad por acción.</strong></p>
+  <p>Lo que te llevas por ese precio: un fabricante rentable, casi sin deuda, con ~$38M en caja, que lleva desde 1940 haciendo el equipo de acero inoxidable que necesita una planta de medicamentos (<a href="https://www.paulmueller.com/investors" target="_blank" rel="noopener">Paul Mueller, Investor Information</a>). Y encima está parado justo en el camino de una ola de reshoring farmacéutico de cerca de medio billón de dólares (half a trillion) que apenas está arrancando (<a href="https://www.thinkglobalhealth.org/article/tracking-pharmas-progress-on-u-s-onshoring" target="_blank" rel="noopener">Think Global Health</a>).</p>
+  <p>Si el margen se normaliza y las órdenes del reshoring entran como creo, el poder de utilidad se va a $50-60 por acción hacia 2027. A 20x, eso son $1,000-1,200. Ponderando bear, base y bull caigo en un PT 2027 cercano a $790, o sea como +74% desde hoy, y el bull case es más del doble.</p>
+  <p><em>Una aclaración desde el principio: MUEL dejó de reportar 10-K y 10-Q ante la SEC después de 2023 (<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000068726&type=10-K" target="_blank" rel="noopener">EDGAR</a>). Hoy sus estados financieros oficiales, auditados, salen de sus reportes en <a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">OTC Markets</a> y sus comunicados. Toda la información numérica de esta tesis viene de ahí. Que la empresa sea tan opaca es parte de por qué está barata.</em></p>
+
+  <h3>Snapshot</h3>
+  <div class="dtable"><table>
+    <thead><tr><th>Métrica</th><th>Valor</th><th>Nota</th></tr></thead>
+    <tbody>
+      <tr><td>Precio (ago-2026)</td><td>$454</td><td>OTC / Pink; fundada 1940, en bolsa desde 1969</td></tr>
+      <tr><td>Acciones en circulación</td><td>898,883</td><td>Emitidas 1,507,481 menos treasury. Súper ilíquida, cada acción vale +$450</td></tr>
+      <tr><td>Market cap</td><td>~$410M</td><td>Springfield, Missouri</td></tr>
+      <tr><td>Deuda</td><td>Casi nula</td><td>~$38M en caja e inversiones; balance de fortaleza</td></tr>
+      <tr><td>Book value</td><td>~$112 / acción</td><td>Reporte trimestral Q1 2026</td></tr>
+      <tr><td>Ventas FY2025</td><td>$287.0M (+15% YoY)</td><td>Récord (Annual Report 2025, OTC Markets)</td></tr>
+      <tr><td>Margen bruto</td><td>32.7% FY25 · 21.9% Q1'26 · 30.6% Q2'26</td><td>Golpeado por sobrecostos temporales, ya rebotando</td></tr>
+      <tr><td>Utilidad neta FY2025</td><td>$34.7M</td><td>EPS $37.53 (UDM ~$35, deprimido)</td></tr>
+      <tr><td>P/E</td><td>~13x UDM</td><td>~8-10x sobre EPS normalizado</td></tr>
+      <tr><td>Backlog (Q2'26)</td><td>$208.3M</td><td>Bajando: $243.6M (fin 2025) → $235.6M (Q1'26) → $208.3M</td></tr>
+      <tr><td>Mi entrada / peso</td><td>$500 / 5%</td><td>Re-entrada; dispuesto a aumentar si baja más</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>1. ¿Qué hace la empresa?</h2>
+  <p>Paul Mueller es un fabricante de acero inoxidable de Springfield, Missouri. Lleva desde 1940 y cotiza en bolsa desde 1969 (<a href="https://www.paulmueller.com/about" target="_blank" rel="noopener">historia de la empresa</a>). Hace tanques, vessels y sistemas para almacenar, mover, calentar, enfriar y procesar líquidos, desde leche y cerveza hasta los fluidos con los que se fabrican los medicamentos.</p>
+  <p>La empresa no desglosa el revenue por mercado final, pero sí por segmento. El grande, con mucho, es Industrial Equipment, y ahí adentro vive el negocio de farma, que es la parte que más crece y el centro de esta tesis.</p>
+  <div class="dtable"><table>
+    <thead><tr><th>Segmento (FY2025)</th><th>% ventas aprox.</th><th>Qué es</th></tr></thead>
+    <tbody>
+      <tr><td>Industrial Equipment</td><td>~63%</td><td>Tanques de proceso a la medida para food, bebida, químico y FARMA. Aquí viven Biopharm y PyroPure.</td></tr>
+      <tr><td>Operaciones Europa (Mueller B.V.)</td><td>~16%</td><td>Sobre todo lácteo europeo. En Holanda opera como dealer de milk coolers.</td></tr>
+      <tr><td>Refrigeración y Heat Transfer</td><td>~14%</td><td>Enfriamiento y almacenamiento de leche. Producto más estándar, a stock, dairy farms de EE.UU.</td></tr>
+      <tr><td>Transportación</td><td>~7%</td><td>Trucking propio. Inmaterial para las utilidades, corre cerca de break-even.</td></tr>
+    </tbody>
+  </table></div>
+  <p><em>El split por segmento es mi estimado, porque la empresa no publica una tabla limpia de ventas por segmento en sus reportes. El corte que sí reporta con claridad es geográfico (EE.UU. vs Mueller B.V.).</em></p>
+  <h3>Las dos líneas de farma: Biopharm y PyroPure</h3>
+  <p>Esto es lo que hace especial a MUEL. Para farma tiene dos líneas de producto (<a href="https://www.paulmueller.com/markets/pharmaceutical" target="_blank" rel="noopener">catálogo de la empresa</a>), y juntas cubren casi todo el acero inoxidable de una planta.</p>
+  <ul>
+    <li><strong>Biopharm es el equipo donde se hace la medicina.</strong> Biorreactores y fermentadores (los tanques grandes donde se cultivan las células que producen el fármaco), tanques de preparación, filtración, y tanques de formulación. Los entrega como skids, o sea el tanque ya viene armado de fábrica con sus bombas, tubería y controles. Esta línea toca el producto.</li>
+    <li><strong>PyroPure es el equipo que mantiene la planta estéril.</strong> Nunca toca el fármaco. Genera el vapor puro para esterilizar y el agua ultra pura (water for injection) que va en los medicamentos inyectables. Es demanda obligada, toda planta lo necesita sin importar qué medicina fabrique.</li>
+  </ul>
+  <p>Súmalo y MUEL puede surtir la mayor parte del acero inoxidable de una planta nueva desde un solo proveedor, entregado como paquetes probados en fábrica. Para el cliente eso significa menos proveedores y menos riesgo de que las piezas no embonen. Ese es el foso.</p>
+
+  <h2>2. La tesis: en la fiebre del oro, vende palas</h2>
+  <p>La idea es vieja pero encaja perfecto aquí. En una fiebre del oro, el que gana consistente no es el que corre a buscar oro, es el que le vende las palas y los picos a todos los que corren. En el reshoring farmacéutico, las farmacéuticas son los mineros. Para ellas, construir plantas en Estados Unidos es un costo enorme y un dolor de cabeza. MUEL es de los que venden las palas: el equipo de acero inoxidable sin el cual esas plantas no arrancan.</p>
+  <p>¿Por qué corren los mineros? Por los aranceles. Bajo la Sección 232, el gobierno de EE.UU. montó un esquema que castiga con tarifas a los medicamentos importados y premia a quien fabrica en suelo americano, con acuerdos de onshoring para reducir esas tarifas (<a href="https://www.skadden.com/insights/publications/2026/06/deadline-approaching-for-companies-seeking-onshoring-deals" target="_blank" rel="noopener">Skadden</a>, <a href="https://www.wilmerhale.com/en/insights/client-alerts/05132026-onshoring-pharmaceutical-manufacturing-procedures-to-apply-for-onshoring-agreements-to-reduce-section-232-tariffs" target="_blank" rel="noopener">WilmerHale</a>). El resultado es una fiebre de construcción: las farmacéuticas ya comprometieron cerca de medio billón de dólares para producir en EE.UU. de aquí a 2030, con decenas de plantas nuevas en la lista (<a href="https://www.thinkglobalhealth.org/article/tracking-pharmas-progress-on-u-s-onshoring" target="_blank" rel="noopener">Think Global Health</a>).</p>
+  <p>Aquí es donde muchos se equivocan de timing. Levantar una planta no es un solo cheque, es una secuencia. Primero se hace la obra: terreno, concreto, el edificio. Después, cuando el edificio ya está de pie, se mete la maquinaria adentro, y esa es la parte de MUEL. Al final, cuando la planta corre, empieza a comprar consumibles. La orden del equipo de acero no llega cuando cortan el listón, llega cuando empiezan a construir. Y las obras grandes de esta ola apenas están arrancando en 2026 y 2027, así que la ventana de MUEL apenas se está abriendo, no se está cerrando.</p>
+  <div class="callout"><p><strong>El tamaño de la pista: el equipo de proceso es solo una tajada del costo total de una planta, pero aplicado a una ola de cientos de miles de millones sigue siendo un mercado de decenas de miles de millones de dólares. El revenue de farma de MUEL hoy es una fracción diminuta de eso. No necesita ganar mucha cuota para cambiar por completo su tamaño.</strong></p></div>
+
+  <h2>3. Por qué la compré: los pilares</h2>
+  <h3>Pilar 1: la demanda ya rebasa su capacidad</h3>
+  <p>La mejor señal del último reporte no fue el margen, fue una frase escondida en el texto: MUEL ya tiene equipo terminado esperando a que los clientes acaben de construir sus plantas (<a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">reporte Q2 2026, OTC Markets</a>). Eso lo cambia todo, porque significa que el cuello de botella se volteó. Antes el freno era el taller de MUEL, ahora es el calendario de obra de sus clientes. Estar por delante de tus clientes, y no por detrás, es exactamente como se ve un proveedor que llegó temprano a una ola. La demanda es tanta que están usando contratistas de fuera para sacar volumen por encima de su propia capacidad.</p>
+  <h3>Pilar 2: ya está vendiendo farma, esto no es una promesa</h3>
+  <p>No hay que adivinar si la ola ya está tocando el negocio, lo dice el propio CEO en la carta anual:</p>
+  <blockquote>
+    <p>&ldquo;Record level of activity in the modular construction of pharmaceutical equipment continued, along with strong activity in many of the other markets.&rdquo;</p>
+    <p class="who">David Moore, Presidente y CEO — Annual Report 2025 (<a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">OTC Markets</a>)</p>
+  </blockquote>
+  <p>Y para atender esa demanda no se quedaron quietos: levantaron un edificio nuevo de fabricación modular que arrancó a finales de 2025 y amplió fuerte su capacidad de armar skids, algo en lo que llevan invirtiendo desde hace años, no una reacción de último minuto a los aranceles. La prueba está en el backlog, que saltó de $153.7M a cierre de 2024 a $243.6M a cierre de 2025, un brinco de casi 60% en un año (<a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">reportes OTC Markets</a>).</p>
+  <h3>Pilar 3: apalancamiento operativo</h3>
+  <p>Aquí está el motor del caso. La planta y la gente ya están pagadas. Conforme las órdenes se entregan y dejan de depender de contratistas caros, cada dólar extra de venta cae en buena proporción a la utilidad. Ya se vio en vivo: el Q1 2026 fue el fondo (margen bruto 22%, EPS $2.56) y el Q2 rebotó (margen 30.6%, EPS $12.72), casi 5x más utilidad por acción en un solo trimestre (<a href="https://www.globenewswire.com/news-release/2026/04/24/3281096/6747/en/Paul-Mueller-Company-Announces-Its-First-Quarter-Earnings-of-2026.html" target="_blank" rel="noopener">comunicado Q1 2026</a>). Cuando el margen vuelva del todo a su rango normal de 33-34%, y las órdenes del reshoring entren sobre esta base de costos ya pagada, el poder de utilidad se dispara.</p>
+  <h3>Pilar 4: balance de fortaleza y management alineado</h3>
+  <p>Rentable de verdad, con ~$38M en caja e inversiones y casi nada de deuda, con book value de ~$112 por acción. Y el management piensa como dueño: siguen recomprando sus propias acciones vía ofertas de recompra. La última, en mayo de 2026, ofreció recomprar hasta 35,000 acciones a $440, y casi nadie vendió. Cuando la gente de adentro no quiere soltar a ese precio, algo te está diciendo. Con solo 898,883 acciones en circulación y bajando por las recompras, esto es lo contrario de la dilución.</p>
+
+  <h2>4. Cómo va trimestre a trimestre</h2>
+  <div class="dtable"><table>
+    <thead><tr><th>Trimestre</th><th>Ventas</th><th>EPS</th><th>Margen bruto</th><th>Backlog</th><th>Comentario</th></tr></thead>
+    <tbody>
+      <tr><td>Q4 2025</td><td>$94.1M</td><td>$14.73</td><td>34.1%</td><td>$243.6M</td><td>Cierre de año récord (+34% YoY)</td></tr>
+      <tr><td>Q1 2026</td><td>$66.4M</td><td>$2.56</td><td>21.9%</td><td>$235.6M</td><td>El fondo: horas extra y contratistas</td></tr>
+      <tr><td>Q2 2026</td><td>$93.8M</td><td>$12.72</td><td>30.6%</td><td>$208.3M</td><td>Rebote, ventas récord +29% YoY</td></tr>
+    </tbody>
+  </table></div>
+  <p>La secuencia es la tesis en una tabla: el Q1 fue el fondo por ejecución, no por demanda, y el Q2 ya rebotó fuerte con el revenue acelerando a +29%. El pendiente honesto es el backlog, que baja tres trimestres seguidos porque están entregando rápido y todavía no entra la nueva ola de órdenes del reshoring. Fuente: reportes trimestrales en <a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">OTC Markets</a> y <a href="https://www.globenewswire.com/news-release/2026/04/24/3281096/6747/en/Paul-Mueller-Company-Announces-Its-First-Quarter-Earnings-of-2026.html" target="_blank" rel="noopener">comunicados</a>.</p>
+
+  <h2>5. Los números</h2>
+  <div class="dtable"><table>
+    <thead><tr><th>Periodo</th><th>Ventas</th><th>Margen bruto</th><th>Ing. operativo</th><th>Utilidad neta</th><th>EPS</th></tr></thead>
+    <tbody>
+      <tr><td>FY2024</td><td>$248.6M</td><td>33.2%</td><td>$36.2M</td><td>$29.7M</td><td>$30.46</td></tr>
+      <tr><td>FY2025</td><td>$287.0M</td><td>32.7%</td><td>$43.5M</td><td>$34.7M</td><td>$37.53</td></tr>
+      <tr><td>UDM (a Q2'26)</td><td>~$308M</td><td>~29.6%</td><td>&mdash;</td><td>~$34.5M</td><td>~$35.0</td></tr>
+    </tbody>
+  </table></div>
+  <p>Un negocio que creció ventas +15% en 2025 a un récord, rentable de corrido, con el backlog que explotó +59% ese año. La utilidad por acción de los últimos doce meses (~$35) está deprimida por los dos trimestres de sobrecostos. No es el techo, es el piso de un año malo de ejecución. Balance sólido: ~$38M en caja e inversiones, casi sin deuda, y una empresa que recompra sus acciones. Todas las cifras salen del <a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">Annual Report 2025 y los reportes trimestrales de OTC Markets</a>; cruzo contra <a href="https://stockanalysis.com/quote/otc/MUEL/" target="_blank" rel="noopener">stockanalysis.com</a>.</p>
+
+  <h2>6. Valuación y escenarios (a 2027)</h2>
+  <p>La valúo con utilidad por acción, porque prefiero invertir en empresas que ya son rentables. En un trimestre limpio, MUEL hace entre $12 y $15 de EPS, lo que anualizado da un rango de $50-60 cuando el margen normaliza y entran las órdenes. La pregunta es qué múltiplo le pones. Armo tres escenarios a fin de 2027.</p>
+  <div class="dtable"><table>
+    <thead><tr><th>Escenario (2027)</th><th>EPS</th><th>Múltiplo</th><th>PT</th><th>Peso</th><th>vs $454</th></tr></thead>
+    <tbody>
+      <tr><td>Bear</td><td>$35 (sin normalizar)</td><td>12x</td><td>~$420</td><td>20%</td><td>-7%</td></tr>
+      <tr><td>Base</td><td>$42</td><td>18x</td><td>~$755</td><td>50%</td><td>+66%</td></tr>
+      <tr><td>Bull</td><td>$55</td><td>20x</td><td>~$1,100</td><td>30%</td><td>+142%</td></tr>
+      <tr><td>Ponderado</td><td colspan="2">20 / 50 / 30</td><td>~$790</td><td colspan="2">+74% vs hoy</td></tr>
+    </tbody>
+  </table></div>
+  <p>Ponderado, caigo en cerca de $790 a 2027, como +74% desde hoy. El bull case ($1,000-1,200) descansa en que el margen vuelve a lo normal y las órdenes del reshoring entran sobre la base de costos ya pagada. Un múltiplo de 20 veces no es exagerado para una empresa creciendo con este viento a favor. Y el downside está anclado: incluso sin normalizar nada, a 12x el EPS actual y con $112 de valor en libros, no hay mucho aire debajo.</p>
+
+  <h2>7. Posición competitiva</h2>
+  <p>El foso de MUEL no es una patente, es el alcance y la relación. Puede surtir casi todo el acero inoxidable de una planta de medicamentos desde un solo proveedor, entregado como paquetes probados en fábrica, y eso le quita al cliente el dolor de coordinar a diez proveedores distintos y el riesgo de que las piezas no embonen. Lleva 85 años haciéndolo, con la reputación y los estándares de calidad que un ambiente regulado como el farmacéutico exige, y cambiar de proveedor de equipo crítico ya validado no es trivial. Encima suma una ventaja de capacidad: amplió su fabricación de skids justo cuando llega la ola, mientras muchos competidores todavía no invierten. En un mundo donde el capex farma se dispara y la mano de obra calificada escasea, el que ya tiene la fábrica y la gente lista es el que se lleva las órdenes.</p>
+
+  <h2>8. Catalizadores</h2>
+  <ul>
+    <li>El grande (fin 2026-2027): la primera orden nueva grande del reshoring. Cuando el backlog deje de caer y suba, la ola entra a los números.</li>
+    <li>Medio (H2 2026): normalización de margen, que el bruto sostenga o mejore el 30% de vuelta al 33-34%.</li>
+    <li>Medio: ramp de la nueva capacidad modular, con menos dependencia de contratistas caros.</li>
+    <li>Opcional: data-center cooling. Su equipo aplica también al enfriamiento de data centers, una opción que hoy nadie modela.</li>
+    <li>Continuo: recompras vía tenders, que suben la utilidad por acción para el que se queda.</li>
+  </ul>
+
+  <h2>9. Riesgos</h2>
+  <ul>
+    <li>Backlog y timing (el central): baja tres trimestres seguidos y aún no llega la primera orden nueva del reshoring. La tesis apuesta a que entran en 2026-2027, pero hay que verlo.</li>
+    <li>Sobrecostos por mano de obra: si no consiguen soldadores calificados, el margen sigue presionado. El talento tarda años en formarse.</li>
+    <li>Concentración de clientes: un par de cuentas grandes pesan una parte importante de las ventas; un diferimiento distorsiona un trimestre.</li>
+    <li>Iliquidez extrema: con solo 898,883 acciones y a más de $450 cada una, entrar y salir no es fácil y los spreads son amplios. Esto es tamaño de posición, no de trading.</li>
+    <li>Costo de insumo + aranceles: el acero inoxidable (ligado al níquel) es el input clave, y el mismo arancel que crea la demanda le sube el costo en contratos a precio fijo.</li>
+    <li>Opacidad: ya no reporta a la SEC, solo a OTC Markets. Menos información y menos ojos encima.</li>
+  </ul>
+
+  <h2>10. Checklist Micro Capo: 7.5 / 10</h2>
+  <div class="dtable"><table>
+    <thead><tr><th>Criterio</th><th>Nota</th><th>Comentario</th></tr></thead>
+    <tbody>
+      <tr><td>Historia y durabilidad</td><td>9</td><td>85 años operando, desde 1940</td></tr>
+      <tr><td>Simplicidad del modelo</td><td>8</td><td>Fabrica tanques de acero inox; se entiende en una frase</td></tr>
+      <tr><td>Nicho / posición competitiva</td><td>8</td><td>Surte casi todo el scope inox de una planta desde una fuente</td></tr>
+      <tr><td>Management y alineación</td><td>7</td><td>Dueños que no venden a $440; resta: opaca (fuera de la SEC)</td></tr>
+      <tr><td>Asignación de capital</td><td>8</td><td>Tenders, dividendo, capex a capacidad antes de la ola</td></tr>
+      <tr><td>Crecimiento de ingresos</td><td>8</td><td>+15% FY25, +29% Q2'26; backlog +59% en el año</td></tr>
+      <tr><td>Rentabilidad / márgenes</td><td>6</td><td>Rentable de corrido, pero cíclico y con sobrecostos recientes</td></tr>
+      <tr><td>Balance y deuda</td><td>9</td><td>~$38M en caja, casi sin deuda, book ~$112</td></tr>
+      <tr><td>Operating leverage / multibagger</td><td>8</td><td>Capacidad ya pagada + tailwind de reshoring</td></tr>
+      <tr><td>Valuación / margen de seguridad</td><td>7</td><td>~13x, barato por un problema temporal; sin dilución</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>7.5</strong></td><td><strong>Reset de valuación con tailwind secular</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>11. Por qué la tengo</h2>
+  <p>Esta empresa ya la tuve hace tiempo, y volví a entrar a $500 con un 5% de la cartera, dispuesto a aumentar si baja más. La razón para volver es estructural, no técnica. Cuando la tuve, era una fabricante barata de acero inoxidable, medio dormida. Lo que cambió es que se volvió uno de los proveedores más limpios de la ola de reshoring farmacéutico, y eso se ve en los números: el backlog explotó, ampliaron capacidad para la ola, y ya tienen equipo terminado esperando a que los clientes acaben sus obras.</p>
+  <p>El setup me gusta porque el riesgo está acotado y el premio es grande. Abajo tienes un negocio rentable, sin deuda, con menos de 900 mil acciones y recomprando, a 13x. Arriba tienes una empresa que en un trimestre limpio hace $12-15 por acción, con una ola de órdenes de varios años apenas empezando. Pagas poco por el hoy y te llevas casi gratis la opción del mañana. Por eso entré con 5% y dejé espacio para subir peso si baja o si el backlog confirma que la ola está entrando.</p>
+  <p>Lo que vigilo de cerca, con honestidad, es el backlog. Mientras siga bajando y no entre una orden nueva del reshoring, la tesis está en modo espera. El día que ese número deje de caer, será la señal de que la ola ya está tocando los estados financieros.</p>
+
+  <div class="cta"><span>¿Quieres seguir cada movimiento en tiempo real?</span><a href="https://whop.com/the-micro-capo-c69a/tmc-comunidad/" target="_blank" rel="noopener">Entra al Discord →</a></div>
+
+  <hr>
+  <h3>Fuentes</h3>
+  <ul class="srcs">
+    <li><a href="https://www.paulmueller.com/investors" target="_blank" rel="noopener">Paul Mueller Company — Investor Information</a></li>
+    <li><a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">Reportes financieros (Annual Report 2025 y trimestrales) — OTC Markets</a></li>
+    <li><a href="https://www.globenewswire.com/news-release/2026/04/24/3281096/6747/en/Paul-Mueller-Company-Announces-Its-First-Quarter-Earnings-of-2026.html" target="_blank" rel="noopener">Comunicado de resultados Q1 2026 (GlobeNewswire)</a></li>
+    <li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000068726&type=10-K" target="_blank" rel="noopener">Filings históricos ante la SEC (hasta FY2023) — EDGAR</a></li>
+    <li><a href="https://stockanalysis.com/quote/otc/MUEL/" target="_blank" rel="noopener">Datos de mercado y acciones en circulación — stockanalysis.com</a></li>
+    <li><a href="https://www.thinkglobalhealth.org/article/tracking-pharmas-progress-on-u-s-onshoring" target="_blank" rel="noopener">Seguimiento del reshoring farmacéutico (~$500B) — Think Global Health</a></li>
+    <li><a href="https://www.skadden.com/insights/publications/2026/06/deadline-approaching-for-companies-seeking-onshoring-deals" target="_blank" rel="noopener">Aranceles Sección 232 y acuerdos de onshoring — Skadden</a></li>
+  </ul>
+  <p class="legal">Aviso legal. Esto es mi opinión personal con fines educativos e informativos. No es asesoría de inversión ni recomendación de compra o venta. Mantengo una posición larga en MUEL y puedo cambiarla sin aviso. Las microcaps son riesgosas e ilíquidas, incluida la posible pérdida total del capital. Haz tu propia tarea.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> The Micro Capo · @themicrocapo</span>
+    <a href="../../">themicrocapo.com</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
