@@ -402,35 +402,34 @@ const PORTFOLIOS = [
     tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
     tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 20 posiciones: 17 core + 3 bio; pocas que se rompan, varias que se multipliquen.",
-           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 20 positions: 17 core + 3 bio; few that break, several that compound."},
-    extra:{v:"20", l:{es:"posiciones · 17 core + 3 bio",en:"positions · 17 core + 3 bio"}},
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 16 posiciones, todas core; pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 16 positions, all core; few that break, several that compound."},
+    extra:{v:"16", l:{es:"posiciones core",en:"core positions"}},
     extra2:{v:"Mar 2025", l:{es:"cartera pública desde",en:"public since"}},
     updated:"2026-08-20",
     limit:5,
     note:{es:"Top 5 del core por peso en cartera. Cartera pública desde marzo de 2025. La cartera completa y cada movimiento, en el Discord.",
           en:"Top 5 core positions by portfolio weight. Book public since March 2025. Full book and every move in the Discord."},
     holdings:[
-      {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
-      {t:"OCC",   n:{es:"Fibra óptica",en:"Fiber optics"}},
       {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
+      {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
       {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
+      {t:"OCC",   n:{es:"Fibra óptica",en:"Fiber optics"}},
       {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}}
     ]
   }
 ];
 
 /* ============================================================
-   SECTORES  —  distribución por peso, core + bio (edita con cada snapshot)
+   SECTORES  —  distribución por peso, solo core (edita con cada snapshot)
    Paleta categórica validada (CVD-safe) sobre blanco
    ============================================================ */
 const SECTORS = [
-  {label:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, pct:32.1, color:"#2b53ff"},
-  {label:{es:"Tecnología",en:"Technology"},                                     pct:18.4, color:"#e8a13c"},
-  {label:{es:"Bio / salud",en:"Bio / healthcare"},                              pct:17.5, color:"#d84a8b"},
-  {label:{es:"Consumo",en:"Consumer"},                                          pct:16.1, color:"#129b6b"},
-  {label:{es:"Energía",en:"Energy"},                                            pct:12.8, color:"#8a63d2"},
-  {label:{es:"Telecom",en:"Telecom"},                                           pct:2.1,  color:"#59b7e8"},
+  {label:{es:"Industrial / infraestructura",en:"Industrials / infrastructure"}, pct:40.8, color:"#2b53ff"},
+  {label:{es:"Consumo",en:"Consumer"},                                          pct:17.2, color:"#129b6b"},
+  {label:{es:"Tecnología",en:"Technology"},                                     pct:16.0, color:"#e8a13c"},
+  {label:{es:"Energía",en:"Energy"},                                            pct:15.9, color:"#8a63d2"},
+  {label:{es:"Telecom",en:"Telecom"},                                           pct:9.1,  color:"#59b7e8"},
   {label:{es:"Químicos especiales",en:"Specialty chemicals"},                   pct:1.0,  color:"#c8532e"}
 ];
 
