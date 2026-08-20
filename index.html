@@ -402,20 +402,20 @@ const PORTFOLIOS = [
     tab:{es:"TMC Largo Plazo",en:"TMC Long Term"},
     tabSub:{es:"Buy-and-hold · años",en:"Buy-and-hold · years"},
     title:{es:"Microcaps de calidad, a largo plazo",en:"Quality microcaps, long term"},
-    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 16 posiciones: 14 core + 2 bio; pocas que se rompan, varias que se multipliquen.",
-           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 16 positions: 14 core + 2 bio; few that break, several that compound."},
-    extra:{v:"16", l:{es:"posiciones · 14 core + 2 bio",en:"positions · 14 core + 2 bio"}},
+    philo:{es:"Microcaps de calidad, compradas para mantener años. Buy-and-hold con convicción y sin margen. 20 posiciones: 17 core + 3 bio; pocas que se rompan, varias que se multipliquen.",
+           en:"Quality microcaps, bought to hold for years. Conviction buy-and-hold, no margin. 20 positions: 17 core + 3 bio; few that break, several that compound."},
+    extra:{v:"20", l:{es:"posiciones · 17 core + 3 bio",en:"positions · 17 core + 3 bio"}},
     extra2:{v:"Mar 2025", l:{es:"cartera pública desde",en:"public since"}},
-    updated:"2026-07-28",
+    updated:"2026-08-20",
     limit:5,
     note:{es:"Top 5 del core por peso en cartera. Cartera pública desde marzo de 2025. La cartera completa y cada movimiento, en el Discord.",
           en:"Top 5 core positions by portfolio weight. Book public since March 2025. Full book and every move in the Discord."},
     holdings:[
       {t:"PPIH",  n:{es:"Tubería / infraestructura",en:"Piping / infrastructure"}},
       {t:"OCC",   n:{es:"Fibra óptica",en:"Fiber optics"}},
-      {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}},
       {t:"SIF",   n:{es:"Aeroespacial / forja",en:"Aerospace forging"}},
-      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}}
+      {t:"LEAT",  n:{es:"Equipo de protección",en:"Protective gear"}},
+      {t:"TPC",   n:{es:"Construcción / infraestructura",en:"Construction / infrastructure"}}
     ]
   }
 ];
@@ -442,17 +442,16 @@ const SECTORS = [
    - status: "ok" (Intacta) | "risk" (Riesgo)
    - date: mes de entrada ("2026-04") o "" si falta
    ============================================================ */
-const TESIS_UPDATED = "2026-08-19";
+const TESIS_UPDATED = "2026-08-20";
 /* Una fila por tesis PUBLICADA. date = fecha de publicación de la tesis.
    entry = mi precio de entrada (el que declara la propia tesis). El retorno se calcula solo (cur/entry). */
 const TESIS = [
-  {t:"HMM.A",name:"Hammond Manufacturing",   date:"2026-07", type:"Compounder",        status:"ok", sector:{es:"Industrial / eléctrico",en:"Industrials / electrical"}, entry:15.55, cur:23.03, cad:true, url:"tesis/hmma/"},
-  {t:"KLNG", name:"KOIL Energy Solutions",   date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Energía / subsea",en:"Energy / subsea"}, entry:2.46, cur:2.88, cad:false, url:"tesis/klng/"},
-  {t:"SIF",  name:"SIFCO Industries",        date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Industrial / aeroespacial y defensa",en:"Industrials / aerospace & defense"}, entry:13.00, cur:21.48, cad:false, url:"tesis/sif/"},
-  {t:"LEAT", name:"Leatt Corporation",       date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:11.90, cad:false, url:"tesis/leat/"},
-  {t:"MOJO", name:"EQUATOR Beverage Co",     date:"2026-07", type:"Special Situation", status:"ok", sector:{es:"Consumo / bebidas funcionales",en:"Consumer / functional beverages"}, entry:1.33, cur:0.73, cad:false, url:"tesis/mojo/"},
-  {t:"RFIL", name:"RF Industries",           date:"2026-08", type:"Turnaround",        status:"ok", sector:{es:"Industrial / infraestructura telecom",en:"Industrials / telecom infrastructure"}, entry:11.70, cur:12.90, cad:false, url:"tesis/rfil/"},
-  {t:"MUEL", name:"Paul Mueller Company",    date:"2026-08", type:"Turnaround",        status:"ok", sector:{es:"Industrial / equipo farmacéutico",en:"Industrials / pharma equipment"}, entry:500, cur:454, cad:false, url:"tesis/muel/"}
+  {t:"MUEL", name:"Paul Mueller Company",     date:"2026-08", type:"Special Situation", status:"ok", sector:{es:"Industrial / equipo farma",en:"Industrials / pharma equipment"}, entry:500.00, cur:470.00, cad:false, url:"tesis/muel/"},
+  {t:"HMM.A",name:"Hammond Manufacturing",   date:"2026-07", type:"Compounder",        status:"ok", sector:{es:"Industrial / eléctrico",en:"Industrials / electrical"}, entry:15.55, cur:22.06, cad:true, url:"tesis/hmma/"},
+  {t:"KLNG", name:"KOIL Energy Solutions",   date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Energía / subsea",en:"Energy / subsea"}, entry:2.46, cur:3.06, cad:false, url:"tesis/klng/"},
+  {t:"SIF",  name:"SIFCO Industries",        date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Industrial / aeroespacial y defensa",en:"Industrials / aerospace & defense"}, entry:13.00, cur:21.07, cad:false, url:"tesis/sif/"},
+  {t:"LEAT", name:"Leatt Corporation",       date:"2026-07", type:"Turnaround",        status:"ok", sector:{es:"Consumo / equipo de protección",en:"Consumer / protective gear"}, entry:11.75, cur:11.75, cad:false, url:"tesis/leat/"},
+  {t:"MOJO", name:"EQUATOR Beverage Co",     date:"2026-07", type:"Special Situation", status:"ok", sector:{es:"Consumo / bebidas funcionales",en:"Consumer / functional beverages"}, entry:1.33, cur:0.90, cad:false, url:"tesis/mojo/"}
 ];
 
 /* ============================================================
@@ -462,10 +461,6 @@ const DATA = {
   articles:[
     { tag:{es:"Filosofía",en:"Philosophy"}, title:{es:"Las empresas se ganan su lugar en tu portafolio",en:"Companies earn their place in your portfolio"},
       desc:{es:"Por qué \"comprar y aguantar para siempre\" es mal consejo en microcaps: la propiedad de largo plazo se gana trimestre a trimestre, no se asume el día que compras.",en:"Why \"buy and hold forever\" is bad advice in microcaps: long-term ownership is earned quarter after quarter, not assumed the day you buy."}, date:"Ago 2026", cover:"cover_renta.png", url:"articulos/renta-portafolio/index.html" },
-    { tag:{es:"Reporte mensual",en:"Monthly report"}, title:{es:"Reporte Mensual — Largo Plazo",en:"Monthly Report — Long Term"},
-      desc:{es:"Cartera de convicción, holdings, noticias del mes y KPIs del libro de largo plazo.",en:"Conviction book: holdings, monthly news and KPIs of the long-term portfolio."}, date:"May 2026", cover:"cover_mensual.png", url:"https://rodrigolezama.substack.com/p/reporte-mensual" },
-    { tag:{es:"Reporte de trades",en:"Trades report"}, title:{es:"Reporte de Trades — Corto Plazo",en:"Trades Report — Short Term"},
-      desc:{es:"El libro de corto plazo, trade por trade, con las lecciones del mes.",en:"The short-term book, trade by trade, with the month's lessons."}, date:"May 2026", cover:"cover_trades.png", url:"https://rodrigolezama.substack.com/p/reporte-de-trades" },
     { tag:{es:"Framework",en:"Framework"}, title:{es:"El Micro Capo Checklist",en:"The Micro Capo Checklist"},
       desc:{es:"El proceso de 1 página que uso para filtrar cada idea antes de poner un dólar.",en:"The one-page process I run on every idea before risking a dollar."}, date:"2026", cover:"cover_checklist.png", url:"#" }
   ],
