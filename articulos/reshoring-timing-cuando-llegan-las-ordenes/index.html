@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>¿Cuándo llega la ola? El timing del reshoring farma — The Micro Capo</title>
+<meta name="description" content="La pregunta que decide el timing del reshoring farma no es SI llega el dinero, es CUÁNDO llega a la capa de equipo. Los gigantes que venden ese equipo (Sartorius, Danaher, Repligen, Steris) ya le pusieron fecha: el pico en 2H 2027. Qué significa para MUEL." />
+<link rel="icon" type="image/png" href="../../TMC_logo_1080x1080.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--bg-soft:#f6f7fa;--bg-ink:#0a0f1d;--line:#e8eaf1;--line-2:#dcdfe9;--ink:#0a0f1d;--ink-soft:#525a6e;--ink-mute:#8b93a6;--blue:#2b53ff;--blue-deep:#1d2747;--blue-soft:#eef2ff;--green:#129b6b;--red:#d23b4e;--radius:16px;--maxw:760px;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;--serif:'Fraunces',Georgia,'Times New Roman',serif;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px;margin:0 auto;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1rem;color:var(--ink)}
+.brand:hover{text-decoration:none}.brand img{width:38px;height:38px;border-radius:10px}
+.back{font-size:.92rem;font-weight:600;color:var(--ink-soft)}.back:hover{color:var(--ink);text-decoration:none}
+.hero{background:#05070f;color:#fff;padding:72px 0 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 95% at 50% -12%, #18285f 0%, #0a1130 45%, #05070f 80%)}
+.hero .wrap{position:relative}
+.hero .kicker{display:inline-flex;gap:10px;align-items:center;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#86a4ff;margin-bottom:18px}
+.hero .kicker .tick{background:rgba(120,150,235,.15);border:1px solid rgba(160,180,240,.3);padding:3px 12px;border-radius:999px;color:#c2cdf0}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.08;letter-spacing:-.02em;margin:0}
+.hero .sub{font-family:var(--serif);color:#aeb9d8;font-size:1.15rem;margin:16px 0 0;font-style:italic}
+article{padding:56px 0 30px}
+article h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;letter-spacing:-.01em;line-height:1.2;margin:52px 0 18px}
+article h3{font-size:1.16rem;font-weight:700;margin:38px 0 12px}
+article p{margin:0 0 18px;color:var(--ink);font-size:1.02rem}
+article .lead{font-size:1.08rem}
+article em{color:var(--ink-soft)}
+article ul{margin:0 0 18px;padding-left:22px}
+article li{margin-bottom:10px;font-size:1.02rem}
+article strong{font-weight:700}
+.dtable{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow-x:auto;background:#fff;box-shadow:0 14px 34px -26px rgba(10,15,29,.25)}
+.dtable table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+.dtable th{background:var(--bg-soft);text-align:left;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mute);font-weight:700;padding:11px 14px;border-bottom:1px solid var(--line-2)}
+.dtable td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.dtable tr:last-child td{border-bottom:0}.dtable td:first-child{font-weight:600}
+blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;font-size:.98rem;color:var(--blue-deep)}
+blockquote p{margin:0 0 6px}blockquote .who{font-size:.84rem;font-weight:700;color:var(--ink-soft)}
+.callout{margin:26px 0;padding:20px 24px;border:1px solid var(--line-2);border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--bg-soft)}
+.callout p{margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+.srcs{font-size:.92rem;color:var(--ink-soft)}.srcs li{margin-bottom:6px}
+.legal{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-mute)}
+.cta{margin:48px 0 0;padding:26px 28px;background:var(--bg-ink);border-radius:18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta span{font-weight:600}
+.cta a{background:#fff;color:var(--bg-ink);padding:12px 22px;border-radius:10px;font-weight:700;font-size:.94rem;white-space:nowrap}
+.cta a:hover{text-decoration:none;opacity:.92}
+.cta.muel{background:linear-gradient(120deg,#0d1f14,#0a0f1d);border:1px solid #1e3a2a}
+.cta.muel a{background:#5aa46a;color:#07130b}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;margin-top:60px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-mute)}
+footer a{color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="../../"><img src="../../TMC_logo_1080x1080.png" alt="The Micro Capo" /><span>The Micro Capo</span></a>
+    <a class="back" href="../../#articulos">← Volver a los artículos</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="tick">Tendencia</span><span>Reshoring farma · Agosto 2026</span></div>
+    <h1>¿Cuándo llega la ola? El timing del reshoring</h1>
+    <p class="sub">La pregunta no es si el dinero llega, es cuándo llega a la capa de equipo. Los gigantes que la venden ya le pusieron fecha, y coinciden.</p>
+  </div>
+</section>
+
+<article>
+  <div class="wrap">
+
+  <p class="lead">En la <a href="../../tesis/muel/">tesis de MUEL</a> conté la tendencia: una ola de cerca de medio billón de dólares para traer la fabricación de medicinas a Estados Unidos, y por qué el dinero durable no se queda con las farmacéuticas, sino con los proveedores que construyen y equipan las plantas. Aquí contesto la pregunta que de verdad decide la paciencia: no si el dinero llega, sino cuándo llega a la capa que un proveedor como MUEL fabrica.</p>
+
+  <h2>La clave: escuchar a los que ya venden las palas</h2>
+  <p>Una ola de capex no aterriza toda de golpe. Y para saber cuándo toca cada capa no hay que adivinarle a las farmacéuticas, basta con subir un escalón y escuchar a los gigantes que venden el equipo de bioprocesamiento, porque ellos le dicen a sus inversionistas cuándo entran las órdenes.</p>
+  <p>Hace un año, el rastreo del Council on Foreign Relations (Think Global Health) revisó estas mismas llamadas y encontró "poca mención" de un repunte de órdenes por el reshoring. Un año después la cosa cambió por completo: de "poca mención" a discusión por todos lados, y lo más útil, casi todos le pusieron fecha, y las fechas coinciden (<a href="https://www.thinkglobalhealth.org/article/tracking-pharmas-progress-on-u-s-onshoring" target="_blank" rel="noopener">Think Global Health</a>).</p>
+
+  <h2>Lo que dijeron los proveedores (llamadas Q2 2026)</h2>
+  <p><strong>Sartorius</strong>, uno de los dos gigantes del bioprocesamiento, fue el más específico: el grueso de las órdenes de su tipo de equipo cae en la segunda mitad de 2027, con las ventas materializándose en 2028 y después. Es el mejor ancla de fecha que hay (<a href="https://www.investing.com/news/transcripts/earnings-call-transcript-sartorius-h1-2026-profit-cash-flow-rise-as-shares-gain-93CH-4808814" target="_blank" rel="noopener">call H1 2026</a>).</p>
+  <p><strong>Danaher (Cytiva)</strong>, el otro gigante y el espejo large-cap de lo que hace MUEL, ya ve el reshoring de plantas existentes (brownfield) llegando a sus ingresos hoy, mientras que las plantas nuevas (greenfield) están a 2-3 años, y habla de estar "en las primeras entradas de un ciclo de capex de varios años" (<a href="https://www.fool.com/earnings/call-transcripts/2026/07/21/danaher-dhr-q2-2026-earnings-call-transcript/" target="_blank" rel="noopener">call Q2 2026</a>).</p>
+  <p>El resto cuenta la misma historia desde su lugar en la cadena:</p>
+  <ul>
+    <li><strong>Repligen</strong> ya está ganando RFPs de onshoring y espera ingresos "de 2027".</li>
+    <li><strong>Thermo Fisher</strong>, vía su brazo de manufactura por contrato (Patheon), captura la demanda reshoreada antes de que la farmacéutica siquiera construya su planta, y ubica el gasto de bioproducción en el marco "2027-2028". Es la señal más temprana de la cadena.</li>
+    <li><strong>Steris</strong> (esterilizadores y washers) es lo más cercano a la línea de utilidades limpias de MUEL. Ya ve su ciclo de equipo estéril girar, concentrado en big pharma y en las Carolinas, justo donde los grandes están construyendo.</li>
+    <li><strong>Merck KGaA (MilliporeSigma)</strong>, que vende sobre todo consumibles, dice que en capex "es muy temprano". Que el proveedor del final de la cola confirme que todavía no le toca es exactamente lo que esperas si el equipo se ordena en 2027 y las plantas corren en 2028.</li>
+  </ul>
+  <p>Nadie ha puesto una cifra en dólares todavía, pero el timing coincide, y Sartorius da el marcador más filoso: <strong>el pico de órdenes de equipo aterriza en la segunda mitad de 2027.</strong></p>
+
+  <h2>El calendario, en etapas</h2>
+  <div class="dtable"><table>
+    <thead><tr><th>Etapa</th><th>Cuándo</th><th>Quién cobra</th></tr></thead>
+    <tbody>
+      <tr><td>Concreto + contract manufacturing</td><td>Ahora (2025-26)</td><td>Constructores; CDMOs (Thermo/Patheon); brownfield de Danaher (ya en ingresos)</td></tr>
+      <tr><td>Ventana temprana de compras</td><td>Fin 2026 - 2027</td><td>Clean utilities (agua y vapor puro) + los vessels custom grandes de lead time largo</td></tr>
+      <tr><td>Pico principal de equipo de proceso</td><td>2H 2027</td><td>Biorreactores y tanques (Sartorius, Cytiva, y en acero inox, MUEL)</td></tr>
+      <tr><td>Ingresos, luego consumibles</td><td>2028-2030</td><td>El equipo ordenado se factura; luego filtros y materiales (Merck KGaA)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p><strong>La regla de oro: la orden llega mucho antes que el ingreso. Para cuando el equipo aparece en las ventas de un proveedor, la orden que importaba se colocó uno o dos años antes. Por eso se vigilan los order books, no las ventas.</strong></p></div>
+
+  <h2>Dónde queda parado MUEL</h2>
+  <p>MUEL queda parado en un lugar raro de bueno. Su línea de utilidades limpias (agua para inyección y vapor puro) es lo primero que una planta instala y valida, antes de que cualquier biorreactor pueda arrancar, así que entra en la ventana temprana de finales de 2026 y 2027. Y su línea de biorreactores y tanques es la misma capa que venden Sartorius y Cytiva, solo que en acero inoxidable, así que llega en el pico principal de la segunda mitad de 2027. Dicho de otro modo: MUEL puede comer dos rebanadas del mismo pastel, una al principio y otra más grande al final.</p>
+
+  <h2>Por qué el backlog cae (y por qué no debería asustar)</h2>
+  <p>El backlog de MUEL bajó tres trimestres seguidos aun con ingresos récord. Según este calendario, eso no es la ola pasándose de largo, es el valle entre dos olas: está entregando su ola de órdenes de 2024-25 más rápido de lo que entra la siguiente, que no llega hasta finales de 2026 y 2027. Y hay una razón de política por la que el valle se ve más profundo: el marco de aranceles de la Sección 232 se finalizó apenas en abril de 2026 y los acuerdos de onshoring se presentaron en junio, sin fecha de aprobación, así que cuando cerró el trimestre las órdenes que van a venir todavía se estaban negociando. Es un backlog "pre-aprobación". Y el detalle que lo confirma: MUEL ya tiene equipo terminado "esperando a que los clientes acaben de construir sus plantas". El cuello de botella se volteó, va por delante de sus clientes, no por detrás.</p>
+
+  <h2>El número a vigilar</h2>
+  <p>Todo esto vuelve a los dos próximos reportes de backlog los datos más importantes: el del 30 de septiembre (que publican a finales de octubre) y el del 31 de diciembre.</p>
+  <ul>
+    <li>Una re-inflexión al alza, con el backlog de EE.UU. estabilizándose, diría que la primera rebanada ya la están sirviendo.</li>
+    <li>Un reporte plano no rompe la tesis: significa que las órdenes tempranas no han entrado, con el pico grande de 2H 2027 todavía por delante.</li>
+    <li>Una caída sostenida hasta mediados de 2027, mientras los order books de Danaher, Sartorius y Steris aceleran, sí sería la señal de alerta.</li>
+  </ul>
+  <div class="callout"><p><strong>Con cerca de medio billón de capex apuntado a este tipo de equipo y una base limitada de fabricantes capaces de construirlo, el riesgo cuando la ola aterrice es escasez de capacidad, no exceso. El que ya amplió su fábrica antes de la ola no es el que se queda corto.</strong></p></div>
+
+  <h2>Conclusión</h2>
+  <p>La ola es real, los grandes están construyendo, y los proveedores que equipan sus plantas dejaron de hablar de "si" y empezaron a ponerle fecha al "cuándo": finales de 2026 a 2027 para la capa de equipo, con el pico en 2H 2027 e ingresos hacia 2028. Nada de esto es promesa, las primeras órdenes todavía no aparecen y competidores se llevarán una parte. Pero es un setup limpio y, mejor aún, verificable: los reportes de backlog del 30-sep y el 31-dic dicen si la primera rebanada llega a tiempo. Entre hoy y entonces, se vigilan los order books, no los titulares.</p>
+
+  <div class="cta muel"><span>La empresa parada justo en este calendario</span><a href="../../tesis/muel/">Lee la tesis de MUEL →</a></div>
+
+  <div class="cta"><span>¿Quieres seguir cada movimiento en tiempo real?</span><a href="https://whop.com/the-micro-capo-c69a/tmc-comunidad/" target="_blank" rel="noopener">Entra al Discord →</a></div>
+
+  <hr>
+  <h3>Fuentes</h3>
+  <ul class="srcs">
+    <li><a href="https://www.thinkglobalhealth.org/article/tracking-pharmas-progress-on-u-s-onshoring" target="_blank" rel="noopener">Tracking Pharma's Progress on U.S. Onshoring — Think Global Health (CFR)</a></li>
+    <li><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-sartorius-h1-2026-profit-cash-flow-rise-as-shares-gain-93CH-4808814" target="_blank" rel="noopener">Sartorius — call H1 2026 (transcript)</a></li>
+    <li><a href="https://www.fool.com/earnings/call-transcripts/2026/07/21/danaher-dhr-q2-2026-earnings-call-transcript/" target="_blank" rel="noopener">Danaher — call Q2 2026 (transcript)</a></li>
+    <li><a href="https://www.otcmarkets.com/stock/MUEL/disclosure" target="_blank" rel="noopener">Reportes de Paul Mueller (MUEL) — OTC Markets</a></li>
+  </ul>
+  <p class="legal">Aviso legal. Esto es mi opinión personal con fines educativos e informativos. No es asesoría de inversión ni recomendación de compra o venta. Mantengo una posición larga en MUEL y puedo cambiarla sin aviso. Invertir en microcaps conlleva un riesgo elevado, incluida la pérdida total. Haz tu propia investigación.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> The Micro Capo · @themicrocapo</span>
+    <a href="../../">themicrocapo.com</a>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
