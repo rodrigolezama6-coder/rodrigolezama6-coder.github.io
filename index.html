@@ -252,6 +252,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     </a>
     <nav class="nav-links">
       <a href="#portafolios" data-i18n="nav_portfolios">Portafolios</a>
+      <a href="#newsletter" data-i18n="nav_news">Newsletter</a>
       <a href="#articulos" data-i18n="nav_articles">Artículos</a>
       <a href="#libros" data-i18n="nav_books">Libros</a>
       <a href="#tesis" data-i18n="nav_thesis">Tesis</a>
@@ -299,6 +300,18 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
     <div class="pf-tabs" id="pfTabs"></div>
     <div id="pfPanel"></div>
     <p class="pf-disc" data-i18n="pf_disc">Carteras compartidas con fines educativos. No es asesoría de inversión. Rendimiento pasado no garantiza resultados futuros.</p>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section id="newsletter" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="news_eyebrow">Cartas</span>
+      <h2 data-i18n="news_title">Newsletter</h2>
+      <p data-i18n="news_sub">Mi carta mensual gratis: una tesis de sector y las microcaps que tengo en el radar. Directo, sin relleno.</p>
+    </div>
+    <div class="grid c3" id="newsletterGrid"></div>
   </div>
 </section>
 
@@ -355,6 +368,7 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
       </div>
       <nav class="foot-links">
         <a href="#portafolios" data-i18n="nav_portfolios">Portafolios</a>
+        <a href="#newsletter" data-i18n="nav_news">Newsletter</a>
         <a href="#articulos" data-i18n="nav_articles">Artículos</a>
         <a href="#libros" data-i18n="nav_books">Libros</a>
         <a href="#tesis" data-i18n="nav_thesis">Tesis</a>
@@ -457,11 +471,11 @@ const TESIS = [
    ARTICULOS y LIBROS
    ============================================================ */
 const DATA = {
+  newsletters:[
+    { tag:{es:"Edición 01 · Defensa",en:"Issue 01 · Defense"}, title:{es:"Ni todo el dinero del mundo compra tiempo",en:"Not all the money in the world buys time"},
+      desc:{es:"Por qué reponer el arsenal de misiles de EE.UU. no depende del dinero sino del tiempo, y tres microcaps de la cadena de defensa en el radar: IEHC, OML y SIF.",en:"Why refilling the US missile arsenal is bound by time, not money — and three defense-chain microcaps on the radar: IEHC, OML and SIF."}, date:"Sep 2026", cover:"cover_news01.png", url:"newsletter/01-defensa/index.html" }
+  ],
   articles:[
-    { tag:{es:"Tendencia",en:"Trend"}, title:{es:"¿Cuándo llega la ola? El timing del reshoring",en:"When does the wave hit? Reshoring timing"},
-      desc:{es:"La pregunta no es si el dinero llega, es cuándo. Los gigantes que venden el equipo (Sartorius, Danaher, Steris) ya le pusieron fecha: el pico en 2H 2027, y lo que significa para MUEL.",en:"The question isn't whether the money comes, it's when. The equipment giants (Sartorius, Danaher, Steris) have dated it: the crest in H2 2027, and what it means for MUEL."}, date:"Ago 2026", cover:"cover_reshoring2.png", url:"articulos/reshoring-timing-cuando-llegan-las-ordenes/index.html" },
-    { tag:{es:"Trimestral",en:"Quarterly"}, title:{es:"El trimestre, empresa por empresa",en:"The quarter, company by company"},
-      desc:{es:"Reporte del Q2 2026: los resultados de mis 16 microcaps una por una, por qué estoy tan cargado a proveedores de data centers, y lo que me está enseñando Richer, Wiser, Happier.",en:"Q2 2026 report: results for all 16 microcaps one by one, why I'm so loaded on data center suppliers, and what Richer, Wiser, Happier is teaching me."}, date:"Ago 2026", cover:"cover_trimestral.png", url:"articulos/reporte-trimestral-q2-2026/index.html" },
     { tag:{es:"Filosofía",en:"Philosophy"}, title:{es:"Las empresas se ganan su lugar en tu portafolio",en:"Companies earn their place in your portfolio"},
       desc:{es:"Por qué \"comprar y aguantar para siempre\" es mal consejo en microcaps: la propiedad de largo plazo se gana trimestre a trimestre, no se asume el día que compras.",en:"Why \"buy and hold forever\" is bad advice in microcaps: long-term ownership is earned quarter after quarter, not assumed the day you buy."}, date:"Ago 2026", cover:"cover_renta.png", url:"articulos/renta-portafolio/index.html" },
     { tag:{es:"Framework",en:"Framework"}, title:{es:"El Micro Capo Checklist",en:"The Micro Capo Checklist"},
@@ -484,7 +498,8 @@ const DATA = {
    ============================================================ */
 const I18N = {
   es:{
-    nav_portfolios:"Portafolios", nav_articles:"Artículos", nav_books:"Libros", nav_thesis:"Tesis", nav_join:"Unirme",
+    nav_portfolios:"Portafolios", nav_news:"Newsletter", nav_articles:"Artículos", nav_books:"Libros", nav_thesis:"Tesis", nav_join:"Unirme",
+    news_eyebrow:"Cartas", news_title:"Newsletter", news_sub:"Mi carta mensual gratis: una tesis de sector y las microcaps que tengo en el radar. Directo, sin relleno.",
     hero_pill:"Research independiente de microcaps",
     hero_h1:"The Micro Capo",
     hero_slogan:"Donde nadie mira, ahí está el alfa.",
@@ -514,7 +529,8 @@ const I18N = {
     read:"Leer"
   },
   en:{
-    nav_portfolios:"Portfolios", nav_articles:"Articles", nav_books:"Books", nav_thesis:"Theses", nav_join:"Join",
+    nav_portfolios:"Portfolios", nav_news:"Newsletter", nav_articles:"Articles", nav_books:"Books", nav_thesis:"Theses", nav_join:"Join",
+    news_eyebrow:"Letters", news_title:"Newsletter", news_sub:"My free monthly letter: one sector thesis and the microcaps on my radar. Direct, no filler.",
     hero_pill:"Independent microcap research",
     hero_h1:"The Micro Capo",
     hero_slogan:"Where no one's looking, that's where the alpha is.",
@@ -740,6 +756,25 @@ function renderArticles(){
     </article>`;
   }).join('');
 }
+function renderNewsletters(){
+  const grid=document.getElementById('newsletterGrid'); if(!grid) return;
+  grid.innerHTML = (DATA.newsletters||[]).map(a=>{
+    const live=a.url&&a.url!=='#';
+    const coverInner = a.cover?`<img src="${a.cover}" alt="${tx(a.title)}" loading="lazy">`:'';
+    const cover = a.cover ? (live
+        ? `<a class="card-cover" href="${a.url}">${coverInner}</a>`
+        : `<div class="card-cover">${coverInner}</div>`) : '';
+    return `<article class="card reveal">
+      ${cover}
+      <div class="card-body">
+        <div class="kicker"><span class="ticker">${tx(a.tag)}</span><span>${a.date}</span></div>
+        <h3>${tx(a.title)}</h3><p>${tx(a.desc)}</p>
+        <div class="meta"><span>${live?'':'<em style="opacity:.6">'+(LANG==='es'?'Pronto':'Soon')+'</em>'}</span>
+        ${live?`<a class="go" href="${a.url}">${t('read')} →</a>`:''}</div>
+      </div>
+    </article>`;
+  }).join('');
+}
 function renderBooks(){
   document.getElementById('booksGrid').innerHTML = DATA.books.map(b=>`
     <div class="book reveal"><div class="spine">${b.spine}</div>
@@ -761,7 +796,7 @@ function applyLang(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[LANG][k])el.textContent=I18N[LANG][k];});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(I18N[LANG][k])el.innerHTML=I18N[LANG][k];});
   document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===LANG));
-  renderSocials(); renderPortfolios(); renderTheses(); renderArticles(); renderBooks(); renderFootSoc();
+  renderSocials(); renderPortfolios(); renderTheses(); renderNewsletters(); renderArticles(); renderBooks(); renderFootSoc();
   observeReveal();
 }
 let io;
