@@ -255,7 +255,6 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
       <a href="#newsletter" data-i18n="nav_news">Newsletter</a>
       <a href="#articulos" data-i18n="nav_articles">Artículos</a>
       <a href="#libros" data-i18n="nav_books">Libros</a>
-      <a href="#tesis" data-i18n="nav_thesis">Tesis</a>
       <div class="lang-toggle">
         <button data-lang="es" class="active">ES</button>
         <button data-lang="en">EN</button>
@@ -340,22 +339,6 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
   </div>
 </section>
 
-<!-- ============ TESIS ============ -->
-<section id="tesis">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow" data-i18n="thesis_eyebrow">Deep dives</span>
-      <h2 data-i18n="thesis_title">Tesis de inversión</h2>
-      <p data-i18n="thesis_sub">Análisis a profundidad de las empresas del portafolio, siguiendo el Micro Capo Checklist: negocio, números, valuación, catalizadores y riesgos.</p>
-      <a class="more" id="thesisMore" target="_blank" rel="noopener" data-i18n="thesis_more">¿Prefieres leerlas en inglés? Viven en Substack →</a>
-    </div>
-    <div class="tt-card reveal">
-      <div class="tt-scroll"><table class="tt" id="tesisTable"></table></div>
-      <p class="tt-note" id="tesisNote"></p>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <footer>
@@ -371,7 +354,6 @@ footer{border-top:1px solid var(--line);padding:62px 0 44px}
         <a href="#newsletter" data-i18n="nav_news">Newsletter</a>
         <a href="#articulos" data-i18n="nav_articles">Artículos</a>
         <a href="#libros" data-i18n="nav_books">Libros</a>
-        <a href="#tesis" data-i18n="nav_thesis">Tesis</a>
       </nav>
     </div>
     <p class="disclaimer" data-i18n="disclaimer">Aviso: The Micro Capo comparte ideas, portafolios y research con fines educativos e informativos. No es asesoría financiera, legal ni fiscal. Invertir en microcaps y operar opciones conlleva un riesgo elevado de pérdida total. Haz tu propia investigación y consulta a un profesional antes de tomar decisiones. El autor mantiene posiciones en las empresas mencionadas.</p>
@@ -673,6 +655,7 @@ function ttDateLabel(d){
   return `${ms[+m-1]} ${y}`;
 }
 function renderTheses(){
+  if(!document.getElementById('tesisTable')) return;
   const cols=[
     {key:'t',      label:t('tt_ticker'), num:false},
     {key:'doc',    label:'',             num:false, nosort:true},
